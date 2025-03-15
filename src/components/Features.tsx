@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { 
   MicIcon, 
   BarChartIcon, 
@@ -9,7 +9,11 @@ import {
   ZapIcon,
   BrainIcon,
   HeadphonesIcon,
-  UsersIcon
+  UsersIcon,
+  PhoneCallIcon,
+  MessageSquareIcon,
+  BoltIcon,
+  PlusCircleIcon
 } from 'lucide-react';
 import { 
   Table,
@@ -20,6 +24,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { toast } from "sonner";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -69,9 +77,72 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
   );
 };
 
+interface UseCase {
+  id: string;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  exampleQuestions: string[];
+  greeting: string;
+}
+
+const useCases: UseCase[] = [
+  {
+    id: "electricity",
+    title: "Electricity Sales Inquiry",
+    description: "Speak with our AI agent about our electricity plans and services.",
+    icon: <ZapIcon className="h-6 w-6" />,
+    exampleQuestions: [
+      "What plans do you offer?",
+      "How much does solar installation cost?",
+      "Do you offer any special rates?"
+    ],
+    greeting: "Hello! I'm your electrical company sales assistant. How can I help you today with our electricity plans and services?"
+  },
+  {
+    id: "dental",
+    title: "Dentist Appointment",
+    description: "Book or reschedule your next dental appointment.",
+    icon: <PlusCircleIcon className="h-6 w-6" />,
+    exampleQuestions: [
+      "I need a cleaning appointment",
+      "When is Dr. Smith available?",
+      "What procedures do you offer?"
+    ],
+    greeting: "Hi there! I'm the dental appointment assistant. I can help you book or reschedule your next dental visit. How can I assist you today?"
+  },
+  {
+    id: "insurance",
+    title: "Insurance Quotation",
+    description: "Get quotes for various insurance policies.",
+    icon: <ShieldCheckIcon className="h-6 w-6" />,
+    exampleQuestions: [
+      "How much is home insurance?",
+      "Can I get a quote for auto insurance?",
+      "What discounts are available?"
+    ],
+    greeting: "Welcome! I'm your insurance quotation assistant. I'm here to help you get quotes for various insurance policies. What type of insurance are you interested in today?"
+  },
+  {
+    id: "support",
+    title: "Customer Support",
+    description: "Get help with product issues or questions.",
+    icon: <HeadphonesIcon className="h-6 w-6" />,
+    exampleQuestions: [
+      "My product isn't working",
+      "I need help with setup",
+      "How do I return an item?"
+    ],
+    greeting: "Hello and welcome to customer support! I'm here to help with any product issues or questions you may have. What can I assist you with today?"
+  }
+];
+
 const Features = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
   const comparisonRef = useRef<HTMLDivElement>(null);
+  const tryItZoneRef = useRef<HTMLDivElement>(null);
+  const [activeUseCase, setActiveUseCase] = useState<UseCase>(useCases[0]);
+  const [isTalking, setIsTalking] = useState(false);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -92,6 +163,10 @@ const Features = () => {
       observer.observe(comparisonRef.current);
     }
     
+    if (tryItZoneRef.current) {
+      observer.observe(tryItZoneRef.current);
+    }
+    
     return () => {
       if (featuresRef.current) {
         observer.unobserve(featuresRef.current);
@@ -99,6 +174,10 @@ const Features = () => {
       
       if (comparisonRef.current) {
         observer.unobserve(comparisonRef.current);
+      }
+      
+      if (tryItZoneRef.current) {
+        observer.unobserve(tryItZoneRef.current);
       }
     };
   }, []);
@@ -211,6 +290,24 @@ const Features = () => {
     }
   ];
 
+  const handleTalkClick = () => {
+    if (isTalking) {
+      setIsTalking(false);
+      toast.info("Voice conversation ended");
+    } else {
+      setIsTalking(true);
+      toast.success(`Started conversation with ${activeUseCase.title} assistant`);
+      
+      // Simulate conversation ending after 20 seconds
+      setTimeout(() => {
+        if (isTalking) {
+          setIsTalking(false);
+          toast.info("Voice conversation ended");
+        }
+      }, 20000);
+    }
+  };
+
   return (
     <section id="features" className="py-24 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -261,18 +358,84 @@ const Features = () => {
         </div>
         
         <div 
-          ref={featuresRef}
-          className="text-center max-w-3xl mx-auto mb-16 transition-all duration-700 opacity-0 translate-y-10"
+          ref={tryItZoneRef}
+          className="text-center max-w-4xl mx-auto mb-16 transition-all duration-700 opacity-0 translate-y-10"
         >
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-600 mb-4">
-            <span className="text-xs font-medium">Powerful Capabilities</span>
+            <span className="text-xs font-medium">Experience It Live</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-semibold mb-4">
-            Feature-Rich AI Voice Agents
+            Try It Zone
           </h2>
-          <p className="text-xl text-gray-600">
-            Our AI voice agent comes equipped with all the tools your business needs to provide exceptional service.
+          <p className="text-xl text-gray-600 mb-10">
+            Experience our AI voice agent in real-time across different use cases. Click on one of the scenarios below and start the conversation.
           </p>
+          
+          <Tabs defaultValue="electricity" className="w-full" onValueChange={(value) => {
+            const newUseCase = useCases.find(uc => uc.id === value);
+            if (newUseCase) {
+              setActiveUseCase(newUseCase);
+              setIsTalking(false);
+            }
+          }}>
+            <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-8">
+              {useCases.map((useCase) => (
+                <TabsTrigger key={useCase.id} value={useCase.id} className="gap-2 py-3">
+                  {useCase.icon} 
+                  <span className="hidden md:inline">{useCase.title}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            
+            {useCases.map((useCase) => (
+              <TabsContent key={useCase.id} value={useCase.id} className="mt-0">
+                <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      {useCase.icon}
+                      {useCase.title}
+                    </CardTitle>
+                    <CardDescription>{useCase.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="bg-gray-50 p-4 rounded-lg mb-6">
+                      <p className="text-gray-700">{useCase.greeting}</p>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <h4 className="text-sm font-medium text-gray-500 mb-2">Example questions you can ask:</h4>
+                      <ul className="space-y-2">
+                        {useCase.exampleQuestions.map((question, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <MessageSquareIcon className="h-5 w-5 text-blue-500 shrink-0 mt-0.5" />
+                            <span className="text-gray-700">{question}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex justify-center border-t pt-6">
+                    <Button 
+                      className={`${isTalking ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-600 hover:bg-blue-700'} text-white px-6 py-3 rounded-full transition-all`}
+                      onClick={handleTalkClick}
+                    >
+                      {isTalking ? (
+                        <>
+                          <PhoneCallIcon className="mr-2 h-5 w-5 animate-pulse" />
+                          End Conversation
+                        </>
+                      ) : (
+                        <>
+                          <MicIcon className="mr-2 h-5 w-5" />
+                          Talk to AI Assistant
+                        </>
+                      )}
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </TabsContent>
+            ))}
+          </Tabs>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
