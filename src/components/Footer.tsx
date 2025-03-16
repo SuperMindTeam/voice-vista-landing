@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MicIcon, Twitter, Linkedin, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 
@@ -10,7 +9,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-5">
               <MicIcon className="h-6 w-6 text-blue-600 mr-2" />
-              <span className="font-display font-semibold text-xl">VoiceAgent</span>
+              <span className="font-display font-semibold text-xl">Shiv AI</span>
             </div>
             <p className="text-gray-600 mb-6">
               The most advanced AI voice assistant for business, providing seamless customer interactions through natural conversation.
@@ -78,7 +77,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Mail className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
-                <span className="text-gray-600">hello@voiceagent.ai</span>
+                <span className="text-gray-600">hello@shivai.ai</span>
               </li>
               <li className="flex items-start">
                 <Phone className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
@@ -94,7 +93,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} VoiceAgent AI. All rights reserved.
+            &copy; {new Date().getFullYear()} Shiv AI. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors text-sm">
