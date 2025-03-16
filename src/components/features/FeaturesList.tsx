@@ -3,7 +3,6 @@ import React from 'react';
 import { 
   ZapIcon,
   BrainIcon,
-  HeadphonesIcon,
   UsersIcon
 } from 'lucide-react';
 import FeatureCard from './FeatureCard';
@@ -46,8 +45,8 @@ const FeaturesList = () => {
       imageOnly: true
     },
     {
-      image: "/lovable-uploads/99a65a25-cd61-4f71-9d33-569f5ca250fb.png",
-      title: "24/7 Availability",
+      image: "/lovable-uploads/731bbfa3-43c7-4660-a01a-1c1780cd550e.png",
+      title: "Instant Response",
       description: "",
       delay: 600,
       imageOnly: true
