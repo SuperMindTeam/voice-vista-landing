@@ -61,24 +61,24 @@ const TryItZone = () => {
       ref={tryItZoneRef}
       className="text-center max-w-5xl mx-auto mb-24 transition-all duration-700 opacity-0 translate-y-10 p-10 rounded-3xl relative overflow-hidden"
       style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2000&auto=format&fit=crop')",
+        backgroundImage: "url('/lovable-uploads/d79dc8af-e797-4da7-b7ae-278fddf29c4f.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         boxShadow: "0 20px 80px -20px rgba(0, 0, 0, 0.2)"
       }}
     >
       <div 
-        className="absolute inset-0 opacity-90" 
+        className="absolute inset-0 opacity-70" 
         style={{ 
-          background: "linear-gradient(135deg, rgba(23, 92, 230, 0.85) 0%, rgba(147, 51, 234, 0.85) 100%)",
+          background: "linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%)",
           mixBlendMode: "multiply" 
         }}
       />
       
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br from-blue-400 to-purple-300 rounded-full blur-3xl opacity-30 animate-float"></div>
-        <div className="absolute top-1/4 -right-20 w-80 h-80 bg-gradient-to-br from-indigo-300 to-purple-400 rounded-full blur-3xl opacity-30 animate-float animate-delay-200"></div>
-        <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-gradient-to-br from-blue-300 to-pink-300 rounded-full blur-3xl opacity-30 animate-float animate-delay-400"></div>
+        <div className="absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br from-blue-400 to-purple-300 rounded-full blur-3xl opacity-20 animate-float"></div>
+        <div className="absolute top-1/4 -right-20 w-80 h-80 bg-gradient-to-br from-indigo-300 to-purple-400 rounded-full blur-3xl opacity-20 animate-float animate-delay-200"></div>
+        <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-gradient-to-br from-blue-300 to-pink-300 rounded-full blur-3xl opacity-20 animate-float animate-delay-400"></div>
       </div>
       
       <div className="relative z-10">
