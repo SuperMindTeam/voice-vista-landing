@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { toast } from "sonner";
 import { 
   DollarSignIcon, 
@@ -23,22 +23,22 @@ const useCases = [
   {
     id: "debt",
     title: "Debt Collection",
-    icon: <DollarSignIcon className="h-6 w-6" />,
+    icon: <DollarSignIcon className="h-6 w-6 text-pink-500" />,
   },
   {
     id: "claims",
     title: "Claims FNOL (Intake)",
-    icon: <FileTextIcon className="h-6 w-6" />,
+    icon: <FileTextIcon className="h-6 w-6 text-pink-500" />,
   },
   {
     id: "insurance",
     title: "Auto Insurance Quote",
-    icon: <ShieldIcon className="h-6 w-6" />,
+    icon: <ShieldIcon className="h-6 w-6 text-pink-500" />,
   },
   {
     id: "doctor",
     title: "Doctor Appointment Booking",
-    icon: <PlusCircleIcon className="h-6 w-6" />,
+    icon: <PlusCircleIcon className="h-6 w-6 text-pink-500" />,
   },
 ];
 
@@ -122,8 +122,6 @@ const TryItZone = () => {
                 Tap the mic and try our Collections AI Agent
               </p>
             </div>
-            
-            {/* We'll add a pseudo-element for the border animation in CSS */}
           </div>
         </div>
       </div>

@@ -31,9 +31,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border: 2px solid #D946EF;
+  border: 3px solid #D946EF; /* Increased border width for visibility */
   border-radius: inherit;
   pointer-events: none;
-  animation: borderAnimation 20s linear infinite;
+  animation: borderAnimation 10s linear infinite; /* Faster animation */
   z-index: 1;
 }
