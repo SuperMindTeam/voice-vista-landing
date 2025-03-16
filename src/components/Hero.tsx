@@ -83,7 +83,7 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-4 max-w-4xl">
-              Reduce Salaries, Not Service—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls for You.
+              Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8 animate-fade-in animate-delay-100 font-bold">
@@ -129,7 +129,7 @@ const Hero = () => {
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-4">
-                  Reduce Salaries, Not Service—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls for You.
+                  Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
                 </h1>
                 
                 <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in animate-delay-100 font-bold">
