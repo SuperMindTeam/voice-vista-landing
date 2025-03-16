@@ -86,7 +86,7 @@ const Hero = () => {
               Why Hire More? Let us Answer Your <span className="gradient-text">Calls 24x7</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8 animate-fade-in animate-delay-100">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8 animate-fade-in animate-delay-100 font-bold">
               Reduce payroll costs by 80% every month
             </p>
             
@@ -132,7 +132,7 @@ const Hero = () => {
                   Why Hire More? Let us Answer Your <span className="gradient-text">Calls 24x7</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in animate-delay-100">
+                <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in animate-delay-100 font-bold">
                   Reduce payroll costs by 80% every month
                 </p>
                 
