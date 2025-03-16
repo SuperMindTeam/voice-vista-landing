@@ -45,51 +45,51 @@ const CostComparison = () => {
   const costComparisonData: CostComparisonItem[] = [
     { 
       expense: "Monthly Salary (per agent)", 
-      traditional: "$3,500", 
-      ai: "$299",
-      savings: "$3,201 (91%)"
+      traditional: "₹25,000", 
+      ai: "₹15,000",
+      savings: "₹10,000 (40%)"
     },
     { 
       expense: "Training Costs", 
-      traditional: "$1,200", 
-      ai: "$0",
-      savings: "$1,200 (100%)"
+      traditional: "₹1,200", 
+      ai: "₹0",
+      savings: "₹1,200 (100%)"
     },
     { 
       expense: "Benefits & Insurance", 
-      traditional: "$1,050", 
-      ai: "$0",
-      savings: "$1,050 (100%)"
+      traditional: "₹1,050", 
+      ai: "₹0",
+      savings: "₹1,050 (100%)"
     },
     { 
       expense: "Office Space & Equipment", 
-      traditional: "$800", 
-      ai: "$0",
-      savings: "$800 (100%)"
+      traditional: "₹800", 
+      ai: "₹0",
+      savings: "₹800 (100%)"
     },
     { 
       expense: "Management Overhead", 
-      traditional: "$700", 
-      ai: "$0",
-      savings: "$700 (100%)"
+      traditional: "₹700", 
+      ai: "₹0",
+      savings: "₹700 (100%)"
     },
     { 
       expense: "Turnover Costs (averaged)", 
-      traditional: "$450", 
-      ai: "$0",
-      savings: "$450 (100%)"
+      traditional: "₹450", 
+      ai: "₹0",
+      savings: "₹450 (100%)"
     },
     { 
       expense: "Total Monthly Cost", 
-      traditional: "$7,700", 
-      ai: "$299",
-      savings: "$7,401 (96%)"
+      traditional: "₹29,200", 
+      ai: "₹15,000",
+      savings: "₹14,200 (49%)"
     },
     { 
       expense: "Annual Cost", 
-      traditional: "$92,400", 
-      ai: "$3,588",
-      savings: "$88,812 (96%)"
+      traditional: "₹350,400", 
+      ai: "₹180,000",
+      savings: "₹170,400 (49%)"
     }
   ];
 
@@ -135,7 +135,7 @@ const CostComparison = () => {
       </div>
       
       <p className="text-lg text-gray-700">
-        Save over <span className="font-semibold text-blue-600">$88,000 per year</span> for each agent you replace with our AI solution, 
+        Save over <span className="font-semibold text-blue-600">₹170,400 per year</span> for each agent you replace with our AI solution, 
         while maintaining exceptional customer service quality 24/7.
       </p>
     </div>
