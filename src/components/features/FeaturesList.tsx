@@ -22,7 +22,7 @@ const FeaturesList = () => {
       imageOnly: true
     },
     {
-      image: "/lovable-uploads/41a8a57f-c08d-4658-86d5-2bbdcb9b4ae5.png",
+      image: "/lovable-uploads/8c7fb5a3-36c1-427e-9f9b-ac59fc5cffa5.png",
       title: "Seamless Integration",
       description: "",
       delay: 200,
