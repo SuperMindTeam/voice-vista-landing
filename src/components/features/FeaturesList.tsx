@@ -35,9 +35,10 @@ const FeaturesList = () => {
     },
     {
       icon: <GlobeIcon className="h-6 w-6" />,
-      title: "Multilingual Support",
+      title: "Queries Resolved 60%",
       description: "Communicate with customers in over 30 languages with natural-sounding translation.",
-      delay: 300
+      delay: 300,
+      isHighlighted: true
     },
     {
       icon: <BarChartIcon className="h-6 w-6" />,
@@ -80,6 +81,7 @@ const FeaturesList = () => {
           title={feature.title}
           description={feature.description}
           delay={feature.delay}
+          isHighlighted={feature.isHighlighted}
         />
       ))}
     </div>

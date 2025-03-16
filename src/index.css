@@ -145,3 +145,8 @@
   background-image: radial-gradient(rgba(0, 0, 100, 0.03) 1px, transparent 1px);
   background-size: 20px 20px;
 }
+
+/* Glow effect for the curve */
+.glow-effect {
+  filter: drop-shadow(0 0 8px rgba(125, 211, 252, 0.5));
+}
