@@ -86,7 +86,7 @@ const Hero = () => {
               Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
             </h1>
             
-            <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 max-w-2xl mb-8 animate-fade-in animate-delay-100 font-bold">
+            <p className="text-xl md:text-2xl lg:text-3xl text-green-600 max-w-2xl mb-8 animate-fade-in animate-delay-100 font-bold">
               Instant Answers, Zero Wait Time.
             </p>
             
@@ -132,7 +132,7 @@ const Hero = () => {
                   Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
                 </h1>
                 
-                <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 mb-8 animate-fade-in animate-delay-100 font-bold">
+                <p className="text-xl md:text-2xl lg:text-3xl text-green-600 mb-8 animate-fade-in animate-delay-100 font-bold">
                   Instant Answers, Zero Wait Time.
                 </p>
                 
