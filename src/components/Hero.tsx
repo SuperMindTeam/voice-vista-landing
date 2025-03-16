@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { MicIcon, PhoneIcon, MessageCircleIcon, ChevronDownIcon } from 'lucide-react';
@@ -98,7 +99,7 @@ const Hero = () => {
             ref={heroRef}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center transition-all duration-700 opacity-0 translate-y-10"
           >
-            <div className="order-2 lg:order-1 animate-fade-in animate-delay-200">
+            <div className="order-2 lg:order-1 animate-fade-in animate-delay-200 mt-6">
               <div className="aspect-video rounded-xl overflow-hidden shadow-2xl glass">
                 <div className="relative h-full w-full bg-gray-100">
                   <iframe 
