@@ -58,7 +58,6 @@ const FeaturesList = () => {
       {features.map((feature, index) => (
         <FeatureCard
           key={index}
-          icon={feature.icon}
           title={feature.title}
           description={feature.description}
           delay={feature.delay}
