@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from 'react';
 import { toast } from "sonner";
 import { 
@@ -60,7 +61,7 @@ const TryItZone = () => {
       ref={tryItZoneRef}
       className="text-center max-w-5xl mx-auto mb-24 transition-all duration-700 opacity-0 translate-y-10 p-10 rounded-3xl relative overflow-hidden"
       style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2000&auto=format&fit=crop')",
+        backgroundImage: "url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2000&auto=format&fit=crop')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         boxShadow: "0 20px 80px -20px rgba(0, 0, 0, 0.2)"

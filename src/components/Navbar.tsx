@@ -22,15 +22,15 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-4',
-        isScrolled 
-          ? 'bg-white/80 backdrop-blur-md border-b border-gray-200/30 shadow-sm' 
-          : 'bg-transparent'
-      )}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5 px-4">
+      <header
+        className={cn(
+          'max-w-5xl w-full rounded-full transition-all duration-300 ease-in-out px-6 py-4',
+          isScrolled 
+            ? 'bg-white/80 backdrop-blur-md border border-gray-200/30 shadow-lg' 
+            : 'bg-white/50 backdrop-blur-sm border border-white/20 shadow-md'
+        )}
+      >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <MicIcon className="h-6 w-6 text-blue-600 mr-2" />
@@ -74,7 +74,7 @@ const Navbar = () => {
             )}
           </button>
         </div>
-      </div>
+      </header>
 
       {/* Mobile menu */}
       <div 
@@ -129,7 +129,7 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
-    </header>
+    </div>
   );
 };
 
