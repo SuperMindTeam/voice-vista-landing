@@ -87,7 +87,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8 animate-fade-in animate-delay-100 font-bold">
-              Reduce staff salaries costs by 80% every month
+              Instant Answers, Zero Wait Time.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in animate-delay-200">
@@ -133,7 +133,7 @@ const Hero = () => {
                 </h1>
                 
                 <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in animate-delay-100 font-bold">
-                  Reduce staff salaries costs by 80% every month
+                  Instant Answers, Zero Wait Time.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in animate-delay-200 justify-center lg:justify-start">
