@@ -3,12 +3,13 @@ import React, { useEffect, useRef } from 'react';
 import { AspectRatio } from "../ui/aspect-ratio";
 
 interface FeatureCardProps {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   title: string;
   description: string;
   delay: number;
   isHighlighted?: boolean;
   image?: string;
+  imageOnly?: boolean;
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ 
@@ -17,7 +18,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   description, 
   delay,
   isHighlighted = false,
-  image
+  image,
+  imageOnly = false
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   
@@ -44,6 +46,21 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       }
     };
   }, [delay]);
+
+  if (imageOnly && image) {
+    return (
+      <div 
+        ref={cardRef} 
+        className="feature-card bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-500 opacity-0 translate-y-10 h-full"
+      >
+        <img 
+          src={image} 
+          alt={title}
+          className="object-cover w-full h-full"
+        />
+      </div>
+    );
+  }
 
   if (isHighlighted) {
     return (
