@@ -60,47 +60,49 @@ const TryItZone = () => {
       ref={tryItZoneRef}
       className="text-center max-w-5xl mx-auto mb-24 transition-all duration-700 opacity-0 translate-y-10 p-10 rounded-3xl relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
-        boxShadow: "0 20px 80px -20px rgba(0, 0, 0, 0.1)"
+        backgroundImage: "url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2000&auto=format&fit=crop')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        boxShadow: "0 20px 80px -20px rgba(0, 0, 0, 0.2)"
       }}
     >
       <div 
-        className="absolute inset-0 opacity-60" 
+        className="absolute inset-0 opacity-90" 
         style={{ 
-          background: "linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%)",
-          mixBlendMode: "overlay" 
+          background: "linear-gradient(135deg, rgba(23, 92, 230, 0.85) 0%, rgba(147, 51, 234, 0.85) 100%)",
+          mixBlendMode: "multiply" 
         }}
       />
       
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br from-blue-400 to-purple-300 rounded-full blur-3xl opacity-20"></div>
-        <div className="absolute top-1/4 -right-20 w-80 h-80 bg-gradient-to-br from-indigo-300 to-purple-400 rounded-full blur-3xl opacity-20"></div>
-        <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-gradient-to-br from-blue-300 to-pink-300 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br from-blue-400 to-purple-300 rounded-full blur-3xl opacity-30 animate-float"></div>
+        <div className="absolute top-1/4 -right-20 w-80 h-80 bg-gradient-to-br from-indigo-300 to-purple-400 rounded-full blur-3xl opacity-30 animate-float animate-delay-200"></div>
+        <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-gradient-to-br from-blue-300 to-pink-300 rounded-full blur-3xl opacity-30 animate-float animate-delay-400"></div>
       </div>
       
       <div className="relative z-10">
         <div className="relative mb-8">
-          <div className="absolute -top-10 -left-10 w-24 h-24 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
-          <div className="absolute -top-8 -right-8 w-32 h-32 bg-purple-100 rounded-full blur-3xl opacity-50"></div>
-          <div className="absolute -bottom-8 left-1/4 w-28 h-28 bg-amber-100 rounded-full blur-3xl opacity-40"></div>
+          <div className="absolute -top-10 -left-10 w-24 h-24 bg-blue-100 rounded-full blur-3xl opacity-60"></div>
+          <div className="absolute -top-8 -right-8 w-32 h-32 bg-purple-100 rounded-full blur-3xl opacity-70"></div>
+          <div className="absolute -bottom-8 left-1/4 w-28 h-28 bg-amber-100 rounded-full blur-3xl opacity-60"></div>
           
-          <div className="relative inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white mb-4 shadow-md">
+          <div className="relative inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white mb-4 shadow-md border border-white/30">
             <SparklesIcon className="mr-2 h-5 w-5 animate-pulse" />
             <span className="text-sm font-medium">Experience It Live</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-3 text-white">
             Try It Zone
           </h2>
-          <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
+          <p className="text-xl text-white/80 mb-4 max-w-3xl mx-auto">
             Experience our AI voice agent in real-time across different use cases.
             Select a scenario below and start the conversation.
           </p>
         </div>
         
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 rounded-3xl transform -rotate-1 scale-[1.02] blur-sm"></div>
+          <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-3xl transform -rotate-1 scale-[1.02] blur-sm"></div>
           
-          <div className="relative glass rounded-3xl shadow-xl overflow-hidden border border-white/40 backdrop-blur-sm bg-white/70">
+          <div className="relative glass rounded-3xl shadow-xl overflow-hidden border border-white/40 backdrop-blur-sm bg-white/80">
             <Tabs defaultValue="electricity" className="w-full" onValueChange={(value) => {
               const newUseCase = useCases.find(uc => uc.id === value);
               if (newUseCase) {
@@ -108,8 +110,8 @@ const TryItZone = () => {
                 setIsTalking(false);
               }
             }}>
-              <div className="p-4 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100">
-                <TabsList className="grid grid-cols-2 md:grid-cols-4 p-1 rounded-xl bg-white/80 backdrop-blur-sm shadow-inner">
+              <div className="p-4 bg-gradient-to-r from-indigo-100/80 via-purple-100/80 to-pink-100/80 backdrop-blur-sm">
+                <TabsList className="grid grid-cols-2 md:grid-cols-4 p-1 rounded-xl bg-white/90 backdrop-blur-sm shadow-inner">
                   {useCases.map((useCase) => (
                     <TabsTrigger 
                       key={useCase.id} 
