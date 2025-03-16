@@ -45,9 +45,6 @@ const Navbar = () => {
             <a href="#testimonials" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
               Testimonials
             </a>
-            <a href="#pricing" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-              Pricing
-            </a>
             <a href="#faq" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
               FAQ
             </a>
@@ -94,13 +91,6 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
           >
             Testimonials
-          </a>
-          <a 
-            href="#pricing" 
-            className="text-lg font-medium text-gray-700"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Pricing
           </a>
           <a 
             href="#faq" 
