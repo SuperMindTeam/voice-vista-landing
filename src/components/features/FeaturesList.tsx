@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { 
-  MicIcon, 
   BarChartIcon, 
   GitBranchIcon, 
   GlobeIcon, 
@@ -15,12 +14,6 @@ import FeatureCard from './FeatureCard';
 
 const FeaturesList = () => {
   const features = [
-    {
-      icon: <MicIcon className="h-6 w-6" />,
-      title: "Natural Voice Recognition",
-      description: "Advanced speech recognition that understands context, accents, and industry-specific terminology.",
-      delay: 0
-    },
     {
       icon: <BrainIcon className="h-6 w-6" />,
       title: "Intelligent Responses",
