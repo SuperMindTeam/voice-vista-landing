@@ -53,12 +53,9 @@ const Navbar = () => {
             </a>
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-sm font-medium">
-              Sign In
-            </Button>
+          <div className="hidden md:flex items-center">
             <Button size="sm" className="text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white shadow-sm">
-              Get Started
+              Free Trial
             </Button>
           </div>
 
@@ -114,17 +111,10 @@ const Navbar = () => {
           </a>
           <div className="pt-6 border-t">
             <Button 
-              variant="outline" 
-              className="w-full mb-4"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Sign In
-            </Button>
-            <Button 
               className="w-full bg-blue-600 text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Get Started
+              Free Trial
             </Button>
           </div>
         </nav>

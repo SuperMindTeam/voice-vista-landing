@@ -49,7 +49,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8 animate-fade-in animate-delay-100">
-            Reduce payroll calls by 80% every month
+            Reduce payroll costs by 80% every month
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in animate-delay-200">
