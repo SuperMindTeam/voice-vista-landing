@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { toast } from "sonner";
 import { 
   DollarSignIcon, 
@@ -8,7 +8,6 @@ import {
   PlusCircleIcon,
   MicIcon,
   GlobeIcon,
-  ChevronDownIcon
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
@@ -18,12 +17,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 // New use cases to match the screenshot
 const useCases = [
@@ -51,6 +44,46 @@ const useCases = [
 
 const TryItZone = () => {
   const [isTalking, setIsTalking] = useState(false);
+  const [animationProgress, setAnimationProgress] = useState(0);
+  
+  useEffect(() => {
+    let animationFrame: number;
+    let startTime: number;
+    
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      
+      // Complete animation in 20 seconds if talking, or reset if not talking
+      if (isTalking) {
+        // Progress from 0 to 100 over 20 seconds
+        const progress = Math.min(elapsed / 20000, 1);
+        setAnimationProgress(progress);
+        
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(animate);
+        } else {
+          // End the conversation when animation completes
+          setIsTalking(false);
+          toast.info("Voice conversation ended");
+        }
+      } else {
+        // Reset animation when not talking
+        setAnimationProgress(0);
+      }
+    };
+    
+    if (isTalking) {
+      startTime = 0; // Reset start time
+      animationFrame = requestAnimationFrame(animate);
+    }
+    
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [isTalking]);
 
   const handleTalkClick = () => {
     if (isTalking) {
@@ -59,15 +92,14 @@ const TryItZone = () => {
     } else {
       setIsTalking(true);
       toast.success("Started conversation with Collections AI agent");
-      
-      // Auto-end the conversation after 20 seconds
-      setTimeout(() => {
-        if (isTalking) {
-          setIsTalking(false);
-          toast.info("Voice conversation ended");
-        }
-      }, 20000);
     }
+  };
+
+  // Calculate the border dash offset for animation
+  const calculateDashOffset = () => {
+    // The total length is the perimeter of the container
+    // We're using a negative offset that decreases as animation progresses
+    return (1 - animationProgress) * 1600; // Approximate perimeter value
   };
 
   return (
@@ -81,11 +113,33 @@ const TryItZone = () => {
           Select a scenario below and start the conversation.
         </p>
         
-        {/* Dark themed card that resembles the screenshot */}
+        {/* Dark themed card with animated border */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-[#121212] border border-gray-800 rounded-3xl shadow-2xl overflow-hidden">
+          <div className="bg-[#121212] border border-gray-800 rounded-3xl shadow-2xl overflow-hidden relative">
+            {/* Animated border using SVG */}
+            <svg 
+              className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none" 
+              viewBox="0 0 100 100" 
+              preserveAspectRatio="none"
+            >
+              <rect 
+                x="0" 
+                y="0" 
+                width="100" 
+                height="100" 
+                fill="none" 
+                stroke="#D946EF" 
+                strokeWidth="0.5"
+                strokeDasharray="250" 
+                strokeDashoffset={calculateDashOffset()}
+                className="transition-all duration-300"
+                rx="8" 
+                ry="8"
+              />
+            </svg>
+            
             {/* Language selector in top center */}
-            <div className="pt-6 flex justify-center">
+            <div className="pt-6 flex justify-center relative z-10">
               <Select defaultValue="english">
                 <SelectTrigger className="w-32 bg-transparent border-gray-700 text-white">
                   <SelectValue placeholder="Language" />
@@ -100,7 +154,7 @@ const TryItZone = () => {
             </div>
             
             {/* Grid of use cases */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-6 relative z-10">
               {useCases.map((useCase) => (
                 <div
                   key={useCase.id}
@@ -117,7 +171,7 @@ const TryItZone = () => {
             </div>
             
             {/* Microphone in center */}
-            <div className="flex flex-col items-center justify-center py-8">
+            <div className="flex flex-col items-center justify-center py-8 relative z-10">
               <Button
                 variant="outline"
                 size="icon"
@@ -132,11 +186,6 @@ const TryItZone = () => {
               <p className="text-white text-xl max-w-md text-center">
                 Tap the mic and try our Collections AI Agent
               </p>
-            </div>
-            
-            {/* Bottom progress indicator */}
-            <div className="w-full h-1 bg-gray-800 mt-4">
-              <div className="h-full bg-pink-500 w-1/3"></div>
             </div>
           </div>
         </div>
