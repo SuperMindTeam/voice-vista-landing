@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { AspectRatio } from "../ui/aspect-ratio";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -7,6 +8,7 @@ interface FeatureCardProps {
   description: string;
   delay: number;
   isHighlighted?: boolean;
+  image?: string;
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ 
@@ -14,7 +16,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   title, 
   description, 
   delay,
-  isHighlighted = false 
+  isHighlighted = false,
+  image
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   
@@ -122,7 +125,19 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         {icon}
       </div>
       <h3 className="text-xl font-medium mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <p className="text-gray-600 mb-4">{description}</p>
+      
+      {image && (
+        <div className="mt-4 overflow-hidden rounded-lg">
+          <AspectRatio ratio={16/9} className="bg-muted">
+            <img 
+              src={image} 
+              alt={title}
+              className="object-cover w-full h-full"
+            />
+          </AspectRatio>
+        </div>
+      )}
     </div>
   );
 };

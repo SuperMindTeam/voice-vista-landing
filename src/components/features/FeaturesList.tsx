@@ -18,7 +18,8 @@ const FeaturesList = () => {
       icon: <BrainIcon className="h-6 w-6" />,
       title: "Intelligent Responses",
       description: "AI-powered responses that adapt to conversation flow and provide accurate, helpful information.",
-      delay: 100
+      delay: 100,
+      image: "/lovable-uploads/97487a33-dfea-40e3-85f9-e06e533c5c39.png"
     },
     {
       icon: <GitBranchIcon className="h-6 w-6" />,
@@ -75,6 +76,7 @@ const FeaturesList = () => {
           description={feature.description}
           delay={feature.delay}
           isHighlighted={feature.isHighlighted}
+          image={feature.image}
         />
       ))}
     </div>
