@@ -44,47 +44,7 @@ const useCases = [
 
 const TryItZone = () => {
   const [isTalking, setIsTalking] = useState(false);
-  const [animationProgress, setAnimationProgress] = useState(0);
   
-  useEffect(() => {
-    let animationFrame: number;
-    let startTime: number;
-    
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      
-      // Complete animation in 20 seconds if talking, or reset if not talking
-      if (isTalking) {
-        // Progress from 0 to 100 over 20 seconds
-        const progress = Math.min(elapsed / 20000, 1);
-        setAnimationProgress(progress);
-        
-        if (progress < 1) {
-          animationFrame = requestAnimationFrame(animate);
-        } else {
-          // End the conversation when animation completes
-          setIsTalking(false);
-          toast.info("Voice conversation ended");
-        }
-      } else {
-        // Reset animation when not talking
-        setAnimationProgress(0);
-      }
-    };
-    
-    if (isTalking) {
-      startTime = 0; // Reset start time
-      animationFrame = requestAnimationFrame(animate);
-    }
-    
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame);
-      }
-    };
-  }, [isTalking]);
-
   const handleTalkClick = () => {
     if (isTalking) {
       setIsTalking(false);
@@ -93,13 +53,6 @@ const TryItZone = () => {
       setIsTalking(true);
       toast.success("Started conversation with Collections AI agent");
     }
-  };
-
-  // Calculate the border dash offset for animation
-  const calculateDashOffset = () => {
-    // The total length is the perimeter of the container
-    // We're using a negative offset that decreases as animation progresses
-    return (1 - animationProgress) * 1600; // Approximate perimeter value
   };
 
   return (
@@ -115,29 +68,11 @@ const TryItZone = () => {
         
         {/* Dark themed card with animated border */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-[#121212] border border-gray-800 rounded-3xl shadow-2xl overflow-hidden relative">
-            {/* Animated border using SVG */}
-            <svg 
-              className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none" 
-              viewBox="0 0 100 100" 
-              preserveAspectRatio="none"
-            >
-              <rect 
-                x="0" 
-                y="0" 
-                width="100" 
-                height="100" 
-                fill="none" 
-                stroke="#D946EF" 
-                strokeWidth="0.5"
-                strokeDasharray="250" 
-                strokeDashoffset={calculateDashOffset()}
-                className="transition-all duration-300"
-                rx="8" 
-                ry="8"
-              />
-            </svg>
-            
+          <div 
+            className={`bg-[#121212] border border-gray-800 rounded-3xl shadow-2xl overflow-hidden relative ${
+              isTalking ? 'border-animation' : ''
+            }`}
+          >
             {/* Language selector in top center */}
             <div className="pt-6 flex justify-center relative z-10">
               <Select defaultValue="english">
@@ -187,6 +122,8 @@ const TryItZone = () => {
                 Tap the mic and try our Collections AI Agent
               </p>
             </div>
+            
+            {/* We'll add a pseudo-element for the border animation in CSS */}
           </div>
         </div>
       </div>
