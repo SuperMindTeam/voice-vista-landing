@@ -83,7 +83,7 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-4 max-w-4xl">
-              Why Hire More? Let us Answer Your <span className="gradient-text">Calls 24x7</span>
+              Reduce Salaries, Not Service—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls for You.
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-8 animate-fade-in animate-delay-100 font-bold">
@@ -129,7 +129,7 @@ const Hero = () => {
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-4">
-                  Why Hire More? Let us Answer Your <span className="gradient-text">Calls 24x7</span>
+                  Reduce Salaries, Not Service—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls for You.
                 </h1>
                 
                 <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in animate-delay-100 font-bold">
