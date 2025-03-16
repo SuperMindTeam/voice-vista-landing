@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { 
-  ShieldCheckIcon, 
   ZapIcon,
   BrainIcon,
   HeadphonesIcon,
@@ -47,10 +46,11 @@ const FeaturesList = () => {
       imageOnly: true
     },
     {
-      icon: <HeadphonesIcon className="h-6 w-6" />,
+      image: "/lovable-uploads/99a65a25-cd61-4f71-9d33-569f5ca250fb.png",
       title: "24/7 Availability",
-      description: "Provide support and service to your customers around the clock without any downtime.",
-      delay: 600
+      description: "",
+      delay: 600,
+      imageOnly: true
     },
     {
       icon: <UsersIcon className="h-6 w-6" />,
