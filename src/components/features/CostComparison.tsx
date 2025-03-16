@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { 
   Table,
@@ -50,22 +49,10 @@ const CostComparison = () => {
       savings: "₹10,000 (40%)"
     },
     { 
-      expense: "Training Costs", 
-      traditional: "₹1,200", 
-      ai: "₹0",
-      savings: "₹1,200 (100%)"
-    },
-    { 
-      expense: "Benefits & Insurance", 
-      traditional: "₹1,050", 
-      ai: "₹0",
-      savings: "₹1,050 (100%)"
-    },
-    { 
       expense: "Office Space & Equipment", 
-      traditional: "₹800", 
+      traditional: "₹15,000", 
       ai: "₹0",
-      savings: "₹800 (100%)"
+      savings: "₹15,000 (100%)"
     },
     { 
       expense: "Management Overhead", 
@@ -81,15 +68,15 @@ const CostComparison = () => {
     },
     { 
       expense: "Total Monthly Cost", 
-      traditional: "₹29,200", 
+      traditional: "₹41,150", 
       ai: "₹15,000",
-      savings: "₹14,200 (49%)"
+      savings: "₹26,150 (64%)"
     },
     { 
       expense: "Annual Cost", 
-      traditional: "₹350,400", 
+      traditional: "₹493,800", 
       ai: "₹180,000",
-      savings: "₹170,400 (49%)"
+      savings: "₹313,800 (64%)"
     }
   ];
 
@@ -135,7 +122,7 @@ const CostComparison = () => {
       </div>
       
       <p className="text-lg text-gray-700">
-        Save over <span className="font-semibold text-blue-600">₹170,400 per year</span> for each agent you replace with our AI solution, 
+        Save over <span className="font-semibold text-blue-600">₹313,800 per year</span> for each agent you replace with our AI solution, 
         while maintaining exceptional customer service quality 24/7.
       </p>
     </div>
