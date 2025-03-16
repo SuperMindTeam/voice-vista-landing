@@ -105,11 +105,11 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-blue-50">
+    <section id="testimonials" className="py-16 bg-blue-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={sectionRef}
-          className="text-center max-w-3xl mx-auto mb-16 transition-all duration-700 opacity-0 translate-y-10"
+          className="text-center max-w-3xl mx-auto mb-12 transition-all duration-700 opacity-0 translate-y-10"
         >
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-600 mb-4">
             <span className="text-xs font-medium">Customer Stories</span>

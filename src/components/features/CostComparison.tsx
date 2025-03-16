@@ -96,7 +96,7 @@ const CostComparison = () => {
   return (
     <div 
       ref={comparisonRef}
-      className="text-center max-w-4xl mx-auto mb-16 transition-all duration-700 opacity-0 translate-y-10"
+      className="text-center max-w-4xl mx-auto transition-all duration-700 opacity-0 translate-y-10"
     >
       <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-600 mb-3">
         <span className="text-xs font-medium">Cost Efficiency</span>

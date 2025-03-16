@@ -95,7 +95,7 @@ const Hero = () => {
                 Get Started Free
               </Button>
               <Button size="lg" variant="outline" className="border-gray-300">
-                Watch Demo
+                Try Today
               </Button>
             </div>
             
@@ -141,7 +141,7 @@ const Hero = () => {
                     Get Started Free
                   </Button>
                   <Button size="lg" variant="outline" className="border-gray-300">
-                    Watch Demo
+                    Try Today
                   </Button>
                 </div>
               </div>
