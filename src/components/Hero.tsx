@@ -1,7 +1,6 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { MicIcon, PhoneIcon, MessageCircleIcon, ChevronDownIcon } from 'lucide-react';
+import { MicIcon, PhoneIcon, MessageCircleIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
@@ -153,13 +152,6 @@ const Hero = () => {
             </div>
           </div>
         )}
-        
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <a href="#features" className="flex flex-col items-center text-gray-400">
-            <span className="text-sm mb-1">Discover More</span>
-            <ChevronDownIcon className="h-5 w-5" />
-          </a>
-        </div>
       </div>
     </section>
   );
