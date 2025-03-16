@@ -22,10 +22,11 @@ const FeaturesList = () => {
       imageOnly: true
     },
     {
-      icon: <GitBranchIcon className="h-6 w-6" />,
+      image: "/lovable-uploads/41a8a57f-c08d-4658-86d5-2bbdcb9b4ae5.png",
       title: "Seamless Integration",
-      description: "Easily integrate with your existing systems including CRM, help desk, and booking platforms.",
-      delay: 200
+      description: "",
+      delay: 200,
+      imageOnly: true
     },
     {
       icon: <GlobeIcon className="h-6 w-6" />,
