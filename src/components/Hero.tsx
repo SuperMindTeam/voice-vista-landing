@@ -1,6 +1,7 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { MicIcon, PhoneIcon, MessageCircleIcon } from 'lucide-react';
+import { MicIcon, PhoneIcon, MessageCircleIcon, PercentIcon, Clock, TrendingUpIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
@@ -78,17 +79,34 @@ const Hero = () => {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div className="bg-white/70 backdrop-blur-sm border border-gray-100 rounded-xl p-6 shadow-sm">
-                  <h3 className="font-display text-3xl font-semibold mb-2">98%</h3>
-                  <p className="text-gray-600">Customer satisfaction rate</p>
+                <div className="rounded-full overflow-hidden shadow-lg bg-gradient-to-r from-purple-400 to-indigo-500 text-white p-4 flex items-center gap-3">
+                  <div className="bg-white/20 rounded-full p-2 flex-shrink-0">
+                    <PercentIcon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-semibold">98%</h3>
+                    <p className="text-sm text-white/80">Customer satisfaction rate</p>
+                  </div>
                 </div>
-                <div className="bg-white/70 backdrop-blur-sm border border-gray-100 rounded-xl p-6 shadow-sm">
-                  <h3 className="font-display text-3xl font-semibold mb-2">24/7</h3>
-                  <p className="text-gray-600">Always available support</p>
+                
+                <div className="rounded-full overflow-hidden shadow-lg bg-gradient-to-r from-emerald-400 to-teal-500 text-white p-4 flex items-center gap-3">
+                  <div className="bg-white/20 rounded-full p-2 flex-shrink-0">
+                    <Clock className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-semibold">24/7</h3>
+                    <p className="text-sm text-white/80">Always available support</p>
+                  </div>
                 </div>
-                <div className="bg-white/70 backdrop-blur-sm border border-gray-100 rounded-xl p-6 shadow-sm">
-                  <h3 className="font-display text-3xl font-semibold mb-2">45%</h3>
-                  <p className="text-gray-600">Reduction in support costs</p>
+                
+                <div className="rounded-full overflow-hidden shadow-lg bg-gradient-to-r from-rose-400 to-pink-500 text-white p-4 flex items-center gap-3">
+                  <div className="bg-white/20 rounded-full p-2 flex-shrink-0">
+                    <TrendingUpIcon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-semibold">45%</h3>
+                    <p className="text-sm text-white/80">Reduction in support costs</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -98,36 +116,6 @@ const Hero = () => {
             ref={heroRef}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center transition-all duration-700 opacity-0 translate-y-10"
           >
-            <div className="order-2 lg:order-1 animate-fade-in animate-delay-200 mt-6">
-              <div className="aspect-video rounded-xl overflow-hidden shadow-2xl glass">
-                <div className="relative h-full w-full bg-gray-100">
-                  <iframe 
-                    className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                    title="Shiv AI Demo"
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-3 gap-4 mt-6">
-                <div className="bg-white/70 backdrop-blur-sm border border-gray-100 rounded-xl p-4 shadow-sm">
-                  <h3 className="font-display text-2xl font-semibold mb-1">98%</h3>
-                  <p className="text-sm text-gray-600">Customer satisfaction rate</p>
-                </div>
-                <div className="bg-white/70 backdrop-blur-sm border border-gray-100 rounded-xl p-4 shadow-sm">
-                  <h3 className="font-display text-2xl font-semibold mb-1">24/7</h3>
-                  <p className="text-sm text-gray-600">Always available support</p>
-                </div>
-                <div className="bg-white/70 backdrop-blur-sm border border-gray-100 rounded-xl p-4 shadow-sm">
-                  <h3 className="font-display text-2xl font-semibold mb-1">45%</h3>
-                  <p className="text-sm text-gray-600">Reduction in support costs</p>
-                </div>
-              </div>
-            </div>
-            
             <div className="text-center lg:text-left order-1 lg:order-2">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-600 mb-6 animate-fade-in">
                 <span className="text-xs font-medium">Introducing AI Voice Assistant</span>
@@ -148,6 +136,53 @@ const Hero = () => {
                 <Button size="lg" variant="outline" className="border-gray-300">
                   Watch Demo
                 </Button>
+              </div>
+            </div>
+            
+            <div className="order-2 lg:order-1 animate-fade-in animate-delay-200 mt-6">
+              <div className="aspect-video rounded-xl overflow-hidden shadow-2xl glass">
+                <div className="relative h-full w-full bg-gray-100">
+                  <iframe 
+                    className="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="Shiv AI Demo"
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-4 mt-6">
+                <div className="rounded-full overflow-hidden shadow-lg bg-gradient-to-r from-purple-400 to-indigo-500 text-white p-3 flex items-center gap-2">
+                  <div className="bg-white/20 rounded-full p-1.5 flex-shrink-0">
+                    <PercentIcon className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-semibold">98%</h3>
+                    <p className="text-xs text-white/80">Customer satisfaction</p>
+                  </div>
+                </div>
+                
+                <div className="rounded-full overflow-hidden shadow-lg bg-gradient-to-r from-emerald-400 to-teal-500 text-white p-3 flex items-center gap-2">
+                  <div className="bg-white/20 rounded-full p-1.5 flex-shrink-0">
+                    <Clock className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-semibold">24/7</h3>
+                    <p className="text-xs text-white/80">Always available</p>
+                  </div>
+                </div>
+                
+                <div className="rounded-full overflow-hidden shadow-lg bg-gradient-to-r from-rose-400 to-pink-500 text-white p-3 flex items-center gap-2">
+                  <div className="bg-white/20 rounded-full p-1.5 flex-shrink-0">
+                    <TrendingUpIcon className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-semibold">45%</h3>
+                    <p className="text-xs text-white/80">Cost reduction</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
