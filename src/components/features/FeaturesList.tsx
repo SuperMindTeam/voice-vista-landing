@@ -40,10 +40,11 @@ const FeaturesList = () => {
       imageOnly: true
     },
     {
-      icon: <ShieldCheckIcon className="h-6 w-6" />,
+      image: "/lovable-uploads/63116ebe-d005-44c6-8855-158bfa16471b.png",
       title: "Enterprise Security",
-      description: "Bank-level encryption and compliance with GDPR, HIPAA, and other regulatory standards.",
-      delay: 500
+      description: "",
+      delay: 500,
+      imageOnly: true
     },
     {
       icon: <HeadphonesIcon className="h-6 w-6" />,
