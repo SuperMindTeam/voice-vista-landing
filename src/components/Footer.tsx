@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MicIcon, Twitter, Linkedin, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 
@@ -5,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <div className="flex items-center mb-5">
               <MicIcon className="h-6 w-6 text-blue-600 mr-2" />
@@ -31,53 +32,11 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-medium text-lg mb-5">Company</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">About Us</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Careers</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Press</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Partners</a>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-medium text-lg mb-5">Resources</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Documentation</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">API Reference</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Community</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Support</a>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
             <h3 className="font-medium text-lg mb-5">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Mail className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
-                <span className="text-gray-600">hello@shivai.ai</span>
+                <span className="text-gray-600">hello@tryshiv.ai</span>
               </li>
               <li className="flex items-start">
                 <Phone className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />

@@ -60,7 +60,7 @@ const TryItZone = () => {
   return (
     <div 
       ref={tryItZoneRef}
-      className="text-center max-w-5xl mx-auto mb-24 transition-all duration-700 opacity-0 translate-y-10"
+      className="text-center max-w-5xl mx-auto mb-24 transition-all duration-700 opacity-0 translate-y-10 p-10 rounded-3xl bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
     >
       <div className="relative mb-8">
         {/* Background decoration elements */}
@@ -68,7 +68,7 @@ const TryItZone = () => {
         <div className="absolute -top-8 -right-8 w-32 h-32 bg-purple-100 rounded-full blur-3xl opacity-50"></div>
         <div className="absolute -bottom-8 left-1/4 w-28 h-28 bg-amber-100 rounded-full blur-3xl opacity-40"></div>
         
-        <div className="relative inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white mb-4">
+        <div className="relative inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white mb-4 shadow-md">
           <SparklesIcon className="mr-2 h-5 w-5 animate-pulse" />
           <span className="text-sm font-medium">Experience It Live</span>
         </div>
@@ -82,10 +82,10 @@ const TryItZone = () => {
       </div>
       
       <div className="relative">
-        {/* Glass card with shadow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-3xl transform -rotate-1 scale-[1.02] blur-sm"></div>
+        {/* Glass card with enhanced shadow effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 rounded-3xl transform -rotate-1 scale-[1.02] blur-sm"></div>
         
-        <div className="relative glass rounded-3xl shadow-xl overflow-hidden border border-white/40 backdrop-blur-sm bg-white/50">
+        <div className="relative glass rounded-3xl shadow-xl overflow-hidden border border-white/40 backdrop-blur-sm bg-white/70">
           <Tabs defaultValue="electricity" className="w-full" onValueChange={(value) => {
             const newUseCase = useCases.find(uc => uc.id === value);
             if (newUseCase) {
@@ -93,7 +93,7 @@ const TryItZone = () => {
               setIsTalking(false);
             }
           }}>
-            <div className="p-4 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50">
+            <div className="p-4 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100">
               <TabsList className="grid grid-cols-2 md:grid-cols-4 p-1 rounded-xl bg-white/80 backdrop-blur-sm shadow-inner">
                 {useCases.map((useCase) => (
                   <TabsTrigger 
