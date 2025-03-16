@@ -1,9 +1,6 @@
 
 import React from 'react';
 import { 
-  BarChartIcon, 
-  GitBranchIcon, 
-  GlobeIcon, 
   ShieldCheckIcon, 
   ZapIcon,
   BrainIcon,
@@ -36,10 +33,11 @@ const FeaturesList = () => {
       imageOnly: true
     },
     {
-      icon: <BarChartIcon className="h-6 w-6" />,
+      image: "/lovable-uploads/c3c1aee2-4ea8-46ec-8d40-e1a5049fd24e.png",
       title: "Analytics Dashboard",
-      description: "Comprehensive insights on customer interactions, sentiment analysis, and performance metrics.",
-      delay: 400
+      description: "",
+      delay: 400,
+      imageOnly: true
     },
     {
       icon: <ShieldCheckIcon className="h-6 w-6" />,
@@ -76,7 +74,6 @@ const FeaturesList = () => {
           title={feature.title}
           description={feature.description}
           delay={feature.delay}
-          isHighlighted={feature.isHighlighted}
           image={feature.image}
           imageOnly={feature.imageOnly}
         />
