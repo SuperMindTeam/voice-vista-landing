@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { MicIcon, PhoneIcon, MessageCircleIcon, PercentIcon, Clock, TrendingUpIcon } from 'lucide-react';
@@ -65,7 +66,7 @@ const Hero = () => {
   );
 
   return (
-    <section className="relative min-h-screen pt-24 pb-16 overflow-hidden pattern-background">
+    <section className="relative min-h-screen pt-32 pb-16 overflow-hidden pattern-background">
       <div 
         className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent pointer-events-none"
         aria-hidden="true"
@@ -77,11 +78,11 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center text-center transition-all duration-700 opacity-0 translate-y-10"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-4 max-w-4xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl">
               Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
             </h1>
             
-            <p className="text-xl md:text-2xl lg:text-3xl text-green-600 max-w-2xl mb-8 animate-fade-in animate-delay-100 font-bold">
+            <p className="text-xl md:text-2xl lg:text-3xl text-green-600 max-w-2xl mb-10 animate-fade-in animate-delay-100 font-bold">
               Instant Answers, Zero Wait Time.
             </p>
             
@@ -119,11 +120,11 @@ const Hero = () => {
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12 w-full">
               <div className="text-center lg:text-left">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6">
                   Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
                 </h1>
                 
-                <p className="text-xl md:text-2xl lg:text-3xl text-green-600 mb-8 animate-fade-in animate-delay-100 font-bold">
+                <p className="text-xl md:text-2xl lg:text-3xl text-green-600 mb-10 animate-fade-in animate-delay-100 font-bold">
                   Instant Answers, Zero Wait Time.
                 </p>
                 
