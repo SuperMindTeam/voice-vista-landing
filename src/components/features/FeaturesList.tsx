@@ -29,11 +29,11 @@ const FeaturesList = () => {
       imageOnly: true
     },
     {
-      icon: <GlobeIcon className="h-6 w-6" />,
-      title: "Queries Resolved 60%",
-      description: "Communicate with customers in over 30 languages with natural-sounding translation.",
+      image: "/lovable-uploads/a0f5bd6b-3ebc-4007-b8bf-f4c225a30d5f.png",
+      title: "Queries Resolved",
+      description: "",
       delay: 300,
-      isHighlighted: true
+      imageOnly: true
     },
     {
       icon: <BarChartIcon className="h-6 w-6" />,
