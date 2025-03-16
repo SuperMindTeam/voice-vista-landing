@@ -50,18 +50,6 @@ const FeaturesList = () => {
       description: "",
       delay: 600,
       imageOnly: true
-    },
-    {
-      icon: <UsersIcon className="h-6 w-6" />,
-      title: "Personalized Experience",
-      description: "Recognize returning customers and provide personalized service based on previous interactions.",
-      delay: 700
-    },
-    {
-      icon: <ZapIcon className="h-6 w-6" />,
-      title: "Automated Workflows",
-      description: "Trigger automated actions based on conversation outcomes like scheduling, payments, or follow-ups.",
-      delay: 800
     }
   ];
 
