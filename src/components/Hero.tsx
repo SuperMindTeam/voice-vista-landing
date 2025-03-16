@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { MicIcon, PhoneIcon, MessageCircleIcon, PercentIcon, Clock, TrendingUpIcon } from 'lucide-react';
@@ -78,10 +77,6 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center text-center transition-all duration-700 opacity-0 translate-y-10"
           >
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-600 mb-6 animate-fade-in">
-              <span className="text-xs font-medium">Introducing AI Voice Assistant</span>
-            </div>
-            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-4 max-w-4xl">
               Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
             </h1>
@@ -124,10 +119,6 @@ const Hero = () => {
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12 w-full">
               <div className="text-center lg:text-left">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-600 mb-6 animate-fade-in">
-                  <span className="text-xs font-medium">Introducing AI Voice Assistant</span>
-                </div>
-                
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-4">
                   Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
                 </h1>
