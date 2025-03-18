@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MicIcon, Twitter, Linkedin, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { MicIcon, Twitter, Linkedin, Facebook, Instagram, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -41,10 +41,6 @@ const Footer = () => {
               <li className="flex items-start">
                 <Phone className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
                 <span className="text-gray-600">+1 (555) 123-4567</span>
-              </li>
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
-                <span className="text-gray-600">123 AI Boulevard, San Francisco, CA 94107</span>
               </li>
             </ul>
           </div>
