@@ -65,6 +65,22 @@ const Hero = () => {
     </div>
   );
 
+  // Video component to reuse in both mobile and desktop views
+  const VideoPlayer = () => (
+    <div className="aspect-video rounded-xl overflow-hidden shadow-2xl glass">
+      <div className="relative h-full w-full bg-gray-100">
+        <iframe 
+          className="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          title="Shiv AI Demo"
+          frameBorder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+  );
+
   return (
     <section className="relative min-h-screen pt-32 pb-16 overflow-hidden pattern-background">
       <div 
@@ -98,19 +114,8 @@ const Hero = () => {
             {/* Centered stat boxes */}
             <StatBoxes />
             
-            <div className="mt-8 relative mx-auto max-w-5xl animate-fade-in animate-delay-300">
-              <div className="aspect-video rounded-xl overflow-hidden shadow-2xl glass">
-                <div className="relative h-full w-full bg-gray-100">
-                  <iframe 
-                    className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                    title="Shiv AI Demo"
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </div>
+            <div className="mt-8 w-full relative mx-auto max-w-5xl animate-fade-in animate-delay-300">
+              <VideoPlayer />
             </div>
           </div>
         ) : (
@@ -139,18 +144,7 @@ const Hero = () => {
               </div>
               
               <div className="animate-fade-in animate-delay-200">
-                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl glass">
-                  <div className="relative h-full w-full bg-gray-100">
-                    <iframe 
-                      className="absolute inset-0 w-full h-full"
-                      src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                      title="Shiv AI Demo"
-                      frameBorder="0" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </div>
+                <VideoPlayer />
               </div>
             </div>
             
@@ -164,3 +158,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
