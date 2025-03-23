@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { MicIcon, PhoneIcon, MessageCircleIcon, PercentIcon, Clock, TrendingUpIcon } from 'lucide-react';
+import { PercentIcon, Clock, TrendingUpIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
@@ -65,7 +65,7 @@ const Hero = () => {
     </div>
   );
 
-  // Video component to reuse in both mobile and desktop views
+  // Video component with lazy loading
   const VideoPlayer = () => (
     <div className="aspect-video rounded-xl overflow-hidden shadow-2xl glass">
       <div className="relative h-full w-full bg-gray-100">
@@ -73,7 +73,8 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full"
           src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
           title="Shiv AI Demo"
-          frameBorder="0" 
+          frameBorder="0"
+          loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowFullScreen
         ></iframe>
@@ -92,17 +93,17 @@ const Hero = () => {
         {isMobile ? (
           <div 
             ref={heroRef}
-            className="flex flex-col items-center text-center transition-all duration-700 opacity-0 translate-y-10"
+            className="flex flex-col items-center text-center"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl">
               Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
             </h1>
             
-            <p className="text-xl md:text-2xl lg:text-3xl text-green-600 max-w-2xl mb-10 animate-fade-in animate-delay-100 font-bold">
+            <p className="text-xl md:text-2xl lg:text-3xl text-green-600 max-w-2xl mb-10 font-bold">
               Instant Answers, Zero Wait Time.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in animate-delay-200">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-md">
                 Get Started Free
               </Button>
@@ -114,7 +115,7 @@ const Hero = () => {
             {/* Centered stat boxes */}
             <StatBoxes />
             
-            <div className="mt-8 w-full relative mx-auto max-w-5xl animate-fade-in animate-delay-300">
+            <div className="mt-8 w-full relative mx-auto max-w-5xl">
               <VideoPlayer />
             </div>
           </div>
@@ -158,4 +159,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
