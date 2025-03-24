@@ -1,13 +1,19 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  // Scroll reveal effect for elements with the 'reveal' class
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  // Ensure components are visible on direct page loads
   useEffect(() => {
+    // Set loaded state immediately
+    setIsLoaded(true);
+    
+    // Also handle reveal elements with IntersectionObserver
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -30,7 +36,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main>
+      <main className={isLoaded ? 'loaded' : ''}>
         <Hero />
         <Features />
       </main>

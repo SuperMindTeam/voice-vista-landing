@@ -1,5 +1,5 @@
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { 
   Table,
   TableBody,
@@ -18,22 +18,16 @@ interface CostComparisonItem {
 
 const CostComparison = () => {
   const comparisonRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Initialize with visible state for direct page loads
-    if (comparisonRef.current) {
-      // Small timeout to ensure the element is in the DOM
-      setTimeout(() => {
-        comparisonRef.current?.classList.add('opacity-100');
-        comparisonRef.current?.classList.remove('opacity-0', 'translate-y-10');
-      }, 100);
-    }
-
+    // Make content visible immediately for direct page loads
+    setIsVisible(true);
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100');
-          entry.target.classList.remove('opacity-0', 'translate-y-10');
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 }
@@ -86,7 +80,7 @@ const CostComparison = () => {
   return (
     <div 
       ref={comparisonRef}
-      className="text-center max-w-4xl mx-auto transition-all duration-700 opacity-0 translate-y-10"
+      className={`text-center max-w-4xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}
     >
       <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-600 mb-3">
         <span className="text-xs font-medium">Cost Efficiency</span>
