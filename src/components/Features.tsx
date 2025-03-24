@@ -11,22 +11,24 @@ const Features = () => {
   
   // Get currency and savings amount based on country
   const getCurrencyData = (countryCode: string) => {
-    // Default to USD if country is not determined yet or not in our list
+    // Default to Indian Rupees as shown in the image
     switch(countryCode) {
       case 'IN':
         return { symbol: '₹', amount: '313,800', name: 'rupees' };
       case 'GB':
-        return { symbol: '£', amount: '3,000', name: 'pounds' };
+        return { symbol: '£', amount: '34,800', name: 'pounds' };
       case 'EU':
-        return { symbol: '€', amount: '3,500', name: 'euros' };
+        return { symbol: '€', amount: '37,500', name: 'euros' };
       case 'JP':
-        return { symbol: '¥', amount: '500,000', name: 'yen' };
+        return { symbol: '¥', amount: '5,500,000', name: 'yen' };
       case 'AU':
-        return { symbol: 'A$', amount: '5,000', name: 'Australian dollars' };
+        return { symbol: 'A$', amount: '45,000', name: 'Australian dollars' };
       case 'CA':
-        return { symbol: 'C$', amount: '4,200', name: 'Canadian dollars' };
+        return { symbol: 'C$', amount: '42,000', name: 'Canadian dollars' };
+      case 'US':
+        return { symbol: '$', amount: '38,000', name: 'dollars' };
       default:
-        return { symbol: '$', amount: '3,800', name: 'dollars' };
+        return { symbol: '₹', amount: '313,800', name: 'rupees' };
     }
   };
   
