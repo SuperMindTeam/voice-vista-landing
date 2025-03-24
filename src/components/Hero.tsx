@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { PercentIcon, Clock, TrendingUpIcon } from 'lucide-react';
@@ -124,29 +123,27 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center transition-all duration-700 opacity-0 translate-y-10"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12 w-full">
-              <div className="text-center lg:text-left">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6">
-                  Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
-                </h1>
-                
-                <p className="text-xl md:text-2xl lg:text-3xl text-green-600 mb-10 animate-fade-in animate-delay-100 font-bold">
-                  Instant Answers, Zero Wait Time.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in animate-delay-200 justify-center lg:justify-start">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-md">
-                    Get Started Free
-                  </Button>
-                  <Button size="lg" variant="outline" className="border-gray-300">
-                    Try Today
-                  </Button>
-                </div>
-              </div>
+            <div className="text-center max-w-4xl mx-auto mb-12">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6">
+                Reduce Salaries—Our <span className="gradient-text">Artificial Intelligence</span> will Answer Your Calls.
+              </h1>
               
-              <div className="animate-fade-in animate-delay-200">
-                <VideoPlayer />
+              <p className="text-xl md:text-2xl lg:text-3xl text-green-600 mb-10 animate-fade-in animate-delay-100 font-bold">
+                Instant Answers, Zero Wait Time.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in animate-delay-200 justify-center">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-md">
+                  Get Started Free
+                </Button>
+                <Button size="lg" variant="outline" className="border-gray-300">
+                  Try Today
+                </Button>
               </div>
+            </div>
+            
+            <div className="animate-fade-in animate-delay-200 max-w-5xl mx-auto w-full">
+              <VideoPlayer />
             </div>
             
             {/* Centered stat boxes */}
