@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { PercentIcon, Clock, TrendingUpIcon } from 'lucide-react';
+import { SmileIcon, Clock, TrendingUpIcon } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
@@ -35,7 +35,7 @@ const Hero = () => {
     <div className="grid grid-cols-3 gap-4 md:gap-6 mt-8 max-w-3xl mx-auto">
       <div className="rounded-full overflow-hidden shadow-lg bg-[#9E99F9] text-white p-3 md:p-4 flex items-center gap-2">
         <div className="bg-white/20 rounded-full p-1.5 md:p-2 flex-shrink-0">
-          <PercentIcon className="w-4 h-4 md:w-5 md:h-5" />
+          <SmileIcon className="w-4 h-4 md:w-5 md:h-5" />
         </div>
         <div>
           <h3 className="font-display text-lg md:text-xl font-semibold">98%</h3>
