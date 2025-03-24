@@ -1,13 +1,5 @@
 
 import React from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
 
 interface CostComparisonProps {
   currencySymbol?: string;
@@ -15,8 +7,8 @@ interface CostComparisonProps {
 
 const CostComparison: React.FC<CostComparisonProps> = ({ currencySymbol = '₹' }) => {
   return (
-    <div className="mx-auto my-12">
-      <div className="mb-8 text-center">
+    <div className="mx-auto my-8">
+      <div className="mb-6 text-center">
         <h3 className="text-2xl font-bold mb-2">Cost Comparison</h3>
         <p className="text-lg text-gray-600">
           See how much you can save by switching to Shiv AI
@@ -24,52 +16,56 @@ const CostComparison: React.FC<CostComparisonProps> = ({ currencySymbol = '₹' 
       </div>
       
       <div className="overflow-hidden rounded-lg shadow-md">
-        <Table className="w-full">
-          <TableHeader className="bg-gray-900">
-            <TableRow className="border-none">
-              <TableHead className="w-[40%] text-gray-300 font-medium py-4 pl-8">Expense Category</TableHead>
-              <TableHead className="text-right text-gray-300 font-medium py-4 pr-8">Traditional Staff</TableHead>
-              <TableHead className="text-right text-gray-300 font-medium py-4 pr-8">AI Voice Agent</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow className="bg-[#121212] border-t border-gray-800">
-              <TableCell className="font-medium text-white py-5 pl-8">Monthly Salary (per agent)</TableCell>
-              <TableCell className="text-right font-semibold text-white pr-8">{currencySymbol}25,000</TableCell>
-              <TableCell className="text-right font-semibold text-white pr-8">{currencySymbol}15,000</TableCell>
-            </TableRow>
-            <TableRow className="bg-[#121212] border-t border-gray-800">
-              <TableCell className="font-medium text-white py-5 pl-8">Office Space & Equipment</TableCell>
-              <TableCell className="text-right font-semibold text-white pr-8">{currencySymbol}15,000</TableCell>
-              <TableCell className="text-right font-semibold text-white pr-8">{currencySymbol}0</TableCell>
-            </TableRow>
-            <TableRow className="bg-[#121212] border-t border-gray-800">
-              <TableCell className="font-medium text-white py-5 pl-8">Management Overhead</TableCell>
-              <TableCell className="text-right font-semibold text-white pr-8">{currencySymbol}700</TableCell>
-              <TableCell className="text-right font-semibold text-white pr-8">{currencySymbol}0</TableCell>
-            </TableRow>
-            <TableRow className="bg-[#121212] border-t border-gray-800">
-              <TableCell className="font-medium text-white py-5 pl-8">Turnover Costs (averaged)</TableCell>
-              <TableCell className="text-right font-semibold text-white pr-8">{currencySymbol}450</TableCell>
-              <TableCell className="text-right font-semibold text-white pr-8">{currencySymbol}0</TableCell>
-            </TableRow>
-            <TableRow className="bg-[#1a1f2c] border-t border-gray-700">
-              <TableCell className="font-bold text-white py-5 pl-8">Total Monthly Cost</TableCell>
-              <TableCell className="text-right font-bold text-white pr-8">{currencySymbol}41,150</TableCell>
-              <TableCell className="text-right font-bold text-white pr-8">{currencySymbol}15,000</TableCell>
-            </TableRow>
-            <TableRow className="bg-[#181b24] border-t border-gray-600">
-              <TableCell className="font-bold text-white py-5 pl-8">Annual Cost</TableCell>
-              <TableCell className="text-right font-bold text-white pr-8">{currencySymbol}493,800</TableCell>
-              <TableCell className="text-right font-bold text-white pr-8">{currencySymbol}180,000</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </div>
-      
-      <div className="mt-6 text-center">
-        <p className="text-lg text-gray-700">Annual Savings with Shiv AI:</p>
-        <p className="text-green-600 text-3xl font-bold mt-2">{currencySymbol}313,800</p>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-blue-50">
+                <th className="w-[30%] text-gray-600 font-medium py-3 px-4 text-left">Expense Category</th>
+                <th className="w-[23%] text-gray-600 font-medium py-3 px-4 text-right">Traditional Staff</th>
+                <th className="w-[23%] text-gray-600 font-medium py-3 px-4 text-right">AI Voice Agent</th>
+                <th className="w-[24%] text-gray-600 font-medium py-3 px-4 text-right">Your Savings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t border-gray-200">
+                <td className="py-3 px-4 text-left font-medium">Monthly Salary (per agent)</td>
+                <td className="py-3 px-4 text-right font-medium">{currencySymbol}25,000</td>
+                <td className="py-3 px-4 text-right font-medium">{currencySymbol}15,000</td>
+                <td className="py-3 px-4 text-right font-medium text-green-600">{currencySymbol}10,000 (40%)</td>
+              </tr>
+              <tr className="border-t border-gray-200">
+                <td className="py-3 px-4 text-left font-medium">Office Space & Equipment</td>
+                <td className="py-3 px-4 text-right font-medium">{currencySymbol}15,000</td>
+                <td className="py-3 px-4 text-right font-medium">{currencySymbol}0</td>
+                <td className="py-3 px-4 text-right font-medium text-green-600">{currencySymbol}15,000 (100%)</td>
+              </tr>
+              <tr className="border-t border-gray-200">
+                <td className="py-3 px-4 text-left font-medium">Management Overhead</td>
+                <td className="py-3 px-4 text-right font-medium">{currencySymbol}700</td>
+                <td className="py-3 px-4 text-right font-medium">{currencySymbol}0</td>
+                <td className="py-3 px-4 text-right font-medium text-green-600">{currencySymbol}700 (100%)</td>
+              </tr>
+              <tr className="border-t border-gray-200">
+                <td className="py-3 px-4 text-left font-medium">Turnover Costs (averaged)</td>
+                <td className="py-3 px-4 text-right font-medium">{currencySymbol}450</td>
+                <td className="py-3 px-4 text-right font-medium">{currencySymbol}0</td>
+                <td className="py-3 px-4 text-right font-medium text-green-600">{currencySymbol}450 (100%)</td>
+              </tr>
+              <tr className="border-t border-gray-200 bg-blue-50">
+                <td className="py-3 px-4 text-left font-bold">Total Monthly Cost</td>
+                <td className="py-3 px-4 text-right font-bold">{currencySymbol}41,150</td>
+                <td className="py-3 px-4 text-right font-bold">{currencySymbol}15,000</td>
+                <td className="py-3 px-4 text-right font-bold text-green-600">{currencySymbol}26,150 (64%)</td>
+              </tr>
+              <tr className="border-t border-gray-200 bg-blue-50">
+                <td className="py-3 px-4 text-left font-bold">Annual Cost</td>
+                <td className="py-3 px-4 text-right font-bold">{currencySymbol}493,800</td>
+                <td className="py-3 px-4 text-right font-bold">{currencySymbol}180,000</td>
+                <td className="py-3 px-4 text-right font-bold text-green-600">{currencySymbol}313,800 (64%)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

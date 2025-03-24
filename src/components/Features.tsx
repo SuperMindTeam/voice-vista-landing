@@ -35,9 +35,9 @@ const Features = () => {
   const currencyData = getCurrencyData(countryCode);
   
   return (
-    <section id="features" className="py-24 bg-gradient-to-b from-white to-blue-50">
+    <section id="features" className="py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-600 mb-4">
             <span className="text-xs font-medium">Cost-Effective Solution</span>
           </div>
@@ -50,7 +50,7 @@ const Features = () => {
         </div>
         
         <CostComparison currencySymbol={currencyData.symbol} />
-        <div className="bg-white py-12 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 rounded-2xl">
+        <div className="bg-white py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 rounded-2xl">
           <TryItZone />
         </div>
         <FeaturesList />
