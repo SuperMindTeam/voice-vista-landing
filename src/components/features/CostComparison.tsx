@@ -20,6 +20,15 @@ const CostComparison = () => {
   const comparisonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Initialize with visible state for direct page loads
+    if (comparisonRef.current) {
+      // Small timeout to ensure the element is in the DOM
+      setTimeout(() => {
+        comparisonRef.current?.classList.add('opacity-100');
+        comparisonRef.current?.classList.remove('opacity-0', 'translate-y-10');
+      }, 100);
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
