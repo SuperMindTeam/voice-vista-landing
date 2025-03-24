@@ -59,7 +59,7 @@ const TryItZone = () => {
     <div className="text-center max-w-5xl mx-auto mb-24 p-10 rounded-3xl relative overflow-hidden">
       <div className="relative z-10">
         <h2 className="text-3xl md:text-5xl font-display font-bold mb-3 text-black">
-          Try It Zone
+          Demo Zone
         </h2>
         <p className="text-xl text-black/80 mb-8 max-w-3xl mx-auto">
           Experience our AI voice agent in real-time across different use cases.
@@ -130,4 +130,3 @@ const TryItZone = () => {
 };
 
 export default TryItZone;
-
