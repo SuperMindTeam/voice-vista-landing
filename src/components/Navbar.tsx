@@ -39,14 +39,14 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            <a href="#pricing" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+              Pricing
+            </a>
+            <a href="#tryitzone" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+              Try It Zone
+            </a>
             <a href="#features" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
               Features
-            </a>
-            <a href="#testimonials" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-              Testimonials
-            </a>
-            <a href="#faq" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-              FAQ
             </a>
           </nav>
 
@@ -79,25 +79,25 @@ const Navbar = () => {
       >
         <nav className="flex flex-col px-8 py-4 space-y-6">
           <a 
+            href="#pricing" 
+            className="text-lg font-medium text-gray-700"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Pricing
+          </a>
+          <a 
+            href="#tryitzone" 
+            className="text-lg font-medium text-gray-700"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Try It Zone
+          </a>
+          <a 
             href="#features" 
             className="text-lg font-medium text-gray-700"
             onClick={() => setMobileMenuOpen(false)}
           >
             Features
-          </a>
-          <a 
-            href="#testimonials" 
-            className="text-lg font-medium text-gray-700"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Testimonials
-          </a>
-          <a 
-            href="#faq" 
-            className="text-lg font-medium text-gray-700"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            FAQ
           </a>
           <div className="pt-6 border-t">
             <Button 
