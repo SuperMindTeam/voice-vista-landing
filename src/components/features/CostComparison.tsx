@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import { 
   Table,
@@ -13,7 +14,6 @@ interface CostComparisonItem {
   expense: string;
   traditional: string;
   ai: string;
-  savings: string;
 }
 
 const CostComparison = () => {
@@ -45,38 +45,32 @@ const CostComparison = () => {
     { 
       expense: "Monthly Salary (per agent)", 
       traditional: "₹25,000", 
-      ai: "₹15,000",
-      savings: "₹10,000 (40%)"
+      ai: "₹15,000"
     },
     { 
       expense: "Office Space & Equipment", 
       traditional: "₹15,000", 
-      ai: "₹0",
-      savings: "₹15,000 (100%)"
+      ai: "₹0"
     },
     { 
       expense: "Management Overhead", 
       traditional: "₹700", 
-      ai: "₹0",
-      savings: "₹700 (100%)"
+      ai: "₹0"
     },
     { 
       expense: "Turnover Costs (averaged)", 
       traditional: "₹450", 
-      ai: "₹0",
-      savings: "₹450 (100%)"
+      ai: "₹0"
     },
     { 
       expense: "Total Monthly Cost", 
       traditional: "₹41,150", 
-      ai: "₹15,000",
-      savings: "₹26,150 (64%)"
+      ai: "₹15,000"
     },
     { 
       expense: "Annual Cost", 
       traditional: "₹493,800", 
-      ai: "₹180,000",
-      savings: "₹313,800 (64%)"
+      ai: "₹180,000"
     }
   ];
 
@@ -105,7 +99,6 @@ const CostComparison = () => {
               <TableHead className="w-[250px] font-semibold">Expense Category</TableHead>
               <TableHead className="text-right font-semibold">Traditional Staff</TableHead>
               <TableHead className="text-right font-semibold">AI Voice Agent</TableHead>
-              <TableHead className="text-right font-semibold">Your Savings</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -114,7 +107,6 @@ const CostComparison = () => {
                 <TableCell className="font-medium">{item.expense}</TableCell>
                 <TableCell className="text-right">{item.traditional}</TableCell>
                 <TableCell className="text-right">{item.ai}</TableCell>
-                <TableCell className="text-right text-green-600">{item.savings}</TableCell>
               </TableRow>
             ))}
           </TableBody>
