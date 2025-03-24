@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { SmileIcon, Phone, DollarSign } from 'lucide-react';
@@ -83,9 +82,9 @@ const Hero = () => {
   );
 
   return (
-    <section className="relative min-h-screen pt-32 pb-16 overflow-hidden pattern-background">
+    <section className="relative min-h-screen pt-32 pb-16 overflow-hidden bg-white">
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
       />
       
