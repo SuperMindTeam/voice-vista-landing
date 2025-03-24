@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { PercentIcon, Clock, TrendingUpIcon } from 'lucide-react';
@@ -104,7 +105,7 @@ const Hero = () => {
             
             <div className="mb-12">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-md">
-                Get Started Free
+                Start 1 Month Free Trial
               </Button>
             </div>
             
@@ -131,7 +132,7 @@ const Hero = () => {
               
               <div className="mb-8 animate-fade-in animate-delay-200 flex justify-center">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-md">
-                  Get Started Free
+                  Start 1 Month Free Trial
                 </Button>
               </div>
             </div>
@@ -150,3 +151,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
