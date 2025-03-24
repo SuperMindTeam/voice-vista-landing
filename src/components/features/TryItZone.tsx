@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { toast } from "sonner";
 import { 
-  FileTextIcon, 
+  UserIcon, 
   ShieldIcon,
   PlusCircleIcon,
   MicIcon,
@@ -28,7 +28,7 @@ const useCases = [
   {
     id: "salesman",
     title: "Super Salesman",
-    icon: <FileTextIcon className="h-6 w-6 text-pink-500" />,
+    icon: <UserIcon className="h-6 w-6 text-pink-500" />,
   },
   {
     id: "insurance",
