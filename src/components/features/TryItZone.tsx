@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import { toast } from "sonner";
 import { 
-  DollarSignIcon, 
   FileTextIcon, 
   ShieldIcon,
   PlusCircleIcon,
   MicIcon,
   GlobeIcon,
+  UserIcon,
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
@@ -21,9 +21,9 @@ import {
 // New use cases to match the screenshot
 const useCases = [
   {
-    id: "debt",
-    title: "Debt Collection",
-    icon: <DollarSignIcon className="h-6 w-6 text-pink-500" />,
+    id: "lead",
+    title: "Lead Qualification",
+    icon: <UserIcon className="h-6 w-6 text-pink-500" />,
   },
   {
     id: "claims",
