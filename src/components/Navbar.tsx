@@ -39,13 +39,13 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#pricing" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#pricing" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
               Pricing
             </a>
-            <a href="#tryitzone" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-              Try It Zone
+            <a href="#tryitzone" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
+              Demo Zone
             </a>
-            <a href="#features" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#features" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
               Features
             </a>
           </nav>
@@ -90,7 +90,7 @@ const Navbar = () => {
             className="text-lg font-medium text-gray-700"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Try It Zone
+            Demo Zone
           </a>
           <a 
             href="#features" 
