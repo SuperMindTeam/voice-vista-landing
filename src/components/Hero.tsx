@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { SmileIcon, Clock, TrendingUpIcon } from 'lucide-react';
+import { SmileIcon, Phone, DollarSign } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
@@ -45,7 +45,7 @@ const Hero = () => {
       
       <div className="rounded-full overflow-hidden shadow-lg bg-[#9E99F9] text-white p-3 md:p-4 flex items-center gap-2">
         <div className="bg-white/20 rounded-full p-1.5 md:p-2 flex-shrink-0">
-          <Clock className="w-4 h-4 md:w-5 md:h-5" />
+          <Phone className="w-4 h-4 md:w-5 md:h-5" />
         </div>
         <div>
           <h3 className="font-display text-lg md:text-xl font-semibold">24x7</h3>
@@ -55,7 +55,7 @@ const Hero = () => {
       
       <div className="rounded-full overflow-hidden shadow-lg bg-[#9E99F9] text-white p-3 md:p-4 flex items-center gap-2">
         <div className="bg-white/20 rounded-full p-1.5 md:p-2 flex-shrink-0">
-          <TrendingUpIcon className="w-4 h-4 md:w-5 md:h-5" />
+          <DollarSign className="w-4 h-4 md:w-5 md:h-5" />
         </div>
         <div>
           <h3 className="font-display text-lg md:text-xl font-semibold">80%</h3>
