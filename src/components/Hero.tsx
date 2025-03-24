@@ -102,12 +102,9 @@ const Hero = () => {
               Instant Answers, Zero Wait Time.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="mb-12">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-md">
                 Get Started Free
-              </Button>
-              <Button size="lg" variant="outline" className="border-gray-300">
-                Try Today
               </Button>
             </div>
             
@@ -132,12 +129,9 @@ const Hero = () => {
                 Instant Answers, Zero Wait Time.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in animate-delay-200 justify-center">
+              <div className="mb-8 animate-fade-in animate-delay-200 flex justify-center">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-md">
                   Get Started Free
-                </Button>
-                <Button size="lg" variant="outline" className="border-gray-300">
-                  Try Today
                 </Button>
               </div>
             </div>
