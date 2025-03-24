@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import CostComparison from './features/CostComparison';
 import TryItZone from './features/TryItZone';
@@ -44,12 +43,16 @@ const Features = () => {
           <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6">
             Save over {currencyData.symbol}{currencyData.amount} per year for each agent you replace
           </h2>
+        </div>
+        
+        <CostComparison currencySymbol={currencyData.symbol} />
+        
+        <div className="text-center max-w-3xl mx-auto mt-8">
           <p className="text-xl text-gray-600">
             with our AI solution, while maintaining exceptional customer service quality 24/7.
           </p>
         </div>
         
-        <CostComparison currencySymbol={currencyData.symbol} />
         <div className="bg-white py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 rounded-2xl">
           <TryItZone />
         </div>
