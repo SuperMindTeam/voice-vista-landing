@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import CostComparison from './features/CostComparison';
 import TryItZone from './features/TryItZone';
@@ -41,7 +42,7 @@ const Features = () => {
             <span className="text-xs font-medium">Cost-Effective Solution</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6">
-            Save over {currencyData.symbol}{currencyData.amount} per year for each agent you replace
+            How Much Can You Save?
           </h2>
         </div>
         
