@@ -32,7 +32,7 @@ const useCases = [
   },
   {
     id: "insurance",
-    title: "Auto Insurance Quote",
+    title: "Automatic Quotation",
     icon: <ShieldIcon className="h-6 w-6 text-pink-500" />,
   },
   {
