@@ -27,8 +27,8 @@ const Navbar = () => {
         className={cn(
           'max-w-5xl w-full rounded-full transition-all duration-300 ease-in-out px-6 py-4',
           isScrolled 
-            ? 'bg-white/80 backdrop-blur-md border border-gray-200/30 shadow-lg' 
-            : 'bg-white/50 backdrop-blur-sm border border-white/20 shadow-md'
+            ? 'bg-white/80 backdrop-blur-md border-2 border-gray-200 shadow-lg' 
+            : 'bg-white/50 backdrop-blur-sm border-2 border-white/70 shadow-md'
         )}
       >
         <div className="flex items-center justify-between">
