@@ -33,7 +33,7 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <MicIcon className="h-6 w-6 text-blue-600 mr-2" />
+            <MicIcon className="h-6 w-6 text-black mr-2" />
             <span className="font-display font-bold text-xl text-black">Shiv AI</span>
           </div>
 
