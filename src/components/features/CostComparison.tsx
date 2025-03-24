@@ -1,4 +1,14 @@
+
 import React from 'react';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 
 interface CostComparisonProps {
   currencySymbol?: string;
@@ -6,59 +16,52 @@ interface CostComparisonProps {
 
 const CostComparison: React.FC<CostComparisonProps> = ({ currencySymbol = '$' }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div>
-        <h3 className="text-2xl font-semibold mb-4">
-          Typical Employee Costs
-        </h3>
-        <ul className="space-y-3">
-          <li className="flex justify-between items-center border-b border-gray-200 py-2">
-            <span>Salary</span>
-            <span className="text-2xl font-semibold">{currencySymbol}41,500</span>
-          </li>
-          <li className="flex justify-between items-center border-b border-gray-200 py-2">
-            <span>Benefits & Insurance</span>
-            <span className="text-2xl font-semibold">{currencySymbol}8,300</span>
-          </li>
-          <li className="flex justify-between items-center border-b border-gray-200 py-2">
-            <span>Training</span>
-            <span className="text-2xl font-semibold">{currencySymbol}2,100</span>
-          </li>
-          <li className="flex justify-between items-center border-b border-gray-200 py-2">
-            <span>Office Space & Equipment</span>
-            <span className="text-2xl font-semibold">{currencySymbol}3,600</span>
-          </li>
-          <li className="flex justify-between items-center py-2">
-            <span>Total Annual Cost</span>
-            <span className="text-2xl font-semibold">{currencySymbol}55,500</span>
-          </li>
-        </ul>
-      </div>
-      
-      <div>
-        <h3 className="text-2xl font-semibold mb-4">
-          Shiv AI Costs
-        </h3>
-        <ul className="space-y-3">
-          <li className="flex justify-between items-center border-b border-gray-200 py-2">
-            <span>Subscription</span>
-            <span className="text-2xl font-semibold">{currencySymbol}4,500</span>
-          </li>
-          <li className="flex justify-between items-center border-b border-gray-200 py-2">
-            <span>Setup & Training</span>
-            <span className="text-2xl font-semibold">{currencySymbol}2,000</span>
-          </li>
-          <li className="flex justify-between items-center py-2">
-            <span>Total Annual Cost</span>
-            <span className="text-2xl font-semibold">{currencySymbol}6,500</span>
-          </li>
-        </ul>
-        <div className="mt-6">
+    <div className="mx-auto my-12 bg-white p-6 rounded-lg shadow-sm">
+      <Table>
+        <TableCaption>
           <p className="text-lg font-medium">
             Savings with Shiv AI: <span className="text-green-500 text-3xl font-bold">{currencySymbol}49,000</span>
           </p>
-        </div>
-      </div>
+        </TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[50%] text-xl">Typical Employee Costs</TableHead>
+            <TableHead className="text-right text-xl">Shiv AI Costs</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell className="font-medium">Salary</TableCell>
+            <TableCell className="text-right text-2xl font-semibold">{currencySymbol}41,500</TableCell>
+            <TableCell className="font-medium">Subscription</TableCell>
+            <TableCell className="text-right text-2xl font-semibold">{currencySymbol}4,500</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Benefits & Insurance</TableCell>
+            <TableCell className="text-right text-2xl font-semibold">{currencySymbol}8,300</TableCell>
+            <TableCell className="font-medium">Setup & Training</TableCell>
+            <TableCell className="text-right text-2xl font-semibold">{currencySymbol}2,000</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Training</TableCell>
+            <TableCell className="text-right text-2xl font-semibold">{currencySymbol}2,100</TableCell>
+            <TableCell className="font-medium"></TableCell>
+            <TableCell className="text-right"></TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Office Space & Equipment</TableCell>
+            <TableCell className="text-right text-2xl font-semibold">{currencySymbol}3,600</TableCell>
+            <TableCell className="font-medium"></TableCell>
+            <TableCell className="text-right"></TableCell>
+          </TableRow>
+          <TableRow className="font-bold">
+            <TableCell className="font-semibold text-lg">Total Annual Cost</TableCell>
+            <TableCell className="text-right text-2xl font-semibold">{currencySymbol}55,500</TableCell>
+            <TableCell className="font-semibold text-lg">Total Annual Cost</TableCell>
+            <TableCell className="text-right text-2xl font-semibold">{currencySymbol}6,500</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
     </div>
   );
 };
