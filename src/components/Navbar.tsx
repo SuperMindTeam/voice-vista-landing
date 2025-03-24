@@ -22,10 +22,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5 px-4">
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4">
       <header
         className={cn(
-          'max-w-5xl w-full rounded-full transition-all duration-300 ease-in-out px-6 py-4',
+          'max-w-5xl w-full rounded-full transition-all duration-300 ease-in-out px-6 py-4 mt-5',
           isScrolled 
             ? 'bg-white/80 backdrop-blur-md border-2 border-gray-200 shadow-lg' 
             : 'bg-white/50 backdrop-blur-sm border-2 border-white/70 shadow-md'
