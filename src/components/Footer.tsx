@@ -35,7 +35,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="flex flex-col items-center md:items-end">
+          <div className="flex flex-col items-start">
             <h3 className="font-medium text-lg mb-5">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-center">
