@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { PercentIcon, Clock, TrendingUpIcon } from 'lucide-react';
@@ -53,12 +52,12 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="rounded-full overflow-hidden shadow-lg bg-gradient-to-r from-rose-400 to-pink-500 text-white p-3 md:p-4 flex items-center gap-2">
+      <div className="rounded-full overflow-hidden shadow-lg bg-[#9E99F9] text-white p-3 md:p-4 flex items-center gap-2">
         <div className="bg-white/20 rounded-full p-1.5 md:p-2 flex-shrink-0">
           <TrendingUpIcon className="w-4 h-4 md:w-5 md:h-5" />
         </div>
         <div>
-          <h3 className="font-display text-lg md:text-xl font-semibold">45%</h3>
+          <h3 className="font-display text-lg md:text-xl font-semibold">80%</h3>
           <p className="text-xs md:text-sm text-white/80">Cost reduction</p>
         </div>
       </div>
@@ -151,4 +150,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
