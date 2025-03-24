@@ -26,8 +26,8 @@ const useCases = [
     icon: <HeadphonesIcon className="h-6 w-6 text-pink-500" />,
   },
   {
-    id: "claims",
-    title: "Claims FNOL (Intake)",
+    id: "salesman",
+    title: "Super Salesman",
     icon: <FileTextIcon className="h-6 w-6 text-pink-500" />,
   },
   {
