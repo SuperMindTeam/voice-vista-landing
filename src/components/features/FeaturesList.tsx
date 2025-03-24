@@ -24,7 +24,7 @@ const FeaturesList = () => {
       imageOnly: true
     },
     {
-      image: "/lovable-uploads/a0f5bd6b-3ebc-4007-b8bf-f4c225a30d5f.png",
+      image: "/lovable-uploads/e8435e73-d781-4192-92bd-987e6cf9f5f1.png",
       title: "Queries Resolved",
       description: "",
       delay: 300,
