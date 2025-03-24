@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { PercentIcon, Clock, TrendingUpIcon } from 'lucide-react';
@@ -32,23 +33,23 @@ const Hero = () => {
   // Stat boxes component to be reused in both mobile and desktop views
   const StatBoxes = () => (
     <div className="grid grid-cols-3 gap-4 md:gap-6 mt-8 max-w-3xl mx-auto">
-      <div className="rounded-full overflow-hidden shadow-lg bg-gradient-to-r from-purple-400 to-indigo-500 text-white p-3 md:p-4 flex items-center gap-2">
+      <div className="rounded-full overflow-hidden shadow-lg bg-[#9E99F9] text-white p-3 md:p-4 flex items-center gap-2">
         <div className="bg-white/20 rounded-full p-1.5 md:p-2 flex-shrink-0">
           <PercentIcon className="w-4 h-4 md:w-5 md:h-5" />
         </div>
         <div>
           <h3 className="font-display text-lg md:text-xl font-semibold">98%</h3>
-          <p className="text-xs md:text-sm text-white/80">Customer satisfaction</p>
+          <p className="text-xs md:text-sm text-white/80">Customer Satisfaction</p>
         </div>
       </div>
       
-      <div className="rounded-full overflow-hidden shadow-lg bg-gradient-to-r from-emerald-400 to-teal-500 text-white p-3 md:p-4 flex items-center gap-2">
+      <div className="rounded-full overflow-hidden shadow-lg bg-[#9E99F9] text-white p-3 md:p-4 flex items-center gap-2">
         <div className="bg-white/20 rounded-full p-1.5 md:p-2 flex-shrink-0">
           <Clock className="w-4 h-4 md:w-5 md:h-5" />
         </div>
         <div>
-          <h3 className="font-display text-lg md:text-xl font-semibold">24/7</h3>
-          <p className="text-xs md:text-sm text-white/80">Always available</p>
+          <h3 className="font-display text-lg md:text-xl font-semibold">24x7</h3>
+          <p className="text-xs md:text-sm text-white/80">Always Available</p>
         </div>
       </div>
       
@@ -58,7 +59,7 @@ const Hero = () => {
         </div>
         <div>
           <h3 className="font-display text-lg md:text-xl font-semibold">80%</h3>
-          <p className="text-xs md:text-sm text-white/80">Cost reduction</p>
+          <p className="text-xs md:text-sm text-white/80">Cost Reduction</p>
         </div>
       </div>
     </div>
