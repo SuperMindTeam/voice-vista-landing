@@ -7,7 +7,7 @@ import {
   PlusCircleIcon,
   MicIcon,
   GlobeIcon,
-  UserIcon,
+  HeadphonesIcon,
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
@@ -21,9 +21,9 @@ import {
 // New use cases to match the screenshot
 const useCases = [
   {
-    id: "lead",
-    title: "Lead Qualification",
-    icon: <UserIcon className="h-6 w-6 text-pink-500" />,
+    id: "virtual",
+    title: "Virtual Receptionist",
+    icon: <HeadphonesIcon className="h-6 w-6 text-pink-500" />,
   },
   {
     id: "claims",
