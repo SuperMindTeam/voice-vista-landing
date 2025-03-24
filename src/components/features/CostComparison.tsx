@@ -85,9 +85,6 @@ const CostComparison = () => {
       <h2 className="text-3xl md:text-4xl font-display font-semibold mb-4">
         How Much Can You Save?
       </h2>
-      <p className="text-xl text-gray-600 mb-8">
-        Compare the costs of traditional call center staff versus our AI voice agent solution.
-      </p>
       
       <div className="glass rounded-xl overflow-hidden shadow-md mb-12">
         <Table>
