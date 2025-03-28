@@ -5,17 +5,9 @@ import {
   UserIcon, 
   ShieldIcon,
   PlusCircleIcon,
-  HeadphonesIcon,
-  YoutubeIcon
+  HeadphonesIcon
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // New use cases to match the screenshot
@@ -69,73 +61,49 @@ const TryItZone = () => {
         </p>
         
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white border border-gray-200 rounded-3xl shadow-2xl overflow-hidden relative">
-            {/* Language selector in top right */}
-            <div className="absolute top-4 right-4 z-10">
-              <Select defaultValue="english">
-                <SelectTrigger className="w-32 bg-transparent border-gray-300 text-black">
-                  <SelectValue placeholder="Language" />
-                </SelectTrigger>
-                <SelectContent className="bg-white border-gray-200 text-black">
-                  <SelectItem value="english">English</SelectItem>
-                  <SelectItem value="spanish">Spanish</SelectItem>
-                  <SelectItem value="french">French</SelectItem>
-                  <SelectItem value="german">German</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+          <Tabs 
+            defaultValue="virtual" 
+            value={selectedTab}
+            onValueChange={handleTabChange}
+            className="w-full"
+          >
+            <TabsList className="flex w-full bg-transparent p-0 mb-6 justify-between">
+              {useCases.map((useCase) => (
+                <TabsTrigger
+                  key={useCase.id}
+                  value={useCase.id}
+                  className={`
+                    flex-1 relative flex items-center gap-2 rounded-t-lg px-6 py-3
+                    ${selectedTab === useCase.id ? 'bg-[#B8D393] text-black font-semibold' : 'bg-gray-100 text-gray-700'}
+                    transition-all duration-200
+                  `}
+                >
+                  <div className="flex items-center gap-2">
+                    {useCase.icon}
+                    <span>{useCase.title}</span>
+                  </div>
+                </TabsTrigger>
+              ))}
+            </TabsList>
             
-            {/* Chrome-style tabs */}
-            <Tabs 
-              defaultValue="virtual" 
-              value={selectedTab}
-              onValueChange={handleTabChange}
-              className="w-full"
-            >
-              <div className="bg-gray-100 px-6 pt-4 border-b border-gray-200">
-                <TabsList className="grid grid-cols-4 w-full bg-gray-100 p-0">
-                  {useCases.map((useCase) => (
-                    <TabsTrigger
-                      key={useCase.id}
-                      value={useCase.id}
-                      className={`
-                        relative flex items-center gap-2 rounded-t-lg border-t border-l border-r border-gray-200 px-6 py-3 
-                        data-[state=active]:bg-white data-[state=active]:border-gray-300 
-                        data-[state=active]:shadow-none data-[state=active]:text-pink-600
-                        data-[state=inactive]:bg-gray-50
-                        transition-all duration-200
-                      `}
-                    >
-                      <div className="flex items-center gap-2">
-                        {useCase.icon}
-                        <span>{useCase.title}</span>
-                      </div>
-                      {/* Bottom border cover to create tab effect when active */}
-                      <div className={`absolute bottom-[-1px] left-0 right-0 h-[1px] bg-white ${selectedTab === useCase.id ? 'opacity-100' : 'opacity-0'}`}></div>
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
-              </div>
-              
-              {/* Content area with video player */}
-              <div className="p-6 bg-white">
-                {useCases.map((useCase) => (
-                  <TabsContent key={useCase.id} value={useCase.id} className="mt-0">
-                    <div className="w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden">
-                      <iframe 
-                        className="w-full h-full"
-                        src={`https://www.youtube.com/embed/${useCase.videoId}?autoplay=0`}
-                        title={`${useCase.title} demo video`}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  </TabsContent>
-                ))}
-              </div>
-            </Tabs>
-          </div>
+            {/* Content area with video player */}
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              {useCases.map((useCase) => (
+                <TabsContent key={useCase.id} value={useCase.id} className="mt-0">
+                  <div className="w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden">
+                    <iframe 
+                      className="w-full h-full"
+                      src={`https://www.youtube.com/embed/${useCase.videoId}?autoplay=0`}
+                      title={`${useCase.title} demo video`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </TabsContent>
+              ))}
+            </div>
+          </Tabs>
         </div>
       </div>
     </div>
