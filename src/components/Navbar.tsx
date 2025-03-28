@@ -45,7 +45,7 @@ const Navbar = () => {
             <a href="#tryitzone" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
               Demo Zone
             </a>
-            <a href="#features" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#features-list" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
               Features
             </a>
           </nav>
@@ -93,7 +93,7 @@ const Navbar = () => {
             Demo Zone
           </a>
           <a 
-            href="#features" 
+            href="#features-list" 
             className="text-lg font-medium text-gray-700"
             onClick={() => setMobileMenuOpen(false)}
           >
