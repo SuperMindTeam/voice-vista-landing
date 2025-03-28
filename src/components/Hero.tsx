@@ -86,8 +86,7 @@ const Hero = () => {
     <section 
       className="relative min-h-screen pt-32 pb-16 overflow-hidden"
       style={{
-        background: 'hsla(0, 0%, 100%, 1)',
-        background: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 62%, 75%, 1) 100%)',
+        backgroundImage: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 62%, 75%, 1) 100%)',
         WebkitBackgroundImage: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 62%, 75%, 1) 100%)',
         MozBackgroundImage: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 62%, 75%, 1) 100%)'
       }}
