@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { SmileIcon, Phone, DollarSign } from 'lucide-react';
@@ -101,7 +102,7 @@ const Hero = () => {
               Reduce Salaries—Our <span className="text-black bg-[#D9F19E] px-1">Artificial Intelligence</span> will Answer Your Calls.
             </h1>
             
-            <p className="text-xl md:text-2xl lg:text-3xl text-[#4A7F2D] max-w-2xl mb-10 font-bold">
+            <p className="text-xl md:text-2xl lg:text-3xl text-[#76A646] max-w-2xl mb-10 font-bold">
               Instant Answers, Zero Wait Time.
             </p>
             
@@ -127,7 +128,7 @@ const Hero = () => {
                 Reduce Salaries—Our <span className="text-black bg-[#D9F19E] px-1">Artificial Intelligence</span> will Answer Your Calls.
               </h1>
               
-              <p className="text-xl md:text-2xl lg:text-3xl text-[#4A7F2D] mb-10 animate-fade-in animate-delay-100 font-bold">
+              <p className="text-xl md:text-2xl lg:text-3xl text-[#76A646] mb-10 animate-fade-in animate-delay-100 font-bold">
                 Instant Answers, Zero Wait Time.
               </p>
               
