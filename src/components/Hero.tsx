@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { SmileIcon, Phone, DollarSign } from 'lucide-react';
@@ -84,7 +83,6 @@ const Hero = () => {
     <section 
       className="relative min-h-screen pt-32 pb-16 overflow-hidden"
       style={{
-        background: 'hsla(0, 0%, 100%, 1)',
         background: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 93%, 84%, 1) 100%)',
       }}
     >
@@ -103,7 +101,7 @@ const Hero = () => {
               Reduce Salaries—Our <span className="text-black bg-[#D9F19E] px-1">Artificial Intelligence</span> will Answer Your Calls.
             </h1>
             
-            <p className="text-xl md:text-2xl lg:text-3xl text-green-600 max-w-2xl mb-10 font-bold">
+            <p className="text-xl md:text-2xl lg:text-3xl text-[#4A7F2D] max-w-2xl mb-10 font-bold">
               Instant Answers, Zero Wait Time.
             </p>
             
@@ -129,7 +127,7 @@ const Hero = () => {
                 Reduce Salaries—Our <span className="text-black bg-[#D9F19E] px-1">Artificial Intelligence</span> will Answer Your Calls.
               </h1>
               
-              <p className="text-xl md:text-2xl lg:text-3xl text-green-600 mb-10 animate-fade-in animate-delay-100 font-bold">
+              <p className="text-xl md:text-2xl lg:text-3xl text-[#4A7F2D] mb-10 animate-fade-in animate-delay-100 font-bold">
                 Instant Answers, Zero Wait Time.
               </p>
               
