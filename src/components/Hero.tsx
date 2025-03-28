@@ -99,7 +99,7 @@ const Hero = () => {
             className="flex flex-col items-center text-center"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl">
-              Reduce Salaries—Our <span className="text-black bg-[#D9F19E] px-1">Artificial Intelligence</span> will Answer Your Calls.
+              Reduce Salaries—Our <span className="text-black bg-[#76A646] px-1">Artificial Intelligence</span> will Answer Your Calls.
             </h1>
             
             <p className="text-xl md:text-2xl lg:text-3xl text-[#76A646] max-w-2xl mb-10 font-bold">
@@ -125,7 +125,7 @@ const Hero = () => {
           >
             <div className="text-center max-w-4xl mx-auto mb-12">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6">
-                Reduce Salaries—Our <span className="text-black bg-[#D9F19E] px-1">Artificial Intelligence</span> will Answer Your Calls.
+                Reduce Salaries—Our <span className="text-black bg-[#76A646] px-1">Artificial Intelligence</span> will Answer Your Calls.
               </h1>
               
               <p className="text-xl md:text-2xl lg:text-3xl text-[#76A646] mb-10 animate-fade-in animate-delay-100 font-bold">
