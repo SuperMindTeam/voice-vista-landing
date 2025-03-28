@@ -72,11 +72,12 @@ const TryItZone = () => {
                 <TabsTrigger
                   key={useCase.id}
                   value={useCase.id}
-                  className={`
-                    flex-1 relative flex items-center gap-2 rounded-t-lg px-6 py-3
-                    ${useCase.id === selectedTab ? 'bg-[#B8D393] text-black font-semibold' : 'bg-gray-100 text-gray-700'}
-                    transition-all duration-200
-                  `}
+                  style={{
+                    backgroundColor: useCase.id === selectedTab ? '#B8D393' : '#f3f3f3',
+                    color: useCase.id === selectedTab ? 'black' : '#4b5563',
+                    fontWeight: useCase.id === selectedTab ? '600' : '400'
+                  }}
+                  className="flex-1 relative flex items-center gap-2 rounded-t-lg px-6 py-3 transition-all duration-200"
                 >
                   <div className="flex items-center gap-2">
                     {useCase.icon}
