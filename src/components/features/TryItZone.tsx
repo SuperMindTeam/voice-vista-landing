@@ -15,25 +15,25 @@ const useCases = [
   {
     id: "virtual",
     title: "Virtual Receptionist",
-    icon: <HeadphonesIcon className="h-6 w-6 text-pink-500" />,
+    icon: <HeadphonesIcon className="h-6 w-6 text-black" />,
     videoId: "dQw4w9WgXcQ" // Example YouTube video ID
   },
   {
     id: "salesman",
     title: "Super Salesman",
-    icon: <UserIcon className="h-6 w-6 text-pink-500" />,
+    icon: <UserIcon className="h-6 w-6 text-black" />,
     videoId: "jNQXAC9IVRw" // Example YouTube video ID
   },
   {
     id: "insurance",
     title: "Automatic Quotation",
-    icon: <ShieldIcon className="h-6 w-6 text-pink-500" />,
+    icon: <ShieldIcon className="h-6 w-6 text-black" />,
     videoId: "9bZkp7q19f0" // Example YouTube video ID
   },
   {
     id: "doctor",
     title: "Doctor Appointment Booking",
-    icon: <PlusCircleIcon className="h-6 w-6 text-pink-500" />,
+    icon: <PlusCircleIcon className="h-6 w-6 text-black" />,
     videoId: "xvFZjo5PgG0" // Example YouTube video ID
   },
 ];
