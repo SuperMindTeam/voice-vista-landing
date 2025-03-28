@@ -15,7 +15,7 @@ interface CostComparisonProps {
 
 const CostComparison: React.FC<CostComparisonProps> = ({ currencySymbol = '₹' }) => {
   return (
-    <div className="mx-auto my-8">
+    <div id="cost-comparison" className="mx-auto my-8">
       <div className="overflow-hidden rounded-lg shadow-md">
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">

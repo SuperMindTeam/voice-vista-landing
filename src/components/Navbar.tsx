@@ -39,7 +39,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#pricing" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#cost-comparison" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
               Pricing
             </a>
             <a href="#tryitzone" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
@@ -79,7 +79,7 @@ const Navbar = () => {
       >
         <nav className="flex flex-col px-8 py-4 space-y-6">
           <a 
-            href="#pricing" 
+            href="#cost-comparison" 
             className="text-lg font-medium text-gray-700"
             onClick={() => setMobileMenuOpen(false)}
           >
