@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { SmileIcon, Phone, DollarSign } from 'lucide-react';
@@ -30,7 +29,6 @@ const Hero = () => {
     };
   }, []);
 
-  // Stat boxes component to be reused in both mobile and desktop views
   const StatBoxes = () => (
     <div className="grid grid-cols-3 gap-4 md:gap-6 mt-8 max-w-3xl mx-auto">
       <div className="rounded-full overflow-hidden shadow-lg bg-[#D9F19E] text-black p-3 md:p-4 flex items-center gap-2">
@@ -65,7 +63,6 @@ const Hero = () => {
     </div>
   );
 
-  // Video component with lazy loading
   const VideoPlayer = () => (
     <div className="aspect-video rounded-xl overflow-hidden shadow-2xl glass">
       <div className="relative h-full w-full bg-gray-100">
@@ -87,8 +84,6 @@ const Hero = () => {
       className="relative min-h-screen pt-32 pb-16 overflow-hidden"
       style={{
         backgroundImage: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 62%, 75%, 1) 100%)',
-        WebkitBackgroundImage: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 62%, 75%, 1) 100%)',
-        MozBackgroundImage: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 62%, 75%, 1) 100%)'
       }}
     >
       <div 
@@ -116,7 +111,6 @@ const Hero = () => {
               </Button>
             </div>
             
-            {/* Centered stat boxes */}
             <StatBoxes />
             
             <div className="mt-8 w-full relative mx-auto max-w-5xl">
@@ -148,7 +142,6 @@ const Hero = () => {
               <VideoPlayer />
             </div>
             
-            {/* Centered stat boxes */}
             <StatBoxes />
           </div>
         )}
