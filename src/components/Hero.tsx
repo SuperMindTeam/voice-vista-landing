@@ -84,7 +84,8 @@ const Hero = () => {
     <section 
       className="relative min-h-screen pt-32 pb-16 overflow-hidden"
       style={{
-        backgroundImage: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 62%, 75%, 1) 100%)',
+        background: 'hsla(0, 0%, 100%, 1)',
+        background: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 93%, 84%, 1) 100%)',
       }}
     >
       <div 
