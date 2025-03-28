@@ -67,7 +67,7 @@ const TryItZone = () => {
             onValueChange={handleTabChange}
             className="w-full"
           >
-            <TabsList className="flex w-full bg-transparent p-0 mb-6 justify-between">
+            <TabsList className="flex w-full bg-transparent p-0 mb-0 justify-between">
               {useCases.map((useCase) => (
                 <TabsTrigger
                   key={useCase.id}
@@ -75,9 +75,15 @@ const TryItZone = () => {
                   style={{
                     backgroundColor: useCase.id === selectedTab ? '#B8D393' : '#f3f3f3',
                     color: useCase.id === selectedTab ? 'black' : '#4b5563',
-                    fontWeight: useCase.id === selectedTab ? '600' : '400'
+                    fontWeight: useCase.id === selectedTab ? '600' : '400',
+                    borderBottomLeftRadius: useCase.id === selectedTab ? '0' : '0.5rem',
+                    borderBottomRightRadius: useCase.id === selectedTab ? '0' : '0.5rem',
+                    marginBottom: '-1px',
+                    borderBottom: useCase.id === selectedTab ? 'none' : 'undefined',
+                    position: 'relative',
+                    zIndex: useCase.id === selectedTab ? '10' : '1'
                   }}
-                  className="flex-1 relative flex items-center gap-2 rounded-t-lg px-6 py-3 transition-all duration-200"
+                  className="flex-1 relative flex items-center gap-2 rounded-t-lg rounded-b-none px-6 py-3 transition-all duration-200"
                 >
                   <div className="flex items-center gap-2">
                     {useCase.icon}
@@ -88,7 +94,7 @@ const TryItZone = () => {
             </TabsList>
             
             {/* Content area with video player - Now with the matching background color */}
-            <div className="bg-[#B8D393] rounded-lg shadow-md p-6">
+            <div className="bg-[#B8D393] rounded-b-lg rounded-tl-none rounded-tr-none shadow-md p-6">
               {useCases.map((useCase) => (
                 <TabsContent key={useCase.id} value={useCase.id} className="mt-0">
                   <div className="w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden">
