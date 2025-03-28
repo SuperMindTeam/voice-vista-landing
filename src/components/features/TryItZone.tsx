@@ -74,7 +74,7 @@ const TryItZone = () => {
                   value={useCase.id}
                   className={`
                     flex-1 relative flex items-center gap-2 rounded-t-lg px-6 py-3
-                    ${selectedTab === useCase.id ? 'bg-[#B8D393] text-black font-semibold' : 'bg-gray-100 text-gray-700'}
+                    ${useCase.id === selectedTab ? 'bg-[#B8D393] text-black font-semibold' : 'bg-gray-100 text-gray-700'}
                     transition-all duration-200
                   `}
                 >
