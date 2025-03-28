@@ -5,7 +5,6 @@ import {
   UserIcon, 
   ShieldIcon,
   PlusCircleIcon,
-  GlobeIcon,
   HeadphonesIcon,
   YoutubeIcon
 } from 'lucide-react';
@@ -17,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // New use cases to match the screenshot
 const useCases = [
@@ -47,12 +47,15 @@ const useCases = [
 ];
 
 const TryItZone = () => {
-  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [selectedTab, setSelectedTab] = useState("virtual");
   
-  const handleUseCaseClick = (videoId) => {
-    setSelectedVideo(videoId);
-    toast.success("Loading demo video");
+  const handleTabChange = (value) => {
+    setSelectedTab(value);
+    toast.success(`Loaded demo: ${useCases.find(useCase => useCase.id === value)?.title}`);
   };
+
+  // Find the current video ID based on selected tab
+  const currentVideoId = useCases.find(useCase => useCase.id === selectedTab)?.videoId;
 
   return (
     <div className="text-center max-w-5xl mx-auto mb-24 p-10 rounded-3xl relative overflow-hidden" id="tryitzone">
@@ -62,14 +65,13 @@ const TryItZone = () => {
         </h2>
         <p className="text-xl text-black/80 mb-8 max-w-3xl mx-auto">
           Experience our AI voice agent in action across different use cases.
-          Select a scenario below to watch a demo video.
+          Select a tab below to watch a demo video.
         </p>
         
-        {/* Updated background color to white */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white border border-gray-200 rounded-3xl shadow-2xl overflow-hidden relative">
-            {/* Language selector in top center */}
-            <div className="pt-6 flex justify-center relative z-10">
+            {/* Language selector in top right */}
+            <div className="absolute top-4 right-4 z-10">
               <Select defaultValue="english">
                 <SelectTrigger className="w-32 bg-transparent border-gray-300 text-black">
                   <SelectValue placeholder="Language" />
@@ -83,46 +85,56 @@ const TryItZone = () => {
               </Select>
             </div>
             
-            {/* Grid of use cases */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-6 relative z-10">
-              {useCases.map((useCase) => (
-                <div
-                  key={useCase.id}
-                  className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer bg-white border border-gray-200"
-                  onClick={() => handleUseCaseClick(useCase.videoId)}
-                >
-                  <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mb-2">
-                    {useCase.icon}
-                  </div>
-                  <span className="text-sm text-black text-center">
-                    {useCase.title}
-                  </span>
-                </div>
-              ))}
-            </div>
-            
-            {/* YouTube video player instead of microphone */}
-            <div className="flex flex-col items-center justify-center py-8 relative z-10">
-              {selectedVideo ? (
-                <div className="w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden">
-                  <iframe 
-                    className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              ) : (
-                <div className="flex flex-col items-center justify-center">
-                  <YoutubeIcon className="h-16 w-16 text-gray-300 mb-4" />
-                  <p className="text-black text-xl max-w-md text-center">
-                    Select a category above to watch a demo video
-                  </p>
-                </div>
-              )}
-            </div>
+            {/* Chrome-style tabs */}
+            <Tabs 
+              defaultValue="virtual" 
+              value={selectedTab}
+              onValueChange={handleTabChange}
+              className="w-full"
+            >
+              <div className="bg-gray-100 px-6 pt-4 border-b border-gray-200">
+                <TabsList className="grid grid-cols-4 w-full bg-gray-100 p-0">
+                  {useCases.map((useCase) => (
+                    <TabsTrigger
+                      key={useCase.id}
+                      value={useCase.id}
+                      className={`
+                        relative flex items-center gap-2 rounded-t-lg border-t border-l border-r border-gray-200 px-6 py-3 
+                        data-[state=active]:bg-white data-[state=active]:border-gray-300 
+                        data-[state=active]:shadow-none data-[state=active]:text-pink-600
+                        data-[state=inactive]:bg-gray-50
+                        transition-all duration-200
+                      `}
+                    >
+                      <div className="flex items-center gap-2">
+                        {useCase.icon}
+                        <span>{useCase.title}</span>
+                      </div>
+                      {/* Bottom border cover to create tab effect when active */}
+                      <div className={`absolute bottom-[-1px] left-0 right-0 h-[1px] bg-white ${selectedTab === useCase.id ? 'opacity-100' : 'opacity-0'}`}></div>
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
+              
+              {/* Content area with video player */}
+              <div className="p-6 bg-white">
+                {useCases.map((useCase) => (
+                  <TabsContent key={useCase.id} value={useCase.id} className="mt-0">
+                    <div className="w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden">
+                      <iframe 
+                        className="w-full h-full"
+                        src={`https://www.youtube.com/embed/${useCase.videoId}?autoplay=0`}
+                        title={`${useCase.title} demo video`}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  </TabsContent>
+                ))}
+              </div>
+            </Tabs>
           </div>
         </div>
       </div>
