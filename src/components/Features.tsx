@@ -37,7 +37,7 @@ const Features = () => {
   return (
     <section id="features" className="py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div id="cost-effective-solution" className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-600 mb-4">
             <span className="text-xs font-medium">Cost-Effective Solution</span>
           </div>
