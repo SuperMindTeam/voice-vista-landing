@@ -87,7 +87,7 @@ const TryItZone = () => {
             </TabsList>
             
             {/* Content area with video player */}
-            <div className="p-6 bg-white rounded-lg shadow-md">
+            <div className="bg-white rounded-lg shadow-md p-6">
               {useCases.map((useCase) => (
                 <TabsContent key={useCase.id} value={useCase.id} className="mt-0">
                   <div className="w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden">
