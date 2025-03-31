@@ -20,7 +20,7 @@ const CostComparison: React.FC<CostComparisonProps> = ({ currencySymbol = '₹' 
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
-              <tr className="bg-blue-50">
+              <tr className="bg-[#B8D393]">
                 <th className="w-[35%] text-gray-600 font-medium py-3 px-3 text-left">Expense Category</th>
                 <th className="w-[32.5%] text-gray-600 font-medium py-3 px-3 text-right">Traditional Staff</th>
                 <th className="w-[32.5%] text-gray-600 font-medium py-3 px-3 text-right">AI Voice Agent</th>
