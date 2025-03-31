@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MicIcon, Twitter, Linkedin, Facebook, Instagram, Mail, Phone } from 'lucide-react';
+import { MicIcon, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center mb-5">
               <MicIcon className="h-6 w-6 text-blue-600 mr-2" />
-              <span className="font-display font-semibold text-xl">Shiv AI</span>
+              <span className="font-display font-semibold text-xl">SuperMind</span>
             </div>
             <p className="text-gray-600 mb-6 text-center md:text-left">
               The most advanced AI voice assistant for business, providing seamless customer interactions through natural conversation.
@@ -19,20 +19,7 @@ const Footer = () => {
 
           <div className="flex flex-col items-center">
             <h3 className="font-medium text-lg mb-5">Connect With Us</h3>
-            <div className="flex space-x-6 mb-4">
-              <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-            </div>
+            <p className="text-gray-500">support@supermind.ai</p>
           </div>
           
           <div className="flex flex-col items-start">
@@ -40,7 +27,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-600 mr-3" />
-                <span className="text-gray-600">hello@tryshiv.ai</span>
+                <span className="text-gray-600">hello@supermind.ai</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-blue-600 mr-3" />
@@ -52,7 +39,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-200 mt-8 pt-8 text-center">
           <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} Shiv AI. All rights reserved.
+            &copy; {new Date().getFullYear()} SuperMind. All rights reserved.
           </p>
         </div>
       </div>

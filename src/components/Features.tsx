@@ -48,12 +48,6 @@ const Features = () => {
         
         <CostComparison currencySymbol={currencyData.symbol} />
         
-        <div className="text-center max-w-3xl mx-auto mt-8">
-          <p className="text-xl text-gray-600">
-            with our AI solution, while maintaining exceptional customer service quality 24/7.
-          </p>
-        </div>
-        
         <div className="bg-white py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 rounded-2xl">
           <TryItZone />
         </div>

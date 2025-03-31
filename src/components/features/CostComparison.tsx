@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Person } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -22,7 +23,13 @@ const CostComparison: React.FC<CostComparisonProps> = ({ currencySymbol = '₹' 
             <thead>
               <tr className="bg-[#B8D393]">
                 <th className="w-[35%] text-gray-600 font-medium py-3 px-3 text-left">Expense Category</th>
-                <th className="w-[32.5%] text-gray-600 font-medium py-3 px-3 text-right">Traditional Staff</th>
+                <th className="w-[32.5%] text-gray-600 font-medium py-3 px-3 text-right">
+                  <div className="flex items-center justify-end">
+                    <Person className="h-5 w-5 text-black mr-1" />
+                    <span className="mr-1">3</span>
+                    <span>Traditional Staff</span>
+                  </div>
+                </th>
                 <th className="w-[32.5%] text-gray-600 font-medium py-3 px-3 text-right">AI Voice Agent</th>
               </tr>
             </thead>
