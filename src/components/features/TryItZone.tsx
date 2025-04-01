@@ -16,25 +16,29 @@ const useCases = [
     id: "virtual",
     title: "Virtual Receptionist",
     icon: <HeadphonesIcon className="h-6 w-6 text-black" />,
-    videoId: "dQw4w9WgXcQ" // Example YouTube video ID
+    videoId: "dQw4w9WgXcQ", // Example YouTube video ID
+    language: "English"
   },
   {
     id: "salesman",
     title: "Super Salesman",
     icon: <UserIcon className="h-6 w-6 text-black" />,
-    videoId: "jNQXAC9IVRw" // Example YouTube video ID
+    videoId: "jNQXAC9IVRw", // Example YouTube video ID
+    language: "English"
   },
   {
     id: "insurance",
     title: "Automatic Quotation",
     icon: <ShieldIcon className="h-6 w-6 text-black" />,
-    videoId: "9bZkp7q19f0" // Example YouTube video ID
+    videoId: "9bZkp7q19f0", // Example YouTube video ID
+    language: "Hindi"
   },
   {
     id: "doctor",
     title: "Doctor Appointment Booking",
     icon: <PlusCircleIcon className="h-6 w-6 text-black" />,
-    videoId: "xvFZjo5PgG0" // Example YouTube video ID
+    videoId: "xvFZjo5PgG0", // Example YouTube video ID
+    language: "Hindi"
   },
 ];
 
@@ -49,6 +53,15 @@ const TryItZone = () => {
   // Find the current video ID based on selected tab
   const currentVideoId = useCases.find(useCase => useCase.id === selectedTab)?.videoId;
 
+  // Group tabs by language
+  const groupedTabs = useCases.reduce((acc, useCase) => {
+    if (!acc[useCase.language]) {
+      acc[useCase.language] = [];
+    }
+    acc[useCase.language].push(useCase);
+    return acc;
+  }, {});
+
   return (
     <div className="text-center max-w-5xl mx-auto mb-24 p-10 rounded-3xl relative overflow-hidden" id="tryitzone">
       <div className="relative z-10">
@@ -61,59 +74,67 @@ const TryItZone = () => {
         </p>
         
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-start mb-2">
-            <span className="px-3 py-1 bg-[#2E8B57] text-white text-xs font-medium rounded">English</span>
-          </div>
-          <Tabs 
-            defaultValue="virtual" 
-            value={selectedTab}
-            onValueChange={handleTabChange}
-            className="w-full"
-          >
-            <TabsList className="flex w-full bg-transparent p-0 mb-0 justify-between">
-              {useCases.map((useCase) => (
-                <TabsTrigger
-                  key={useCase.id}
-                  value={useCase.id}
-                  style={{
-                    backgroundColor: useCase.id === selectedTab ? '#B8D393' : '#f3f3f3',
-                    color: useCase.id === selectedTab ? 'black' : '#4b5563',
-                    fontWeight: useCase.id === selectedTab ? '600' : '400',
-                    borderBottomLeftRadius: useCase.id === selectedTab ? '0' : '0.5rem',
-                    borderBottomRightRadius: useCase.id === selectedTab ? '0' : '0.5rem',
-                    marginBottom: '-1px',
-                    borderBottom: useCase.id === selectedTab ? 'none' : 'undefined',
-                    position: 'relative',
-                    zIndex: useCase.id === selectedTab ? '10' : '1'
-                  }}
-                  className="flex-1 relative flex items-center gap-2 rounded-t-lg rounded-b-none px-6 py-3 transition-all duration-200"
-                >
-                  <div className="flex items-center gap-2">
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="flex flex-col items-start">
+              <span className="px-3 py-1 bg-[#2E8B57] text-white text-xs font-medium rounded mb-2">English</span>
+              <div className="w-full grid grid-cols-2 gap-1">
+                {groupedTabs["English"]?.map((useCase) => (
+                  <button
+                    key={useCase.id}
+                    onClick={() => handleTabChange(useCase.id)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-t-lg ${
+                      selectedTab === useCase.id 
+                        ? "bg-[#B8D393] text-black font-semibold" 
+                        : "bg-[#f3f3f3] text-gray-600"
+                    }`}
+                  >
                     {useCase.icon}
                     <span>{useCase.title}</span>
-                  </div>
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            
-            {/* Content area with video player - Now with the matching background color */}
-            <div className="bg-[#B8D393] rounded-b-lg rounded-tl-none rounded-tr-none shadow-md p-6">
-              {useCases.map((useCase) => (
-                <TabsContent key={useCase.id} value={useCase.id} className="mt-0">
-                  <div className="w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden">
-                    <iframe 
-                      className="w-full h-full"
-                      src={`https://www.youtube.com/embed/${useCase.videoId}?autoplay=0`}
-                      title={`${useCase.title} demo video`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </TabsContent>
-              ))}
+                  </button>
+                ))}
+              </div>
             </div>
-          </Tabs>
+            <div className="flex flex-col items-start">
+              <span className="px-3 py-1 bg-[#F97316] text-white text-xs font-medium rounded mb-2">Hindi</span>
+              <div className="w-full grid grid-cols-2 gap-1">
+                {groupedTabs["Hindi"]?.map((useCase) => (
+                  <button
+                    key={useCase.id}
+                    onClick={() => handleTabChange(useCase.id)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-t-lg ${
+                      selectedTab === useCase.id 
+                        ? "bg-[#B8D393] text-black font-semibold" 
+                        : "bg-[#f3f3f3] text-gray-600"
+                    }`}
+                  >
+                    {useCase.icon}
+                    <span>{useCase.title}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Content area with video player */}
+          <div className="bg-[#B8D393] rounded-lg shadow-md p-6">
+            {useCases.map((useCase) => (
+              <div 
+                key={useCase.id}
+                className={`${selectedTab === useCase.id ? 'block' : 'hidden'}`}
+              >
+                <div className="w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden">
+                  <iframe 
+                    className="w-full h-full"
+                    src={`https://www.youtube.com/embed/${useCase.videoId}?autoplay=0`}
+                    title={`${useCase.title} demo video`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
