@@ -61,6 +61,9 @@ const TryItZone = () => {
         </p>
         
         <div className="max-w-4xl mx-auto">
+          <div className="flex justify-start mb-2">
+            <span className="px-3 py-1 bg-[#2E8B57] text-white text-xs font-medium rounded">English</span>
+          </div>
           <Tabs 
             defaultValue="virtual" 
             value={selectedTab}
