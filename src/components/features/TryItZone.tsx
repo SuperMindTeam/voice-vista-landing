@@ -77,12 +77,16 @@ const TryItZone = () => {
           <div className="grid grid-cols-2 gap-4 mb-0">
             <div className="flex flex-col items-start">
               <span className="px-3 py-1 bg-[#2E8B57] text-white text-xs font-medium rounded mb-2">English</span>
-              <div className="w-full grid grid-cols-2 gap-0">
-                {groupedTabs["English"]?.map((useCase) => (
+              <div className="w-full flex">
+                {groupedTabs["English"]?.map((useCase, index) => (
                   <button
                     key={useCase.id}
                     onClick={() => handleTabChange(useCase.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-t-lg ${
+                    className={`flex items-center gap-2 px-4 py-2 ${
+                      index === 0 ? "rounded-tl-lg" : ""
+                    } ${
+                      index === groupedTabs["English"].length - 1 ? "rounded-tr-lg" : ""
+                    } ${
                       selectedTab === useCase.id 
                         ? "bg-[#B8D393] text-black font-semibold" 
                         : "bg-[#f3f3f3] text-gray-600"
@@ -96,12 +100,16 @@ const TryItZone = () => {
             </div>
             <div className="flex flex-col items-start">
               <span className="px-3 py-1 bg-[#F97316] text-white text-xs font-medium rounded mb-2">Hindi</span>
-              <div className="w-full grid grid-cols-2 gap-0">
-                {groupedTabs["Hindi"]?.map((useCase) => (
+              <div className="w-full flex">
+                {groupedTabs["Hindi"]?.map((useCase, index) => (
                   <button
                     key={useCase.id}
                     onClick={() => handleTabChange(useCase.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-t-lg ${
+                    className={`flex items-center gap-2 px-4 py-2 ${
+                      index === 0 ? "rounded-tl-lg" : ""
+                    } ${
+                      index === groupedTabs["Hindi"].length - 1 ? "rounded-tr-lg" : ""
+                    } ${
                       selectedTab === useCase.id 
                         ? "bg-[#B8D393] text-black font-semibold" 
                         : "bg-[#f3f3f3] text-gray-600"
