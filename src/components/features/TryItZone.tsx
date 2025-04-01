@@ -75,6 +75,7 @@ const TryItZone = () => {
         
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 gap-4 mb-0">
+            {/* English section */}
             <div className="flex flex-col items-start">
               <span className="px-3 py-1 bg-[#2E8B57] text-white text-xs font-medium rounded mb-2">English</span>
               <div className="w-full flex">
@@ -82,15 +83,16 @@ const TryItZone = () => {
                   <button
                     key={useCase.id}
                     onClick={() => handleTabChange(useCase.id)}
-                    className={`flex items-center gap-2 px-4 py-2 ${
-                      index === 0 ? "rounded-tl-lg" : ""
-                    } ${
-                      index === groupedTabs["English"].length - 1 ? "rounded-tr-lg" : ""
-                    } ${
+                    className={`flex items-center gap-2 px-4 py-2 flex-1 ${
                       selectedTab === useCase.id 
                         ? "bg-[#B8D393] text-black font-semibold" 
                         : "bg-[#f3f3f3] text-gray-600"
+                    } ${
+                      index === 0 ? "rounded-tl-lg border-r border-white" : ""
+                    } ${
+                      index === groupedTabs["English"].length - 1 ? "rounded-tr-lg" : ""
                     }`}
+                    style={{ width: '50%' }}
                   >
                     {useCase.icon}
                     <span>{useCase.title}</span>
@@ -98,6 +100,8 @@ const TryItZone = () => {
                 ))}
               </div>
             </div>
+            
+            {/* Hindi section */}
             <div className="flex flex-col items-start">
               <span className="px-3 py-1 bg-[#F97316] text-white text-xs font-medium rounded mb-2">Hindi</span>
               <div className="w-full flex">
@@ -105,15 +109,16 @@ const TryItZone = () => {
                   <button
                     key={useCase.id}
                     onClick={() => handleTabChange(useCase.id)}
-                    className={`flex items-center gap-2 px-4 py-2 ${
-                      index === 0 ? "rounded-tl-lg" : ""
-                    } ${
-                      index === groupedTabs["Hindi"].length - 1 ? "rounded-tr-lg" : ""
-                    } ${
+                    className={`flex items-center gap-2 px-4 py-2 flex-1 ${
                       selectedTab === useCase.id 
                         ? "bg-[#B8D393] text-black font-semibold" 
                         : "bg-[#f3f3f3] text-gray-600"
+                    } ${
+                      index === 0 ? "rounded-tl-lg border-r border-white" : ""
+                    } ${
+                      index === groupedTabs["Hindi"].length - 1 ? "rounded-tr-lg" : ""
                     }`}
+                    style={{ width: '50%' }}
                   >
                     {useCase.icon}
                     <span>{useCase.title}</span>
