@@ -6,6 +6,7 @@ import {
   HeadphonesIcon
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 // Simplified use cases to only include Virtual Receptionist and Super Salesman
 const useCases = [
@@ -21,14 +22,15 @@ const useCases = [
     id: "salesman",
     title: "Super Salesman",
     icon: <UserIcon className="h-6 w-6 text-black" />,
-    videoId: "1072685841", // Updated to your new Vimeo video ID
-    videoType: "vimeo", // Changed to vimeo
+    videoId: "1072685841", 
+    videoType: "vimeo",
     language: "English"
   }
 ];
 
 const TryItZone = () => {
   const [selectedTab, setSelectedTab] = useState("virtual");
+  const isMobile = useIsMobile();
   
   const handleTabChange = (value) => {
     setSelectedTab(value);
@@ -39,7 +41,7 @@ const TryItZone = () => {
   const currentUseCase = useCases.find(useCase => useCase.id === selectedTab);
 
   return (
-    <div className="text-center max-w-5xl mx-auto mb-24 p-10 rounded-3xl relative overflow-hidden" id="tryitzone">
+    <div className="text-center max-w-5xl mx-auto mb-24 p-4 sm:p-10 rounded-3xl relative overflow-hidden" id="tryitzone">
       <div className="relative z-10">
         <h2 className="text-3xl md:text-5xl font-display font-bold mb-3 text-black">
           Demo Zone
@@ -59,7 +61,7 @@ const TryItZone = () => {
                   <button
                     key={useCase.id}
                     onClick={() => handleTabChange(useCase.id)}
-                    className={`flex items-center gap-2 px-4 py-2 flex-1 ${
+                    className={`flex items-center justify-center gap-2 px-2 sm:px-4 py-3 flex-1 ${
                       selectedTab === useCase.id 
                         ? "bg-[#B8D393] text-black font-semibold" 
                         : "bg-[#f3f3f3] text-gray-600"
@@ -68,10 +70,9 @@ const TryItZone = () => {
                     } ${
                       index === useCases.length - 1 ? "rounded-tr-lg" : ""
                     }`}
-                    style={{ width: '50%' }}
                   >
                     {useCase.icon}
-                    <span>{useCase.title}</span>
+                    <span className="whitespace-normal">{useCase.title}</span>
                   </button>
                 ))}
               </div>
@@ -79,7 +80,7 @@ const TryItZone = () => {
           </div>
           
           {/* Content area with video player */}
-          <div className="bg-[#B8D393] rounded-b-lg shadow-md p-6">
+          <div className="bg-[#B8D393] rounded-b-lg shadow-md p-3 sm:p-6">
             {useCases.map((useCase) => (
               <div 
                 key={useCase.id}
