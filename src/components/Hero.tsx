@@ -30,6 +30,10 @@ const Hero = () => {
     };
   }, []);
 
+  const handleFreeTrialClick = () => {
+    window.open("https://forms.gle/zpiozAUmedjgyR678", "_blank");
+  };
+
   const StatBoxes = () => (
     <div className="grid grid-cols-3 gap-4 md:gap-6 mt-8 max-w-3xl mx-auto">
       <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center gap-2">
@@ -91,7 +95,11 @@ const Hero = () => {
             </p>
             
             <div className="mb-12">
-              <Button size="lg" className="bg-black hover:bg-black/80 text-white shadow-md">
+              <Button 
+                size="lg" 
+                className="bg-black hover:bg-black/80 text-white shadow-md"
+                onClick={handleFreeTrialClick}
+              >
                 Start 1 Month Free Trial
               </Button>
             </div>
@@ -113,7 +121,11 @@ const Hero = () => {
               </p>
               
               <div className="mb-8 animate-fade-in animate-delay-200 flex justify-center">
-                <Button size="lg" className="bg-black hover:bg-black/80 text-white shadow-md">
+                <Button 
+                  size="lg" 
+                  className="bg-black hover:bg-black/80 text-white shadow-md"
+                  onClick={handleFreeTrialClick}
+                >
                   Start 1 Month Free Trial
                 </Button>
               </div>

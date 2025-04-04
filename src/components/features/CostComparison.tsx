@@ -15,6 +15,16 @@ interface CostComparisonProps {
 }
 
 const CostComparison: React.FC<CostComparisonProps> = ({ currencySymbol = '₹' }) => {
+  // Monthly costs for traditional staff
+  const monthlySalary = 75000;
+  const officeSpace = 15000;
+  const managementOverhead = 700;
+  const turnoverCosts = 450;
+  
+  // Calculate totals
+  const totalMonthlyCost = monthlySalary + officeSpace + managementOverhead + turnoverCosts;
+  const annualCost = totalMonthlyCost * 12;
+  
   return (
     <div id="cost-comparison" className="mx-auto my-8">
       <div className="overflow-hidden rounded-lg shadow-md">
@@ -32,32 +42,32 @@ const CostComparison: React.FC<CostComparisonProps> = ({ currencySymbol = '₹' 
             <tbody>
               <tr className="border-t border-gray-200">
                 <td className="py-3 px-3 text-left font-medium">Monthly Salary (for 3 people)</td>
-                <td className="py-3 px-3 text-right font-medium">{currencySymbol}75,000</td>
+                <td className="py-3 px-3 text-right font-medium">{currencySymbol}{monthlySalary}</td>
                 <td className="py-3 px-3 text-right font-medium">{currencySymbol}15,000</td>
               </tr>
               <tr className="border-t border-gray-200">
                 <td className="py-3 px-3 text-left font-medium">Office Space & Equipment</td>
-                <td className="py-3 px-3 text-right font-medium">{currencySymbol}15,000</td>
+                <td className="py-3 px-3 text-right font-medium">{currencySymbol}{officeSpace}</td>
                 <td className="py-3 px-3 text-right font-medium">{currencySymbol}0</td>
               </tr>
               <tr className="border-t border-gray-200">
                 <td className="py-3 px-3 text-left font-medium">Management Overhead</td>
-                <td className="py-3 px-3 text-right font-medium">{currencySymbol}700</td>
+                <td className="py-3 px-3 text-right font-medium">{currencySymbol}{managementOverhead}</td>
                 <td className="py-3 px-3 text-right font-medium">{currencySymbol}0</td>
               </tr>
               <tr className="border-t border-gray-200">
                 <td className="py-3 px-3 text-left font-medium">Turnover Costs (averaged)</td>
-                <td className="py-3 px-3 text-right font-medium">{currencySymbol}450</td>
+                <td className="py-3 px-3 text-right font-medium">{currencySymbol}{turnoverCosts}</td>
                 <td className="py-3 px-3 text-right font-medium">{currencySymbol}0</td>
               </tr>
               <tr className="border-t border-gray-200 bg-blue-50">
                 <td className="py-3 px-3 text-left font-bold">Total Monthly Cost</td>
-                <td className="py-3 px-3 text-right font-bold">{currencySymbol}41,150</td>
+                <td className="py-3 px-3 text-right font-bold">{currencySymbol}{totalMonthlyCost.toLocaleString()}</td>
                 <td className="py-3 px-3 text-right font-bold">{currencySymbol}15,000</td>
               </tr>
               <tr className="border-t border-gray-200 bg-blue-50">
                 <td className="py-3 px-3 text-left font-bold">Annual Cost</td>
-                <td className="py-3 px-3 text-right font-bold">{currencySymbol}493,800</td>
+                <td className="py-3 px-3 text-right font-bold">{currencySymbol}{annualCost.toLocaleString()}</td>
                 <td className="py-3 px-3 text-right font-bold">{currencySymbol}180,000</td>
               </tr>
             </tbody>

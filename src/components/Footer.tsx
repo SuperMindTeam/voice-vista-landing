@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MicIcon, Mail, Instagram } from 'lucide-react';
+import { MicIcon, Mail, Instagram, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -30,6 +30,12 @@ const Footer = () => {
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-[#B8D393] mr-3" />
                 <span className="text-gray-600">hello@getsupermind.com</span>
+              </li>
+              <li className="flex items-center">
+                <Phone className="h-5 w-5 text-[#B8D393] mr-3" />
+                <a href="https://wa.me/919810851631" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#76A646]">
+                  +91 9810-851-631
+                </a>
               </li>
             </ul>
           </div>

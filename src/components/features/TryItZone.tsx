@@ -16,28 +16,32 @@ const useCases = [
     id: "virtual",
     title: "Virtual Receptionist",
     icon: <HeadphonesIcon className="h-6 w-6 text-black" />,
-    videoId: "dQw4w9WgXcQ", // Example YouTube video ID
+    videoId: "1072645999",
+    videoType: "vimeo",
     language: "English"
   },
   {
     id: "salesman",
     title: "Super Salesman",
     icon: <UserIcon className="h-6 w-6 text-black" />,
-    videoId: "jNQXAC9IVRw", // Example YouTube video ID
+    videoId: "jNQXAC9IVRw",
+    videoType: "youtube",
     language: "English"
   },
   {
     id: "insurance",
     title: "Automatic Quotation",
     icon: <ShieldIcon className="h-6 w-6 text-black" />,
-    videoId: "9bZkp7q19f0", // Example YouTube video ID
+    videoId: "9bZkp7q19f0",
+    videoType: "youtube",
     language: "Hindi"
   },
   {
     id: "doctor",
     title: "Doctor Appointment Booking",
     icon: <PlusCircleIcon className="h-6 w-6 text-black" />,
-    videoId: "xvFZjo5PgG0", // Example YouTube video ID
+    videoId: "xvFZjo5PgG0",
+    videoType: "youtube",
     language: "Hindi"
   },
 ];
@@ -50,8 +54,8 @@ const TryItZone = () => {
     toast.success(`Loaded demo: ${useCases.find(useCase => useCase.id === value)?.title}`);
   };
 
-  // Find the current video ID based on selected tab
-  const currentVideoId = useCases.find(useCase => useCase.id === selectedTab)?.videoId;
+  // Find the current use case based on selected tab
+  const currentUseCase = useCases.find(useCase => useCase.id === selectedTab);
 
   // Group tabs by language
   const groupedTabs = useCases.reduce((acc, useCase) => {
@@ -136,14 +140,25 @@ const TryItZone = () => {
                 className={`${selectedTab === useCase.id ? 'block' : 'hidden'}`}
               >
                 <div className="w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden">
-                  <iframe 
-                    className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${useCase.videoId}?autoplay=0`}
-                    title={`${useCase.title} demo video`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                  {useCase.videoType === "vimeo" ? (
+                    <iframe 
+                      className="w-full h-full"
+                      src={`https://player.vimeo.com/video/${useCase.videoId}?autoplay=0`}
+                      title={`${useCase.title} demo video`}
+                      frameBorder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <iframe 
+                      className="w-full h-full"
+                      src={`https://www.youtube.com/embed/${useCase.videoId}?autoplay=0`}
+                      title={`${useCase.title} demo video`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  )}
                 </div>
               </div>
             ))}
