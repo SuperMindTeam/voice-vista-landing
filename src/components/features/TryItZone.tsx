@@ -3,14 +3,11 @@ import React, { useState } from 'react';
 import { toast } from "sonner";
 import { 
   UserIcon, 
-  ShieldIcon,
-  PlusCircleIcon,
   HeadphonesIcon
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// New use cases to match the screenshot
+// Simplified use cases to only include Virtual Receptionist and Super Salesman
 const useCases = [
   {
     id: "virtual",
@@ -24,26 +21,10 @@ const useCases = [
     id: "salesman",
     title: "Super Salesman",
     icon: <UserIcon className="h-6 w-6 text-black" />,
-    videoId: "jNQXAC9IVRw",
-    videoType: "youtube",
+    videoId: "1072685841", // Updated to your new Vimeo video ID
+    videoType: "vimeo", // Changed to vimeo
     language: "English"
-  },
-  {
-    id: "insurance",
-    title: "Automatic Quotation",
-    icon: <ShieldIcon className="h-6 w-6 text-black" />,
-    videoId: "9bZkp7q19f0",
-    videoType: "youtube",
-    language: "Hindi"
-  },
-  {
-    id: "doctor",
-    title: "Doctor Appointment Booking",
-    icon: <PlusCircleIcon className="h-6 w-6 text-black" />,
-    videoId: "xvFZjo5PgG0",
-    videoType: "youtube",
-    language: "Hindi"
-  },
+  }
 ];
 
 const TryItZone = () => {
@@ -57,15 +38,6 @@ const TryItZone = () => {
   // Find the current use case based on selected tab
   const currentUseCase = useCases.find(useCase => useCase.id === selectedTab);
 
-  // Group tabs by language
-  const groupedTabs = useCases.reduce((acc, useCase) => {
-    if (!acc[useCase.language]) {
-      acc[useCase.language] = [];
-    }
-    acc[useCase.language].push(useCase);
-    return acc;
-  }, {});
-
   return (
     <div className="text-center max-w-5xl mx-auto mb-24 p-10 rounded-3xl relative overflow-hidden" id="tryitzone">
       <div className="relative z-10">
@@ -78,12 +50,12 @@ const TryItZone = () => {
         </p>
         
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 gap-4 mb-0">
+          <div className="mb-0">
             {/* English section */}
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start w-full">
               <span className="px-3 py-1 bg-[#2E8B57] text-white text-xs font-medium rounded mb-2">English</span>
               <div className="w-full flex">
-                {groupedTabs["English"]?.map((useCase, index) => (
+                {useCases.map((useCase, index) => (
                   <button
                     key={useCase.id}
                     onClick={() => handleTabChange(useCase.id)}
@@ -94,33 +66,7 @@ const TryItZone = () => {
                     } ${
                       index === 0 ? "rounded-tl-lg border-r border-white" : ""
                     } ${
-                      index === groupedTabs["English"].length - 1 ? "rounded-tr-lg" : ""
-                    }`}
-                    style={{ width: '50%' }}
-                  >
-                    {useCase.icon}
-                    <span>{useCase.title}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-            
-            {/* Hindi section */}
-            <div className="flex flex-col items-start">
-              <span className="px-3 py-1 bg-[#F97316] text-white text-xs font-medium rounded mb-2">Hindi</span>
-              <div className="w-full flex">
-                {groupedTabs["Hindi"]?.map((useCase, index) => (
-                  <button
-                    key={useCase.id}
-                    onClick={() => handleTabChange(useCase.id)}
-                    className={`flex items-center gap-2 px-4 py-2 flex-1 ${
-                      selectedTab === useCase.id 
-                        ? "bg-[#B8D393] text-black font-semibold" 
-                        : "bg-[#f3f3f3] text-gray-600"
-                    } ${
-                      index === 0 ? "rounded-tl-lg border-r border-white" : ""
-                    } ${
-                      index === groupedTabs["Hindi"].length - 1 ? "rounded-tr-lg" : ""
+                      index === useCases.length - 1 ? "rounded-tr-lg" : ""
                     }`}
                     style={{ width: '50%' }}
                   >
@@ -139,26 +85,17 @@ const TryItZone = () => {
                 key={useCase.id}
                 className={`${selectedTab === useCase.id ? 'block' : 'hidden'}`}
               >
-                <div className="w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden">
-                  {useCase.videoType === "vimeo" ? (
+                <div className="w-full mx-auto aspect-video rounded-lg overflow-hidden">
+                  <div className="relative pb-[56.25%] h-0">
                     <iframe 
-                      className="w-full h-full"
+                      className="absolute top-0 left-0 w-full h-full"
                       src={`https://player.vimeo.com/video/${useCase.videoId}?autoplay=0`}
                       title={`${useCase.title} demo video`}
                       frameBorder="0"
                       allow="autoplay; fullscreen; picture-in-picture"
                       allowFullScreen
                     ></iframe>
-                  ) : (
-                    <iframe 
-                      className="w-full h-full"
-                      src={`https://www.youtube.com/embed/${useCase.videoId}?autoplay=0`}
-                      title={`${useCase.title} demo video`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  )}
+                  </div>
                 </div>
               </div>
             ))}

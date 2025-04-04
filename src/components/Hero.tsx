@@ -36,33 +36,33 @@ const Hero = () => {
 
   const StatBoxes = () => (
     <div className="grid grid-cols-3 gap-4 md:gap-6 mt-8 max-w-3xl mx-auto">
-      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center gap-2">
-        <div className="bg-black/10 rounded-full p-1.5 md:p-2 flex-shrink-0">
-          <SmileIcon className="w-4 h-4 md:w-5 md:h-5" />
+      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-2 md:p-4 flex items-center gap-2">
+        <div className="bg-black/10 rounded-full p-1 md:p-2 flex-shrink-0">
+          <SmileIcon className="w-3 h-3 md:w-5 md:h-5" />
         </div>
-        <div>
-          <h3 className="font-display text-lg md:text-xl font-semibold">98%</h3>
-          <p className="text-xs md:text-sm text-black/80">Customer Satisfaction</p>
-        </div>
-      </div>
-      
-      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center gap-2">
-        <div className="bg-black/10 rounded-full p-1.5 md:p-2 flex-shrink-0">
-          <Phone className="w-4 h-4 md:w-5 md:h-5" />
-        </div>
-        <div>
-          <h3 className="font-display text-lg md:text-xl font-semibold">24x7</h3>
-          <p className="text-xs md:text-sm text-black/80">Always Available</p>
+        <div className="min-w-0">
+          <h3 className="font-display text-sm md:text-xl font-semibold truncate">98%</h3>
+          <p className="text-[10px] md:text-sm text-black/80 truncate">Customer Satisfaction</p>
         </div>
       </div>
       
-      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center gap-2">
-        <div className="bg-black/10 rounded-full p-1.5 md:p-2 flex-shrink-0">
-          <DollarSign className="w-4 h-4 md:w-5 md:h-5" />
+      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-2 md:p-4 flex items-center gap-2">
+        <div className="bg-black/10 rounded-full p-1 md:p-2 flex-shrink-0">
+          <Phone className="w-3 h-3 md:w-5 md:h-5" />
         </div>
-        <div>
-          <h3 className="font-display text-lg md:text-xl font-semibold">80%</h3>
-          <p className="text-xs md:text-sm text-black/80">Cost Reduction</p>
+        <div className="min-w-0">
+          <h3 className="font-display text-sm md:text-xl font-semibold truncate">24x7</h3>
+          <p className="text-[10px] md:text-sm text-black/80 truncate">Always Available</p>
+        </div>
+      </div>
+      
+      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-2 md:p-4 flex items-center gap-2">
+        <div className="bg-black/10 rounded-full p-1 md:p-2 flex-shrink-0">
+          <DollarSign className="w-3 h-3 md:w-5 md:h-5" />
+        </div>
+        <div className="min-w-0">
+          <h3 className="font-display text-sm md:text-xl font-semibold truncate">80%</h3>
+          <p className="text-[10px] md:text-sm text-black/80 truncate">Cost Reduction</p>
         </div>
       </div>
     </div>
