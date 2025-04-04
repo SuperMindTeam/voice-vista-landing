@@ -61,7 +61,7 @@ const TryItZone = () => {
                   <button
                     key={useCase.id}
                     onClick={() => handleTabChange(useCase.id)}
-                    className={`flex items-center justify-center gap-2 px-2 sm:px-4 py-3 flex-1 ${
+                    className={`flex items-center justify-center gap-2 px-4 py-3 flex-1 ${
                       selectedTab === useCase.id 
                         ? "bg-[#B8D393] text-black font-semibold" 
                         : "bg-[#f3f3f3] text-gray-600"
@@ -72,7 +72,7 @@ const TryItZone = () => {
                     }`}
                   >
                     {useCase.icon}
-                    <span className="whitespace-normal">{useCase.title}</span>
+                    <span className={`text-sm sm:text-base ${isMobile ? "leading-tight" : ""}`}>{useCase.title}</span>
                   </button>
                 ))}
               </div>
