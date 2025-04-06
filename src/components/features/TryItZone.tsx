@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { toast } from "sonner";
 import { 
   UserIcon, 
   HeadphonesIcon
@@ -34,7 +33,7 @@ const TryItZone = () => {
   
   const handleTabChange = (value) => {
     setSelectedTab(value);
-    toast.success(`Loaded demo: ${useCases.find(useCase => useCase.id === value)?.title}`);
+    // Toast messages removed as requested
   };
 
   // Find the current use case based on selected tab
@@ -79,12 +78,12 @@ const TryItZone = () => {
             </div>
           </div>
           
-          {/* Content area with video player */}
+          {/* Content area with video player - adjusted width for mobile */}
           <div className="bg-[#B8D393] rounded-b-lg shadow-md p-3 sm:p-6">
             {useCases.map((useCase) => (
               <div 
                 key={useCase.id}
-                className={`${selectedTab === useCase.id ? 'block' : 'hidden'}`}
+                className={`${selectedTab === useCase.id ? 'block' : 'hidden'} w-full`}
               >
                 <div className="w-full mx-auto aspect-video rounded-lg overflow-hidden">
                   <div className="relative pb-[56.25%] h-0">
