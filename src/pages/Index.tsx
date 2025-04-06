@@ -38,8 +38,6 @@ const Index = () => {
       <Navbar />
       <main className={isLoaded ? 'loaded' : ''}>
         <Hero />
-        {/* Added anchor for Demo Zone section */}
-        <div id="demozone"></div>
         <Features />
       </main>
       <Footer />

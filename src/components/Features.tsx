@@ -48,6 +48,9 @@ const Features = () => {
         
         <CostComparison currencySymbol={currencyData.symbol} />
         
+        {/* Added anchor for Demo Zone section after the cost table */}
+        <div id="demozone" className="pt-10"></div>
+        
         <div className="bg-white py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 rounded-2xl">
           <TryItZone />
         </div>
