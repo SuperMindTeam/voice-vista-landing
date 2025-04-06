@@ -39,7 +39,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#cost-effective-solution" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#features" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
               Pricing
             </a>
             <a href="#tryitzone" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
@@ -51,7 +51,7 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:flex items-center">
-            <Button size="sm" className="text-sm font-medium bg-[#B8D393] hover:bg-[#A6C27D] text-black shadow-sm">
+            <Button size="sm" className="text-sm font-medium bg-[#B8D393] hover:bg-[#A6C27D] text-black shadow-sm" onClick={() => window.open('https://forms.gle/zpiozAUmedjgyR678', '_blank')}>
               Free Trial
             </Button>
           </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
       >
         <nav className="flex flex-col px-8 py-4 space-y-6">
           <a 
-            href="#cost-effective-solution" 
+            href="#features" 
             className="text-lg font-medium text-gray-700"
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -102,7 +102,10 @@ const Navbar = () => {
           <div className="pt-6 border-t">
             <Button 
               className="w-full bg-[#B8D393] hover:bg-[#A6C27D] text-black"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                window.open('https://forms.gle/zpiozAUmedjgyR678', '_blank');
+              }}
             >
               Free Trial
             </Button>

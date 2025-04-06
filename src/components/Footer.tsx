@@ -28,11 +28,11 @@ const Footer = () => {
             <h3 className="font-medium text-lg mb-5">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-center">
-                <Mail className="h-5 w-5 text-[#B8D393] mr-3" />
+                <Mail className="h-5 w-5 text-black mr-3" />
                 <span className="text-gray-600">hello@getsupermind.com</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-[#B8D393] mr-3" />
+                <Phone className="h-5 w-5 text-black mr-3" />
                 <a href="https://wa.me/919810851631" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#76A646]">
                   +91 9810-851-631
                 </a>
