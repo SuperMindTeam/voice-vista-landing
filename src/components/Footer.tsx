@@ -1,8 +1,34 @@
 
 import React from 'react';
 import { MicIcon, Mail, Instagram, Phone } from 'lucide-react';
+import { useGeolocation } from '@/hooks/use-geolocation';
 
 const Footer = () => {
+  const { countryCode } = useGeolocation();
+  
+  // Determine which phone number to display based on location
+  const getPhoneDisplay = () => {
+    switch(countryCode) {
+      case 'IE':
+        return {
+          number: '0833 833 321',
+          link: 'tel:+353833833321'
+        };
+      case 'IN':
+        return {
+          number: '+91 9810 851 631',
+          link: 'https://wa.me/919810851631'
+        };
+      default:
+        return {
+          number: '+91 9810-851-631',
+          link: 'https://wa.me/919810851631'
+        };
+    }
+  };
+  
+  const phoneDisplay = getPhoneDisplay();
+
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -33,8 +59,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-black mr-3" />
-                <a href="https://wa.me/919810851631" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#76A646]">
-                  +91 9810-851-631
+                <a href={phoneDisplay.link} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#76A646]">
+                  {phoneDisplay.number}
                 </a>
               </li>
             </ul>
