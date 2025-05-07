@@ -2,7 +2,7 @@
 class SupermindAIWidget extends HTMLElement {
   constructor() {
     super();
-    this.agentId = this.getAttribute("877006ae-b97c-43a9-9086-5e95409aefd1");
+    this.agentId = this.getAttribute("agent-id");
     this.shadow = this.attachShadow({ mode: "open" });
   }
 
