@@ -1,7 +1,7 @@
 class SupermindAIWidget extends HTMLElement {
   constructor() {
     super();
-    this.agentId = this.getAttribute("agent-id");
+    this.agentId = this.getAttribute("877006ae-b97c-43a9-9086-5e95409aefd1");
     this.shadow = this.attachShadow({ mode: "open" });
   }
 
@@ -75,7 +75,7 @@ class SupermindAIWidget extends HTMLElement {
         const { Vapi } = await import("https://cdn.jsdelivr.net/npm/@vapi-ai/web");
 
         vapiInstance = new Vapi({
-          apiKey: "YOUR_PUBLIC_VAPI_API_KEY", // Replace or handle dynamically
+          apiKey: "bb623861-73db-4dba-8ee2-d5dd24098849", // Replace or handle dynamically
         });
 
         vapiInstance.on("end", () => {
