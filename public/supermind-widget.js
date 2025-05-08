@@ -2,7 +2,7 @@ class SupermindAIWidget extends HTMLElement {
   constructor() {
     super();
     this.agentId = this.getAttribute("agent-id");
-    this.apiKey = this.getAttribute("api-key") || "bb623861-73db-4dba-8ee2-d5dd24098849";
+    this.apiKey = this.getAttribute("api-key") || "YOUR_PUBLIC_VAPI_KEY"; 
     this.shadow = this.attachShadow({ mode: "open" });
     this.vapi = null;
     this.isListening = false;
