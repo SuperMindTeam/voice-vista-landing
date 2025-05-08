@@ -11,11 +11,11 @@ class SupermindAIWidget extends HTMLElement {
 
 connectedCallback() {
   this.render();
-  // Wait for next tick to ensure DOM is fully rendered
-  setTimeout(() => {
+  requestAnimationFrame(() => {
     this.loadVapiSDK().then(() => this.attachListeners());
-  }, 0);
+  });
 }
+
 
 
   render() {
@@ -164,11 +164,16 @@ connectedCallback() {
       script.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
       script.async = true;
       script.onload = () => {
-        this.vapi = window.vapi;
-        this.vapi.configure({
-          apiKey: this.apiKey
-        });
-        resolve();
+        if (window.vapi) {
+          this.vapi = window.vapi;
+          this.vapi.configure({
+            apiKey: this.apiKey
+          });
+          resolve();
+        } else {
+          console.error('VAPI SDK is not available');
+          reject();
+        }
       };
       script.onerror = () => {
         console.error('Failed to load VAPI SDK');
