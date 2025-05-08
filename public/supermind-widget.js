@@ -1,13 +1,16 @@
-
 class SupermindAIWidget extends HTMLElement {
   constructor() {
     super();
     this.agentId = this.getAttribute("agent-id");
+    this.apiKey = this.getAttribute("api-key") || "bb623861-73db-4dba-8ee2-d5dd24098849";
     this.shadow = this.attachShadow({ mode: "open" });
+    this.vapi = null;
+    this.isListening = false;
   }
 
   connectedCallback() {
     this.render();
+    this.loadVapiSDK().then(() => this.attachListeners());
   }
 
   render() {
@@ -39,6 +42,10 @@ class SupermindAIWidget extends HTMLElement {
           fill: #ffffff;
         }
 
+        .listening {
+          animation: pulse 2s infinite;
+        }
+
         @keyframes pulse {
           0% {
             box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
@@ -50,55 +57,6 @@ class SupermindAIWidget extends HTMLElement {
             box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
           }
         }
-
-        .listening {
-          animation: pulse 2s infinite;
-        }
       </style>
 
-      <div class="widget-container" id="voice-button" title="Talk to AI">
-        <svg class="mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 14 0h-2zm-5 9a9 9 0 0 0 9-9h-2a7 7 0 0 1-14 0H3a9 9 0 0 0 9 9z"/>
-        </svg>
-      </div>
-    `;
-
-    this.attachListeners();
-  }
-
-  attachListeners() {
-    const button = this.shadow.getElementById("voice-button");
-    let vapiInstance = null;
-    let isListening = false;
-
-    button.addEventListener("click", async () => {
-      if (!vapiInstance) {
-        const { Vapi } = await import("https://cdn.jsdelivr.net/npm/@vapi-ai/web");
-
-        vapiInstance = new Vapi({
-          apiKey: "bb623861-73db-4dba-8ee2-d5dd24098849", // Replace or handle dynamically
-        });
-
-        vapiInstance.on("end", () => {
-          isListening = false;
-          button.classList.remove("listening");
-        });
-      }
-
-      if (!isListening) {
-        isListening = true;
-        button.classList.add("listening");
-
-        vapiInstance.startConversation({
-          agentId: this.agentId,
-        });
-      } else {
-        isListening = false;
-        vapiInstance.stopConversation();
-        button.classList.remove("listening");
-      }
-    });
-  }
-}
-
-customElements.define("supermind-ai", SupermindAIWidget);
+      <div class="widget-container
