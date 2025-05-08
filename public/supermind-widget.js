@@ -9,10 +9,14 @@ class SupermindAIWidget extends HTMLElement {
     this.conversationId = null;
   }
 
-  connectedCallback() {
-    this.render();
+connectedCallback() {
+  this.render();
+  // Wait for next tick to ensure DOM is fully rendered
+  setTimeout(() => {
     this.loadVapiSDK().then(() => this.attachListeners());
-  }
+  }, 0);
+}
+
 
   render() {
     this.shadow.innerHTML = `
@@ -157,7 +161,7 @@ class SupermindAIWidget extends HTMLElement {
       }
 
       const script = document.createElement('script');
-      script.src = 'https://cdn.vapi.ai/vapi.js';
+      script.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
       script.async = true;
       script.onload = () => {
         this.vapi = window.vapi;
