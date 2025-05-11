@@ -95,11 +95,11 @@ const Hero = () => {
             <div className="w-full mb-6">
               <AspectRatio ratio={16/9} className="bg-muted rounded-md overflow-hidden">
                 <iframe 
-                  src="https://player.vimeo.com/video/1072645999?autoplay=0"
+                  src="https://www.youtube.com/embed/7_4ZsWyPYdA"
                   className="w-full h-full"
                   title="Demo video"
                   frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>
               </AspectRatio>
@@ -126,7 +126,7 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center transition-all duration-700 opacity-0 translate-y-10"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
               <div className="text-left">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6">
                   Reduce Salaries—Our <span className="text-black bg-[#B8D393] px-1">Artificial Intelligence</span> will Answer Your Calls.
@@ -148,13 +148,13 @@ const Hero = () => {
               </div>
               
               <div className="w-full h-full">
-                <AspectRatio ratio={16/9} className="bg-muted rounded-md overflow-hidden shadow-lg">
+                <AspectRatio ratio={16/9} className="bg-muted rounded-md overflow-hidden shadow-xl">
                   <iframe 
-                    src="https://player.vimeo.com/video/1072645999?autoplay=0"
+                    src="https://www.youtube.com/embed/7_4ZsWyPYdA"
                     className="w-full h-full"
                     title="Demo video"
                     frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
                 </AspectRatio>
