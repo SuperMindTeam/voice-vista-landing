@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { SmileIcon, Phone, DollarSign } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -90,6 +91,20 @@ const Hero = () => {
               Reduce Salaries—Our <span className="text-black bg-[#B8D393] px-1">Artificial Intelligence</span> will Answer Your Calls.
             </h1>
             
+            {/* Video for mobile */}
+            <div className="w-full mb-6">
+              <AspectRatio ratio={16/9} className="bg-muted rounded-md overflow-hidden">
+                <iframe 
+                  src="https://player.vimeo.com/video/1072645999?autoplay=0"
+                  className="w-full h-full"
+                  title="Demo video"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </AspectRatio>
+            </div>
+            
             <p className="text-xl md:text-2xl lg:text-3xl text-[#76A646] max-w-2xl mb-10 font-bold">
               Instant Answers, Zero Wait Time.
             </p>
@@ -111,23 +126,38 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center transition-all duration-700 opacity-0 translate-y-10"
           >
-            <div className="text-center max-w-4xl mx-auto mb-12">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6">
-                Reduce Salaries—Our <span className="text-black bg-[#B8D393] px-1">Artificial Intelligence</span> will Answer Your Calls.
-              </h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12 max-w-6xl mx-auto">
+              <div className="text-left">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6">
+                  Reduce Salaries—Our <span className="text-black bg-[#B8D393] px-1">Artificial Intelligence</span> will Answer Your Calls.
+                </h1>
+                
+                <p className="text-xl md:text-2xl lg:text-3xl text-[#76A646] mb-10 animate-fade-in animate-delay-100 font-bold">
+                  Instant Answers, Zero Wait Time.
+                </p>
+                
+                <div className="mb-8 animate-fade-in animate-delay-200">
+                  <Button 
+                    size="lg" 
+                    className="bg-black hover:bg-black/80 text-white shadow-md"
+                    onClick={handleFreeTrialClick}
+                  >
+                    Start 1 Month Free Trial
+                  </Button>
+                </div>
+              </div>
               
-              <p className="text-xl md:text-2xl lg:text-3xl text-[#76A646] mb-10 animate-fade-in animate-delay-100 font-bold">
-                Instant Answers, Zero Wait Time.
-              </p>
-              
-              <div className="mb-8 animate-fade-in animate-delay-200 flex justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-black hover:bg-black/80 text-white shadow-md"
-                  onClick={handleFreeTrialClick}
-                >
-                  Start 1 Month Free Trial
-                </Button>
+              <div className="w-full h-full">
+                <AspectRatio ratio={16/9} className="bg-muted rounded-md overflow-hidden shadow-lg">
+                  <iframe 
+                    src="https://player.vimeo.com/video/1072645999?autoplay=0"
+                    className="w-full h-full"
+                    title="Demo video"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </AspectRatio>
               </div>
             </div>
             
