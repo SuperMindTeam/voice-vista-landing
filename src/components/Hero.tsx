@@ -95,7 +95,7 @@ const Hero = () => {
             <div className="w-full mb-6">
               <AspectRatio ratio={16/9} className="bg-muted rounded-md overflow-hidden">
                 <iframe 
-                  src="https://www.youtube.com/embed/7_4ZsWyPYdA"
+                  src="https://www.youtube.com/embed/7_4ZsWyPYdA?rel=0&modestbranding=1"
                   className="w-full h-full"
                   title="Demo video"
                   frameBorder="0"
@@ -150,7 +150,7 @@ const Hero = () => {
               <div className="w-full h-full">
                 <AspectRatio ratio={16/9} className="bg-muted rounded-md overflow-hidden shadow-xl">
                   <iframe 
-                    src="https://www.youtube.com/embed/7_4ZsWyPYdA"
+                    src="https://www.youtube.com/embed/7_4ZsWyPYdA?rel=0&modestbranding=1"
                     className="w-full h-full"
                     title="Demo video"
                     frameBorder="0"
