@@ -36,7 +36,7 @@ const Navbar = () => {
             <img 
               src={isScrolled ? "/lovable-uploads/65c69295-e209-47b1-a841-efd705a89794.png" : "/lovable-uploads/806e3b40-c340-4a45-878d-316f09ac0ff9.png"} 
               alt="SuperMind Logo" 
-              className="h-30 w-auto"
+              className="h-16 w-auto"
             />
           </div>
 
