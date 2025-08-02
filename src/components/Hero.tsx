@@ -126,12 +126,12 @@ const Hero = () => {
                   Cut Costs. Increase Conversions. Automate Reception.
                 </h1>
                 
-                <div className="text-center">
-                  <p className="text-xl md:text-2xl lg:text-3xl text-white mb-10 animate-fade-in animate-delay-100 font-bold">
+                <div>
+                  <p className="text-xl md:text-2xl lg:text-3xl text-white mb-10 animate-fade-in animate-delay-100 font-bold text-left">
                     Instant Answers, Zero Wait Time.
                   </p>
                   
-                  <div className="mb-8 animate-fade-in animate-delay-200">
+                  <div className="mb-8 animate-fade-in animate-delay-200 text-center">
                     <Button 
                       size="lg" 
                       className="bg-white hover:bg-white/90 text-black shadow-md"

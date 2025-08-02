@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
+import HowItTransforms from '@/components/HowItTransforms';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -39,6 +40,7 @@ const Index = () => {
       <main className={isLoaded ? 'loaded' : ''}>
         <Hero />
         <Features />
+        <HowItTransforms />
       </main>
       <Footer />
     </div>
