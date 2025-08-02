@@ -22,7 +22,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4">
+    <div className="fixed top-0 left-0 right-0 z-50">
       <header
         className={cn(
           'w-full transition-all duration-300 ease-in-out px-6 py-4',
@@ -33,8 +33,11 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center">
-            <MicIcon className={cn("h-6 w-6 mr-2", isScrolled ? "text-black" : "text-white")} />
-            <span className={cn("font-display font-bold text-xl", isScrolled ? "text-black" : "text-white")}>SuperMind</span>
+            <img 
+              src={isScrolled ? "/lovable-uploads/65c69295-e209-47b1-a841-efd705a89794.png" : "/lovable-uploads/806e3b40-c340-4a45-878d-316f09ac0ff9.png"} 
+              alt="SuperMind Logo" 
+              className="h-8 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -73,10 +76,25 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div 
         className={cn(
-          'fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out pt-20',
+          'fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out',
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
+        {/* Mobile menu header */}
+        <div className="flex items-center justify-between p-6 border-b">
+          <img 
+            src="/lovable-uploads/65c69295-e209-47b1-a841-efd705a89794.png" 
+            alt="SuperMind Logo" 
+            className="h-8 w-auto"
+          />
+          <button 
+            className="focus:outline-none" 
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <X className="h-6 w-6 text-gray-700" />
+          </button>
+        </div>
+        
         <nav className="flex flex-col px-8 py-4 space-y-6">
           <a 
             href="#features" 

@@ -92,23 +92,25 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
-              Cut Costs. Increase Conversions. <span className="text-black bg-[#B8D393] px-1">Automate Reception.</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
+              Cut Costs. Increase Conversions. Automate Reception.
             </h1>
             
             
-            <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-2xl mb-10 font-bold">
-              Instant Answers, Zero Wait Time.
-            </p>
-            
-            <div className="mb-12 text-center">
-              <Button 
-                size="lg" 
-                className="bg-white hover:bg-white/90 text-black shadow-md"
-                onClick={handleFreeTrialClick}
-              >
-                Start 1 Month Free Trial
-              </Button>
+            <div className="text-center">
+              <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-2xl mb-10 font-bold">
+                Instant Answers, Zero Wait Time.
+              </p>
+              
+              <div className="mb-12">
+                <Button 
+                  size="lg" 
+                  className="bg-white hover:bg-white/90 text-black shadow-md"
+                  onClick={handleFreeTrialClick}
+                >
+                  Start 1 Month Free Trial
+                </Button>
+              </div>
             </div>
             
             <StatBoxes />
@@ -121,21 +123,23 @@ const Hero = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
               <div className="text-left">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6 text-white">
-                  Cut Costs. Increase Conversions. <span className="text-black bg-[#B8D393] px-1">Automate Reception.</span>
+                  Cut Costs. Increase Conversions. Automate Reception.
                 </h1>
                 
-                <p className="text-xl md:text-2xl lg:text-3xl text-white mb-10 animate-fade-in animate-delay-100 font-bold">
-                  Instant Answers, Zero Wait Time.
-                </p>
-                
-                <div className="mb-8 animate-fade-in animate-delay-200">
-                  <Button 
-                    size="lg" 
-                    className="bg-white hover:bg-white/90 text-black shadow-md"
-                    onClick={handleFreeTrialClick}
-                  >
-                    Start 1 Month Free Trial
-                  </Button>
+                <div className="text-center">
+                  <p className="text-xl md:text-2xl lg:text-3xl text-white mb-10 animate-fade-in animate-delay-100 font-bold">
+                    Instant Answers, Zero Wait Time.
+                  </p>
+                  
+                  <div className="mb-8 animate-fade-in animate-delay-200">
+                    <Button 
+                      size="lg" 
+                      className="bg-white hover:bg-white/90 text-black shadow-md"
+                      onClick={handleFreeTrialClick}
+                    >
+                      Start 1 Month Free Trial
+                    </Button>
+                  </div>
                 </div>
               </div>
               
