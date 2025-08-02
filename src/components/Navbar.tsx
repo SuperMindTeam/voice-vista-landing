@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center">
             <img 
-              src={isScrolled ? "/lovable-uploads/65c69295-e209-47b1-a841-efd705a89794.png" : "/lovable-uploads/806e3b40-c340-4a45-878d-316f09ac0ff9.png"} 
+              src={isScrolled ? "/lovable-uploads/BlackLogo.png" : "/lovable-uploads/WhiteLogo.png"} 
               alt="SuperMind Logo" 
               className="h-16 w-auto"
             />
