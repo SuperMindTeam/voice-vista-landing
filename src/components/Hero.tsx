@@ -83,7 +83,7 @@ const Hero = () => {
           <source src="/hero-background-video.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -92,8 +92,8 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl text-white">
-              Reduce Salaries—Our <span className="text-black bg-[#B8D393] px-1">Artificial Intelligence</span> will Answer Your Calls.
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
+              Cut Costs. Increase Conversions. <span className="text-black bg-[#B8D393] px-1">Automate Reception.</span>
             </h1>
             
             
@@ -101,7 +101,7 @@ const Hero = () => {
               Instant Answers, Zero Wait Time.
             </p>
             
-            <div className="mb-12">
+            <div className="mb-12 text-center">
               <Button 
                 size="lg" 
                 className="bg-white hover:bg-white/90 text-black shadow-md"
@@ -121,7 +121,7 @@ const Hero = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
               <div className="text-left">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6 text-white">
-                  Reduce Salaries—Our <span className="text-black bg-[#B8D393] px-1">Artificial Intelligence</span> will Answer Your Calls.
+                  Cut Costs. Increase Conversions. <span className="text-black bg-[#B8D393] px-1">Automate Reception.</span>
                 </h1>
                 
                 <p className="text-xl md:text-2xl lg:text-3xl text-white mb-10 animate-fade-in animate-delay-100 font-bold">

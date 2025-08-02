@@ -25,34 +25,34 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4">
       <header
         className={cn(
-          'max-w-5xl w-full rounded-full transition-all duration-300 ease-in-out px-6 py-4 mt-5',
+          'w-full transition-all duration-300 ease-in-out px-6 py-4',
           isScrolled 
-            ? 'bg-white/80 backdrop-blur-md border-2 border-gray-200 shadow-lg' 
-            : 'bg-transparent backdrop-blur-sm border-2 border-white/30 shadow-md'
+            ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+            : 'bg-transparent'
         )}
       >
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center">
-            <MicIcon className="h-6 w-6 text-black mr-2" />
-            <span className="font-display font-bold text-xl text-black">SuperMind</span>
+            <MicIcon className={cn("h-6 w-6 mr-2", isScrolled ? "text-black" : "text-white")} />
+            <span className={cn("font-display font-bold text-xl", isScrolled ? "text-black" : "text-white")}>SuperMind</span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#features" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
               Pricing
             </a>
-            <a href="#demozone" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#demozone" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
               Demo Zone
             </a>
-            <a href="#features-list" className="text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#features-list" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
               Features
             </a>
           </nav>
 
           <div className="hidden md:flex items-center">
-            <Button size="sm" className="text-sm font-medium bg-white hover:bg-white/90 text-black shadow-sm" onClick={() => window.open('https://forms.gle/zpiozAUmedjgyR678', '_blank')}>
-              Free Trial
+            <Button size="sm" className={cn("text-sm font-medium shadow-sm", isScrolled ? "bg-black hover:bg-black/90 text-white" : "bg-white hover:bg-white/90 text-black")} onClick={() => window.open('https://forms.gle/zpiozAUmedjgyR678', '_blank')}>
+              Get started
             </Button>
           </div>
 
@@ -62,9 +62,9 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
-              <X className="h-6 w-6 text-gray-700" />
+              <X className={cn("h-6 w-6", isScrolled ? "text-gray-700" : "text-white")} />
             ) : (
-              <Menu className="h-6 w-6 text-gray-700" />
+              <Menu className={cn("h-6 w-6", isScrolled ? "text-gray-700" : "text-white")} />
             )}
           </button>
         </div>
