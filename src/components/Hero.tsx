@@ -93,7 +93,7 @@ const Hero = () => {
             className="flex flex-col items-center text-center"
           >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
-              Cut Costs. Increase Conversions. Automate Reception.
+              Cut Costs. Automate Reception.
             </h1>
             
             
