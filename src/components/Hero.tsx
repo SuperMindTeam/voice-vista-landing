@@ -104,7 +104,7 @@ const Hero = () => {
             <div className="mb-12">
               <Button 
                 size="lg" 
-                className="bg-black hover:bg-black/80 text-white shadow-md"
+                className="bg-white hover:bg-white/90 text-black shadow-md"
                 onClick={handleFreeTrialClick}
               >
                 Start 1 Month Free Trial
@@ -131,7 +131,7 @@ const Hero = () => {
                 <div className="mb-8 animate-fade-in animate-delay-200">
                   <Button 
                     size="lg" 
-                    className="bg-black hover:bg-black/80 text-white shadow-md"
+                    className="bg-white hover:bg-white/90 text-black shadow-md"
                     onClick={handleFreeTrialClick}
                   >
                     Start 1 Month Free Trial
@@ -139,18 +139,6 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="w-full h-full">
-                <AspectRatio ratio={16/9} className="bg-muted rounded-md overflow-hidden shadow-xl">
-                  <iframe 
-                    src="https://www.youtube.com/embed/7_4ZsWyPYdA?rel=0&modestbranding=1"
-                    className="w-full h-full"
-                    title="Demo video"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                </AspectRatio>
-              </div>
             </div>
             
             <StatBoxes />

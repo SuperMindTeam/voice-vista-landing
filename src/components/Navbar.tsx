@@ -28,7 +28,7 @@ const Navbar = () => {
           'max-w-5xl w-full rounded-full transition-all duration-300 ease-in-out px-6 py-4 mt-5',
           isScrolled 
             ? 'bg-white/80 backdrop-blur-md border-2 border-gray-200 shadow-lg' 
-            : 'bg-white/50 backdrop-blur-sm border-2 border-white/70 shadow-md'
+            : 'bg-transparent backdrop-blur-sm border-2 border-white/30 shadow-md'
         )}
       >
         <div className="flex items-center justify-between">
@@ -51,7 +51,7 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:flex items-center">
-            <Button size="sm" className="text-sm font-medium bg-[#B8D393] hover:bg-[#A6C27D] text-black shadow-sm" onClick={() => window.open('https://forms.gle/zpiozAUmedjgyR678', '_blank')}>
+            <Button size="sm" className="text-sm font-medium bg-white hover:bg-white/90 text-black shadow-sm" onClick={() => window.open('https://forms.gle/zpiozAUmedjgyR678', '_blank')}>
               Free Trial
             </Button>
           </div>
