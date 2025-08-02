@@ -73,13 +73,15 @@ const Hero = () => {
     <section className="relative min-h-screen pt-32 pb-16 overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0">
-        <iframe 
-          src="https://www.youtube.com/embed/7_4ZsWyPYdA?autoplay=1&mute=1&loop=1&playlist=7_4ZsWyPYdA&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1"
-          className="w-full h-full object-cover scale-125"
-          title="Background video"
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-        ></iframe>
+        <video 
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/hero-background-video.mp4" type="video/mp4" />
+        </video>
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
