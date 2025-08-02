@@ -123,7 +123,7 @@ const Hero = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
               <div className="text-left">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6 text-white">
-                  Cut Costs. Increase Conversions. Automate Reception.
+                  Cut Costs. Automate Reception.
                 </h1>
                 
                 <div>
