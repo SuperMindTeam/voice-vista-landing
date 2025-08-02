@@ -70,16 +70,19 @@ const Hero = () => {
   );
 
   return (
-    <section 
-      className="relative min-h-screen pt-32 pb-16 overflow-hidden"
-      style={{
-        background: 'linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 22%, hsla(0, 0%, 100%, 1) 35%, hsla(95, 93%, 84%, 1) 100%)',
-      }}
-    >
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-      />
+    <section className="relative min-h-screen pt-32 pb-16 overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0">
+        <iframe 
+          src="https://www.youtube.com/embed/7_4ZsWyPYdA?autoplay=1&mute=1&loop=1&playlist=7_4ZsWyPYdA&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1"
+          className="w-full h-full object-cover scale-125"
+          title="Background video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+        ></iframe>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {isMobile ? (
@@ -87,25 +90,12 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl text-white">
               Reduce Salaries—Our <span className="text-black bg-[#B8D393] px-1">Artificial Intelligence</span> will Answer Your Calls.
             </h1>
             
-            {/* Video for mobile */}
-            <div className="w-full mb-6">
-              <AspectRatio ratio={16/9} className="bg-muted rounded-md overflow-hidden">
-                <iframe 
-                  src="https://www.youtube.com/embed/7_4ZsWyPYdA?rel=0&modestbranding=1"
-                  className="w-full h-full"
-                  title="Demo video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </AspectRatio>
-            </div>
             
-            <p className="text-xl md:text-2xl lg:text-3xl text-[#76A646] max-w-2xl mb-10 font-bold">
+            <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-2xl mb-10 font-bold">
               Instant Answers, Zero Wait Time.
             </p>
             
@@ -128,11 +118,11 @@ const Hero = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
               <div className="text-left">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6 text-white">
                   Reduce Salaries—Our <span className="text-black bg-[#B8D393] px-1">Artificial Intelligence</span> will Answer Your Calls.
                 </h1>
                 
-                <p className="text-xl md:text-2xl lg:text-3xl text-[#76A646] mb-10 animate-fade-in animate-delay-100 font-bold">
+                <p className="text-xl md:text-2xl lg:text-3xl text-white mb-10 animate-fade-in animate-delay-100 font-bold">
                   Instant Answers, Zero Wait Time.
                 </p>
                 
