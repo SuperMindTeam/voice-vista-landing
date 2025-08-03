@@ -42,7 +42,7 @@ const Hero = () => {
           <SmileIcon className="w-3 h-3 md:w-5 md:h-5" />
         </div>
         <div className="min-w-0">
-          <h3 className="font-display text-sm md:text-xl font-semibold truncate">98%</h3>
+          <h3 className="font-display text-sm md:text-xl font-semibold truncate">99%</h3>
           <p className="text-[10px] md:text-sm text-black/80 truncate">Customer Satisfaction</p>
         </div>
       </div>
