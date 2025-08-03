@@ -31,13 +31,13 @@ const Footer = () => {
 
   return (
     <footer 
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat bg-gray-800"
+      className="relative bg-cover bg-center bg-no-repeat bg-gray-800"
       style={{
         backgroundImage: "url('/lovable-uploads/Screenshot 2025-08-03 020531.png')"
       }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           
           {/* Logo Card */}
