@@ -40,8 +40,8 @@ const Index = () => {
       <Navbar />
       <main className={isLoaded ? 'loaded' : ''}>
         <Hero />
-        <Features />
         <LiveDemo />
+        <Features />
         <HowItTransforms />
       </main>
       <Footer />
