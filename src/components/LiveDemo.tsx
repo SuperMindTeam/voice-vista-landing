@@ -10,6 +10,7 @@ const LiveDemo = () => {
   const [transcript, setTranscript] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [callStatus, setCallStatus] = useState<string>('');
+  const [lastSpeaker, setLastSpeaker] = useState<string | null>(null);
 
   const categories = [
     { 
@@ -73,6 +74,7 @@ const LiveDemo = () => {
           setSelectedCategory(null);
           setCallStatus('Call ended');
           setTranscript('');
+          setLastSpeaker(null);
         });
 
         vapiInstance.on('speech-start', () => {
@@ -88,12 +90,29 @@ const LiveDemo = () => {
           
           if (message.type === 'transcript' && message.transcriptType === 'final') {
             console.log('Processing final transcript:', message.role, message.transcript);
-            // Only process final transcripts to avoid duplicates
-            if (message.role === 'assistant') {
-              setTranscript(prev => prev + (prev ? '\n\n' : '') + 'AGENT: ' + message.transcript);
-            } else if (message.role === 'user') {
-              setTranscript(prev => prev + (prev ? '\n\n\n' : '') + 'YOU: ' + message.transcript);
-            }
+            
+            setTranscript(prev => {
+              if (message.role === 'assistant') {
+                // If last speaker was also assistant, append to existing message
+                if (lastSpeaker === 'assistant') {
+                  return prev + ' ' + message.transcript;
+                } else {
+                  // New agent turn
+                  setLastSpeaker('assistant');
+                  return prev + (prev ? '\n\n' : '') + 'AGENT: ' + message.transcript;
+                }
+              } else if (message.role === 'user') {
+                // If last speaker was also user, append to existing message
+                if (lastSpeaker === 'user') {
+                  return prev + ' ' + message.transcript;
+                } else {
+                  // New user turn
+                  setLastSpeaker('user');
+                  return prev + (prev ? '\n\n\n' : '') + 'YOU: ' + message.transcript;
+                }
+              }
+              return prev;
+            });
           }
         });
 
