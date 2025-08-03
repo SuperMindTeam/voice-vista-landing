@@ -38,52 +38,54 @@ const Footer = () => {
     >
       <div className="absolute inset-0 bg-black/40"></div>
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           
-          {/* Logo Card */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
-            <div className="flex items-center justify-center">
-              <img 
-                src="/lovable-uploads/WhiteLogo.png" 
-                alt="SuperMind Logo" 
-                className="h-15 w-25"
-              />
+          {/* Left Column */}
+          <div className="space-y-6">
+            {/* Logo Card */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
+              <div className="flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/WhiteLogo.png" 
+                  alt="Logo" 
+                  className="h-15 w-25"
+                />
+              </div>
+            </div>
+
+            {/* Use Cases Card */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <h3 className="font-medium text-lg mb-4 text-white">Use Cases</h3>
+              <div className="space-y-2">
+                <p className="text-white/80">Healthcare</p>
+                <p className="text-white/80">Hotel</p>
+                <p className="text-white/80">E-commerce</p>
+                <p className="text-white/80">Restaurant</p>
+              </div>
             </div>
           </div>
 
-          {/* Use Cases Card */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <h3 className="font-medium text-lg mb-4 text-white">Use Cases</h3>
-            <div className="space-y-2">
-              <p className="text-white/80">Healthcare</p>
-              <p className="text-white/80">Hotel</p>
-              <p className="text-white/80">E-commerce</p>
-              <p className="text-white/80">Restaurant</p>
+          {/* Right Column */}
+          <div className="space-y-6">
+            {/* Contact Card */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
+              <h3 className="font-medium text-lg mb-4 text-white">Contact</h3>
+              <div className="flex items-center">
+                <Mail className="h-4 w-4 text-white mr-2" />
+                <span className="text-white/80">hello@getsupermind.com</span>
+              </div>
             </div>
-          </div>
 
-          {/* Contact Card */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
-            <h3 className="font-medium text-lg mb-4 text-white">Contact</h3>
-            <div className="flex items-center">
-              <Mail className="h-4 w-4 text-white mr-2" />
-              <span className="text-white/80">hello@getsupermind.com</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Second Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-
-          {/* Social Media */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
-            <div className="flex space-x-4">
-              <a href="#" className="text-white/80 hover:text-white transition-colors">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-white/80 hover:text-white transition-colors">
-                <Instagram className="h-6 w-6" />
-              </a>
+            {/* Social Media */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
+              <div className="flex space-x-4">
+                <a href="#" className="text-white/80 hover:text-white transition-colors">
+                  <Linkedin className="h-6 w-6" />
+                </a>
+                <a href="#" className="text-white/80 hover:text-white transition-colors">
+                  <Instagram className="h-6 w-6" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
