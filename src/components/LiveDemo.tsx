@@ -275,21 +275,31 @@ const LiveDemo = () => {
                           </div>
                         )}
                       </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+                     </div>
+                   )}
+                   {/* iPhone-style slider */}
+                   {!isCallActive && (
+                     <div className="mt-4 mx-auto w-64">
+                       <div className="relative bg-gray-200 rounded-full h-12 flex items-center overflow-hidden">
+                         <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center">
+                           <Phone className="w-5 h-5 text-blue-600" />
+                         </div>
+                         <div className="flex-1 text-center">
+                           <span className="text-gray-600 text-sm font-medium">Click to start call</span>
+                         </div>
+                         <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                       </div>
+                     </div>
+                   )}
+                 </div>
+               ))}
+             </div>
 
             {/* Call Controls and Live Transcript */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               {/* Call Controls */}
               <div className="text-center">
-                {!isCallActive ? (
-                  <p className="text-gray-600 text-lg">
-                    Click on any category above to start a live call
-                  </p>
-                ) : (
+                {isCallActive ? (
                   <div className="space-y-4">
                     <div className="flex items-center justify-center space-x-2 text-green-600">
                       <Phone className="w-5 h-5" />
@@ -305,7 +315,7 @@ const LiveDemo = () => {
                       End Call
                     </Button>
                   </div>
-                )}
+                ) : null}
               </div>
 
               {/* Live Transcription */}
