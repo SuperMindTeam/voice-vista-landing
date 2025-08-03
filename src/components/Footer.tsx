@@ -99,14 +99,6 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
-          {/* Legal Links */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <div className="space-y-2">
-              <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">Privacy Policy</a>
-              <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">Terms & Conditions</a>
-            </div>
-          </div>
         </div>
         
         {/* Copyright */}
