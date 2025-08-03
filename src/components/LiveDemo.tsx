@@ -279,10 +279,10 @@ const LiveDemo = () => {
                    )}
                    {/* iPhone-style slider */}
                    {!isCallActive && (
-                     <div className="mt-4">
+                     <div className="mt-2">
                        <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
                          <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
-                           <Phone className="w-5 h-5 text-green-500 animate-bounce" />
+                           <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
                          </div>
                          <div className="flex-1 text-center">
                            <span className="text-white text-lg font-medium">Click to start call</span>
