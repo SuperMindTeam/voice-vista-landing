@@ -32,16 +32,6 @@ const LiveDemo = () => {
       icon: "🍽️", 
       name: "Restaurant Table Reservation", 
       agentId: "restaurant-agent-id" 
-    },
-    { 
-      icon: "🦷", 
-      name: "Dentist", 
-      agentId: "dentist-agent-id" 
-    },
-    { 
-      icon: "🚗", 
-      name: "Automotive Service Scheduling", 
-      agentId: "automotive-agent-id" 
     }
   ];
 
@@ -223,6 +213,74 @@ const LiveDemo = () => {
                         <h3 className="text-white text-2xl font-bold mb-2">Hotel Receptionist</h3>
                         <p className="text-white/90 text-sm leading-relaxed">
                           Assists with room bookings, provides hotel information, and handles guest services inquiries.
+                        </p>
+                      </div>
+                      {selectedCategory === category.name && isCallActive && (
+                        <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
+                          <Phone className="w-4 h-4 text-white mr-2" />
+                          <span className="text-sm text-white font-medium">{callStatus}</span>
+                        </div>
+                      )}
+                    </div>
+                  ) : category.name === "E-commerce Support Agent" ? (
+                    <div 
+                      onClick={() => startCall(category)}
+                      className={`relative w-full h-80 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                        selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
+                      } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
+                      <video 
+                        autoPlay 
+                        loop 
+                        muted 
+                        className="absolute inset-0 w-full h-full object-cover"
+                      >
+                        <source src="/lovable-uploads/hotel.webm" type="video/webm" />
+                      </video>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                      <div className="absolute top-4 left-4">
+                        <div className="bg-blue-600 rounded-full p-3">
+                          <Phone className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <h3 className="text-white text-2xl font-bold mb-2">E-commerce Support Agent</h3>
+                        <p className="text-white/90 text-sm leading-relaxed">
+                          Assists customers with product inquiries, order tracking, returns, and general shopping support.
+                        </p>
+                      </div>
+                      {selectedCategory === category.name && isCallActive && (
+                        <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
+                          <Phone className="w-4 h-4 text-white mr-2" />
+                          <span className="text-sm text-white font-medium">{callStatus}</span>
+                        </div>
+                      )}
+                    </div>
+                  ) : category.name === "Restaurant Table Reservation" ? (
+                    <div 
+                      onClick={() => startCall(category)}
+                      className={`relative w-full h-80 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                        selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
+                      } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
+                      <video 
+                        autoPlay 
+                        loop 
+                        muted 
+                        className="absolute inset-0 w-full h-full object-cover"
+                      >
+                        <source src="/lovable-uploads/hotel.webm" type="video/webm" />
+                      </video>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                      <div className="absolute top-4 left-4">
+                        <div className="bg-blue-600 rounded-full p-3">
+                          <Phone className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <h3 className="text-white text-2xl font-bold mb-2">Restaurant Table Reservation</h3>
+                        <p className="text-white/90 text-sm leading-relaxed">
+                          Handles table bookings, menu inquiries, special requests, and restaurant information.
                         </p>
                       </div>
                       {selectedCategory === category.name && isCallActive && (
