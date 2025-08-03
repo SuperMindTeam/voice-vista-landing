@@ -197,7 +197,7 @@ const LiveDemo = () => {
                               <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
                             </div>
                             <div className="flex-1 text-center">
-                              <span className="text-white text-lg font-medium">Click to start call</span>
+                              <span className="text-white text-xl font-medium">Click to start call</span>
                             </div>
                             <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                           </div>
