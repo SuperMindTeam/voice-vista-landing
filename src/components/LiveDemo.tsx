@@ -279,10 +279,10 @@ const LiveDemo = () => {
                    )}
                    {/* iPhone-style slider */}
                    {!isCallActive && (
-                     <div className="mt-4 mx-auto w-64">
+                     <div className="mt-4">
                        <div className="relative bg-gray-200 rounded-full h-12 flex items-center overflow-hidden">
-                         <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center">
-                           <Phone className="w-5 h-5 text-blue-600" />
+                         <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
+                           <Phone className="w-5 h-5 text-green-500 animate-bounce" />
                          </div>
                          <div className="flex-1 text-center">
                            <span className="text-gray-600 text-sm font-medium">Click to start call</span>
@@ -295,58 +295,55 @@ const LiveDemo = () => {
                ))}
              </div>
 
-            {/* Call Controls and Live Transcript */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-              {/* Call Controls */}
-              <div className="text-center">
-                {isCallActive ? (
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-center space-x-2 text-green-600">
-                      <Phone className="w-5 h-5" />
-                      <span className="font-medium">Live Call Active</span>
-                    </div>
-                    <Button 
-                      onClick={endCall}
-                      size="lg" 
-                      variant="destructive" 
-                      className="rounded-full px-8 py-3 text-lg font-medium"
-                    >
-                      <PhoneOff className="w-5 h-5 mr-2" />
-                      End Call
-                    </Button>
+            {/* Call Controls */}
+            {isCallActive && (
+              <div className="text-center mb-8">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-center space-x-2 text-green-600">
+                    <Phone className="w-5 h-5" />
+                    <span className="font-medium">Live Call Active</span>
                   </div>
-                ) : null}
-              </div>
-
-              {/* Live Transcription */}
-              <div>
-                <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
-                  LIVE TRANSCRIPT
-                </p>
-                <div className="bg-white rounded-lg p-6 shadow-sm min-h-[300px] max-h-[400px] overflow-y-auto">
-                  {transcript ? (
-                    <div className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">
-                      {transcript}
-                    </div>
-                  ) : (
-                    <div className="flex items-center justify-center h-full text-gray-400">
-                      {isCallActive ? (
-                        <div className="text-center">
-                          <div className="animate-pulse mb-2">●</div>
-                          <p>Listening for speech...</p>
-                        </div>
-                      ) : (
-                        <p>Start a call to see live transcription</p>
-                      )}
-                    </div>
-                  )}
+                  <Button 
+                    onClick={endCall}
+                    size="lg" 
+                    variant="destructive" 
+                    className="rounded-full px-8 py-3 text-lg font-medium"
+                  >
+                    <PhoneOff className="w-5 h-5 mr-2" />
+                    End Call
+                  </Button>
                 </div>
-                {isCallActive && selectedCategory && (
-                  <div className="mt-4 text-sm text-gray-600">
-                    <strong>Active Agent:</strong> {selectedCategory}
+              </div>
+            )}
+
+            {/* Live Transcription */}
+            <div className="w-full">
+              <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
+                LIVE TRANSCRIPT
+              </p>
+              <div className="bg-white rounded-lg p-6 shadow-sm min-h-[300px] max-h-[400px] overflow-y-auto">
+                {transcript ? (
+                  <div className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">
+                    {transcript}
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center h-full text-gray-400">
+                    {isCallActive ? (
+                      <div className="text-center">
+                        <div className="animate-pulse mb-2">●</div>
+                        <p>Listening for speech...</p>
+                      </div>
+                    ) : (
+                      <p>Start a call to see live transcription</p>
+                    )}
                   </div>
                 )}
               </div>
+              {isCallActive && selectedCategory && (
+                <div className="mt-4 text-sm text-gray-600">
+                  <strong>Active Agent:</strong> {selectedCategory}
+                </div>
+              )}
             </div>
           </div>
         </div>
