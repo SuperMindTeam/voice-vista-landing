@@ -93,7 +93,7 @@ const Hero = () => {
             className="flex flex-col items-center text-center"
           >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
-              Cut Costs. Automate Reception.
+              Cut Costs.<br />Automate Reception.
             </h1>
             
             
@@ -123,7 +123,7 @@ const Hero = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
               <div className="text-left">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6 text-white">
-                  Cut Costs. Automate Reception.
+                  Cut Costs.<br />Automate Reception.
                 </h1>
                 
                 <div>
@@ -131,7 +131,7 @@ const Hero = () => {
                     Instant Answers, Zero Wait Time.
                   </p>
                   
-                  <div className="mb-8 animate-fade-in animate-delay-200 text-center">
+                  <div className="mb-8 animate-fade-in animate-delay-200 text-left">
                     <Button 
                       size="lg" 
                       className="bg-white hover:bg-white/90 text-black shadow-md"
