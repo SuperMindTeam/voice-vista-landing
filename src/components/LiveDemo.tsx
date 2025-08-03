@@ -84,8 +84,15 @@ const LiveDemo = () => {
         });
 
         vapiInstance.on('message', (message: any) => {
-          if (message.type === 'transcript') {
-            setTranscript(prev => prev + ' ' + message.transcript);
+          console.log('VAPI message:', message);
+          
+          if (message.type === 'transcript' && message.transcriptType === 'final') {
+            // Only process final transcripts to avoid duplicates
+            if (message.role === 'assistant') {
+              setTranscript(prev => prev + (prev ? '\n\n' : '') + 'AGENT: ' + message.transcript);
+            } else if (message.role === 'user') {
+              setTranscript(prev => prev + (prev ? '\n\n' : '') + 'YOU: ' + message.transcript);
+            }
           }
         });
 
