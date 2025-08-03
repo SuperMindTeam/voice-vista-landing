@@ -1,16 +1,127 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Mic } from 'lucide-react';
+import { Mic, Phone, PhoneOff } from 'lucide-react';
+import Vapi from '@vapi-ai/web';
+import { supabase } from '@/integrations/supabase/client';
 
 const LiveDemo = () => {
+  const [vapi, setVapi] = useState<Vapi | null>(null);
+  const [isCallActive, setIsCallActive] = useState(false);
+  const [transcript, setTranscript] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [callStatus, setCallStatus] = useState<string>('');
+
   const categories = [
-    { icon: "🏥", name: "Healthcare Receptionist" },
-    { icon: "🏨", name: "Hotel Receptionist" },
-    { icon: "🛒", name: "E-commerce Support Agent" },
-    { icon: "🍽️", name: "Restaurant Table Reservation" },
-    { icon: "🦷", name: "Dentist" },
-    { icon: "🚗", name: "Automotive Service Scheduling" }
+    { 
+      icon: "🏥", 
+      name: "Healthcare Receptionist", 
+      agentId: "d275f9a8-d5dd-4c94-ac99-75b1729a0cbc" 
+    },
+    { 
+      icon: "🏨", 
+      name: "Hotel Receptionist", 
+      agentId: "hotel-receptionist-agent-id" 
+    },
+    { 
+      icon: "🛒", 
+      name: "E-commerce Support Agent", 
+      agentId: "ecommerce-agent-id" 
+    },
+    { 
+      icon: "🍽️", 
+      name: "Restaurant Table Reservation", 
+      agentId: "restaurant-agent-id" 
+    },
+    { 
+      icon: "🦷", 
+      name: "Dentist", 
+      agentId: "dentist-agent-id" 
+    },
+    { 
+      icon: "🚗", 
+      name: "Automotive Service Scheduling", 
+      agentId: "automotive-agent-id" 
+    }
   ];
+
+  useEffect(() => {
+    const initVapi = async () => {
+      try {
+        // Fetch VAPI public key from edge function
+        const { data, error } = await supabase.functions.invoke('vapi-config');
+        
+        if (error || !data?.publicKey) {
+          console.error('Failed to get VAPI public key:', error);
+          return;
+        }
+
+        const vapiInstance = new Vapi(data.publicKey);
+        setVapi(vapiInstance);
+
+        vapiInstance.on('call-start', () => {
+          setIsCallActive(true);
+          setCallStatus('Call started');
+        });
+
+        vapiInstance.on('call-end', () => {
+          setIsCallActive(false);
+          setSelectedCategory(null);
+          setCallStatus('Call ended');
+          setTranscript('');
+        });
+
+        vapiInstance.on('speech-start', () => {
+          setCallStatus('Listening...');
+        });
+
+        vapiInstance.on('speech-end', () => {
+          setCallStatus('Processing...');
+        });
+
+        vapiInstance.on('message', (message: any) => {
+          if (message.type === 'transcript') {
+            setTranscript(prev => prev + ' ' + message.transcript);
+          }
+        });
+
+        vapiInstance.on('error', (error: any) => {
+          console.error('VAPI Error:', error);
+          setCallStatus('Error occurred');
+          setIsCallActive(false);
+        });
+      } catch (error) {
+        console.error('Failed to initialize VAPI:', error);
+      }
+    };
+
+    initVapi();
+  }, []);
+
+  const startCall = async (category: typeof categories[0]) => {
+    if (!vapi || isCallActive) return;
+
+    try {
+      setSelectedCategory(category.name);
+      setCallStatus('Connecting...');
+      setTranscript('');
+      
+      await vapi.start(category.agentId);
+    } catch (error) {
+      console.error('Failed to start call:', error);
+      setCallStatus('Failed to connect');
+      setSelectedCategory(null);
+    }
+  };
+
+  const endCall = async () => {
+    if (!vapi || !isCallActive) return;
+    
+    try {
+      await vapi.stop();
+    } catch (error) {
+      console.error('Failed to end call:', error);
+    }
+  };
 
   return (
     <section className="py-24 bg-gray-50">
@@ -20,9 +131,23 @@ const LiveDemo = () => {
             {/* Left side - Categories */}
             <div className="space-y-4">
               {categories.map((category, index) => (
-                <div key={index} className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div 
+                  key={index} 
+                  onClick={() => startCall(category)}
+                  className={`flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer ${
+                    selectedCategory === category.name ? 'ring-2 ring-blue-500 bg-blue-50' : ''
+                  } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
+                >
                   <span className="text-2xl">{category.icon}</span>
-                  <span className="text-lg font-medium text-gray-700">{category.name}</span>
+                  <div className="flex-1">
+                    <span className="text-lg font-medium text-gray-700">{category.name}</span>
+                    {selectedCategory === category.name && isCallActive && (
+                      <div className="flex items-center mt-1">
+                        <Phone className="w-4 h-4 text-green-500 mr-2" />
+                        <span className="text-sm text-green-600">{callStatus}</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -34,25 +159,62 @@ const LiveDemo = () => {
                   HEARING IS BELIEVING
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Experience a live call (or text) with
+                  Experience a live call with
                   <br />
-                  <span className="text-blue-600">Mia, our AI agent</span>
+                  <span className="text-blue-600">our AI agents</span>
                 </h2>
-                <Button size="lg" className="bg-black hover:bg-black/90 text-white rounded-full px-8 py-3 text-lg font-medium">
-                  <Mic className="w-5 h-5 mr-2" />
-                  Start Talking
-                </Button>
+                {!isCallActive ? (
+                  <p className="text-gray-600 mb-4">
+                    Click on any category to start a live call
+                  </p>
+                ) : (
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-center space-x-2 text-green-600">
+                      <Phone className="w-5 h-5" />
+                      <span className="font-medium">Live Call Active</span>
+                    </div>
+                    <Button 
+                      onClick={endCall}
+                      size="lg" 
+                      variant="destructive" 
+                      className="rounded-full px-8 py-3 text-lg font-medium"
+                    >
+                      <PhoneOff className="w-5 h-5 mr-2" />
+                      End Call
+                    </Button>
+                  </div>
+                )}
               </div>
             </div>
 
-            {/* Right side - Timer/Stats */}
-            <div className="text-center lg:text-right">
-              <div className="text-4xl font-mono font-bold text-gray-400 mb-2">
-                00:00:00
-              </div>
-              <p className="text-sm text-gray-500 uppercase tracking-wider">
+            {/* Right side - Live Transcription */}
+            <div className="text-center lg:text-left">
+              <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
                 LIVE TRANSCRIPT
               </p>
+              <div className="bg-white rounded-lg p-6 shadow-sm min-h-[300px] max-h-[400px] overflow-y-auto">
+                {transcript ? (
+                  <div className="text-gray-800 text-sm leading-relaxed">
+                    {transcript}
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center h-full text-gray-400">
+                    {isCallActive ? (
+                      <div className="text-center">
+                        <div className="animate-pulse mb-2">●</div>
+                        <p>Listening for speech...</p>
+                      </div>
+                    ) : (
+                      <p>Start a call to see live transcription</p>
+                    )}
+                  </div>
+                )}
+              </div>
+              {isCallActive && selectedCategory && (
+                <div className="mt-4 text-sm text-gray-600">
+                  <strong>Active Agent:</strong> {selectedCategory}
+                </div>
+              )}
             </div>
           </div>
         </div>
