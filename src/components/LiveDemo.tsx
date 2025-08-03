@@ -323,9 +323,9 @@ const LiveDemo = () => {
                ))}
              </div>
 
-            {/* Call Status */}
+            {/* Call Status - Desktop */}
             {selectedCategory && callStatus === 'Connecting...' && (
-              <div className="text-center mb-8">
+              <div className="text-center mb-8 hidden md:block">
                 <div className="flex items-center justify-center space-x-2 text-blue-600">
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
                   <span className="font-medium">Starting call...</span>
@@ -333,9 +333,9 @@ const LiveDemo = () => {
               </div>
             )}
 
-            {/* Call Controls */}
+            {/* Call Controls - Desktop */}
             {isCallActive && (
-              <div className="text-center mb-8">
+              <div className="text-center mb-8 hidden md:block">
                 <div className="space-y-4">
                   <div className="flex items-center justify-center space-x-2 text-green-600">
                     <Phone className="w-5 h-5" />
@@ -354,9 +354,42 @@ const LiveDemo = () => {
               </div>
             )}
 
-            {/* Live Transcription - Only show when call is active */}
+            {/* Mobile Call Status - Below selected category */}
+            <div className="md:hidden">
+              {categories.map((category, index) => (
+                selectedCategory === category.name && (
+                  <div key={`mobile-status-${index}`} className="mt-4 text-center">
+                    {callStatus === 'Connecting...' && (
+                      <div className="flex items-center justify-center space-x-2 text-blue-600 mb-4">
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+                        <span className="font-medium">Starting call...</span>
+                      </div>
+                    )}
+                    {isCallActive && (
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-center space-x-2 text-green-600">
+                          <Phone className="w-5 h-5" />
+                          <span className="font-medium">Live Call Connected</span>
+                        </div>
+                        <Button 
+                          onClick={endCall}
+                          size="lg" 
+                          variant="destructive" 
+                          className="rounded-full px-8 py-3 text-lg font-medium"
+                        >
+                          <PhoneOff className="w-5 h-5 mr-2" />
+                          End Call
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+                )
+              ))}
+            </div>
+
+            {/* Live Transcription - Only show when call is active and on desktop */}
             {isCallActive && (
-              <div className="w-full">
+              <div className="w-full hidden md:block">
                 <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
                   LIVE TRANSCRIPT
                 </p>
