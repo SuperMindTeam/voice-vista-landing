@@ -334,7 +334,7 @@ const LiveDemo = () => {
             )}
 
             {/* Call Controls */}
-            {isCallActive && callStatus === 'Call started' && (
+            {isCallActive && (
               <div className="text-center mb-8">
                 <div className="space-y-4">
                   <div className="flex items-center justify-center space-x-2 text-green-600">
@@ -354,8 +354,8 @@ const LiveDemo = () => {
               </div>
             )}
 
-            {/* Live Transcription - Only show when call is connected */}
-            {isCallActive && callStatus === 'Call started' && (
+            {/* Live Transcription - Only show when call is active */}
+            {isCallActive && (
               <div className="w-full">
                 <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
                   LIVE TRANSCRIPT
