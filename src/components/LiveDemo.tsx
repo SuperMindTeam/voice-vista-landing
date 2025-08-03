@@ -48,13 +48,18 @@ const LiveDemo = () => {
     const initVapi = async () => {
       try {
         // Fetch VAPI public key from edge function
+        console.log('Fetching VAPI config...');
         const { data, error } = await supabase.functions.invoke('vapi-config');
+        
+        console.log('VAPI config response:', { data, error });
         
         if (error || !data?.publicKey) {
           console.error('Failed to get VAPI public key:', error);
+          setCallStatus('Configuration error - check console');
           return;
         }
 
+        console.log('Initializing VAPI with key:', data.publicKey.substring(0, 10) + '...');
         const vapiInstance = new Vapi(data.publicKey);
         setVapi(vapiInstance);
 
