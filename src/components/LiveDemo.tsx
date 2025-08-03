@@ -159,7 +159,7 @@ const LiveDemo = () => {
                   {category.name === "Healthcare Receptionist" ? (
                     <div 
                       onClick={() => startCall(category)}
-                      className={`relative w-full h-80 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                      className={`relative w-full h-96 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
                         selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
                       } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
@@ -177,7 +177,7 @@ const LiveDemo = () => {
                           <Phone className="w-6 h-6 text-white" />
                         </div>
                       </div>
-                      <div className="absolute bottom-6 left-6 right-6">
+                      <div className="absolute bottom-20 left-6 right-6">
                         <h3 className="text-white text-2xl font-bold mb-2">Healthcare Receptionist</h3>
                         <p className="text-white/90 text-sm leading-relaxed">
                           Handles patient inquiries, suggests doctors based on symptoms, and schedules appointments.
@@ -189,11 +189,25 @@ const LiveDemo = () => {
                           <span className="text-sm text-white font-medium">{callStatus}</span>
                         </div>
                       )}
+                      {/* iPhone-style slider */}
+                      {!isCallActive && (
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
+                            <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
+                              <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
+                            </div>
+                            <div className="flex-1 text-center">
+                              <span className="text-white text-lg font-medium">Click to start call</span>
+                            </div>
+                            <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ) : category.name === "Hotel Receptionist" ? (
                     <div 
                       onClick={() => startCall(category)}
-                      className={`relative w-full h-80 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                      className={`relative w-full h-96 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
                         selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
                       } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
@@ -211,7 +225,7 @@ const LiveDemo = () => {
                           <Phone className="w-6 h-6 text-white" />
                         </div>
                       </div>
-                      <div className="absolute bottom-6 left-6 right-6">
+                      <div className="absolute bottom-20 left-6 right-6">
                         <h3 className="text-white text-2xl font-bold mb-2">Hotel Receptionist</h3>
                         <p className="text-white/90 text-sm leading-relaxed">
                           Assists with room bookings, provides hotel information, and handles guest services inquiries.
@@ -223,11 +237,25 @@ const LiveDemo = () => {
                           <span className="text-sm text-white font-medium">{callStatus}</span>
                         </div>
                       )}
+                      {/* iPhone-style slider */}
+                      {!isCallActive && (
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
+                            <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
+                              <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
+                            </div>
+                            <div className="flex-1 text-center">
+                              <span className="text-white text-lg font-medium">Click to start call</span>
+                            </div>
+                            <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ) : category.name === "Restaurant Table Reservation" ? (
                     <div 
                       onClick={() => startCall(category)}
-                      className={`relative w-full h-80 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                      className={`relative w-full h-96 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
                         selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
                       } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
@@ -245,7 +273,7 @@ const LiveDemo = () => {
                           <Phone className="w-6 h-6 text-white" />
                         </div>
                       </div>
-                      <div className="absolute bottom-6 left-6 right-6">
+                      <div className="absolute bottom-20 left-6 right-6">
                         <h3 className="text-white text-2xl font-bold mb-2">Restaurant Table Reservation</h3>
                         <p className="text-white/90 text-sm leading-relaxed">
                           Handles table bookings, menu inquiries, special requests, and restaurant information.
@@ -255,6 +283,20 @@ const LiveDemo = () => {
                         <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
                           <Phone className="w-4 h-4 text-white mr-2" />
                           <span className="text-sm text-white font-medium">{callStatus}</span>
+                        </div>
+                      )}
+                      {/* iPhone-style slider */}
+                      {!isCallActive && (
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
+                            <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
+                              <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
+                            </div>
+                            <div className="flex-1 text-center">
+                              <span className="text-white text-lg font-medium">Click to start call</span>
+                            </div>
+                            <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                          </div>
                         </div>
                       )}
                     </div>
@@ -277,21 +319,7 @@ const LiveDemo = () => {
                       </div>
                      </div>
                    )}
-                   {/* iPhone-style slider */}
-                   {!isCallActive && (
-                     <div className="mt-2">
-                       <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
-                         <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
-                           <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
-                         </div>
-                         <div className="flex-1 text-center">
-                           <span className="text-white text-lg font-medium">Click to start call</span>
-                         </div>
-                         <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                       </div>
-                     </div>
-                   )}
-                 </div>
+                  </div>
                ))}
              </div>
 
