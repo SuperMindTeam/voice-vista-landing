@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MicIcon, Mail, Instagram, Phone } from 'lucide-react';
+import { MicIcon, Mail, Instagram, Phone, Linkedin } from 'lucide-react';
 import { useGeolocation } from '@/hooks/use-geolocation';
 
 const Footer = () => {
@@ -30,46 +30,105 @@ const Footer = () => {
   const phoneDisplay = getPhoneDisplay();
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex flex-col items-center md:items-start">
-            <div className="flex items-center mb-5">
-              <MicIcon className="h-6 w-6 text-black mr-2" />
-              <span className="font-display font-semibold text-xl">SuperMind</span>
+    <footer 
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/footer-background.png')"
+      }}
+    >
+      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          
+          {/* Logo Card */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div className="flex items-center">
+              <MicIcon className="h-8 w-8 text-white mr-3" />
+              <span className="font-display font-bold text-2xl text-white">SuperMind</span>
             </div>
-            <p className="text-gray-600 mb-6 text-center md:text-left">
-              The most advanced AI voice assistant for business, providing seamless customer interactions through natural conversation.
-            </p>
           </div>
 
-          <div className="flex flex-col items-center">
-            <h3 className="font-medium text-lg mb-5">Connect With Us</h3>
-            <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors">
-              <Instagram className="h-6 w-6" />
-            </a>
+          {/* Team Card */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <h3 className="font-medium text-lg mb-4 text-white">Team</h3>
+            <div className="space-y-2">
+              <p className="text-white/80">Ashish</p>
+              <p className="text-white/80">Vaibhav</p>
+            </div>
           </div>
-          
-          <div className="flex flex-col items-start">
-            <h3 className="font-medium text-lg mb-5">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center">
-                <Mail className="h-5 w-5 text-black mr-3" />
-                <span className="text-gray-600">hello@getsupermind.com</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 text-black mr-3" />
-                <a href={phoneDisplay.link} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#76A646]">
+
+          {/* Quicklinks Card */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <h3 className="font-medium text-lg mb-4 text-white">Quicklinks</h3>
+            <div className="space-y-2">
+              <a href="#" className="block text-white/80 hover:text-white transition-colors">Home</a>
+              <a href="#" className="block text-white/80 hover:text-white transition-colors">Company</a>
+              <a href="#" className="block text-white/80 hover:text-white transition-colors">Partners</a>
+              <a href="#" className="block text-white/80 hover:text-white transition-colors">Blog</a>
+              <a href="#" className="block text-white/80 hover:text-white transition-colors">Tips</a>
+              <a href="#" className="block text-white/80 hover:text-white transition-colors">Security</a>
+            </div>
+          </div>
+
+          {/* Contact Card */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <h3 className="font-medium text-lg mb-4 text-white">Contact</h3>
+            <div className="space-y-3">
+              <div className="flex items-center">
+                <Mail className="h-4 w-4 text-white mr-2" />
+                <span className="text-white/80 text-sm">hello@getsupermind.com</span>
+              </div>
+              <div className="flex items-center">
+                <Phone className="h-4 w-4 text-white mr-2" />
+                <a href={phoneDisplay.link} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white text-sm">
                   {phoneDisplay.number}
                 </a>
-              </li>
-            </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Second Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          
+          {/* San Francisco Location */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <h3 className="font-medium text-lg mb-2 text-white">San Francisco</h3>
+            <p className="text-white/80 text-sm">United States, 677 Harrison Street, San Francisco, CA 94107</p>
+          </div>
+
+          {/* United Kingdom Location */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <h3 className="font-medium text-lg mb-2 text-white">United Kingdom</h3>
+            <p className="text-white/80 text-sm">United Kingdom, Brickfields Workspace, London, E2 8HD</p>
+          </div>
+
+          {/* Social Media */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div className="flex space-x-4">
+              <a href="#" className="text-white/80 hover:text-white transition-colors">
+                <Linkedin className="h-6 w-6" />
+              </a>
+              <a href="#" className="text-white/80 hover:text-white transition-colors">
+                <Instagram className="h-6 w-6" />
+              </a>
+            </div>
+          </div>
+
+          {/* Legal Links */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div className="space-y-2">
+              <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">Privacy Policy</a>
+              <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">Terms & Conditions</a>
+              <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">Website Tracking Policy</a>
+            </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-200 mt-8 pt-8 text-center">
-          <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} SuperMind. All rights reserved.
+        {/* Copyright */}
+        <div className="text-center">
+          <p className="text-white/60 text-sm">
+            © All rights reserved {new Date().getFullYear()} SuperMind Inc.
           </p>
         </div>
       </div>
