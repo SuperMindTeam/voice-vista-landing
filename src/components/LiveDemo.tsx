@@ -163,15 +163,14 @@ const LiveDemo = () => {
             {/* Left side - Categories */}
             <div className="space-y-4">
               {categories.map((category, index) => (
-                <div 
-                  key={index} 
-                  onClick={() => startCall(category)}
-                  className={`flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer ${
-                    selectedCategory === category.name ? 'ring-2 ring-blue-500 bg-blue-50' : ''
-                  } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
+                <div key={index}>
                   {category.name === "Healthcare Receptionist" ? (
-                    <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-gray-100">
+                    <div 
+                      onClick={() => startCall(category)}
+                      className={`relative w-full h-80 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                        selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
+                      } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
                       <video 
                         autoPlay 
                         loop 
@@ -180,22 +179,44 @@ const LiveDemo = () => {
                       >
                         <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
                       </video>
-                      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                        <span className="text-white text-xs font-medium text-center px-1">Healthcare Receptionist</span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                      <div className="absolute top-4 left-4">
+                        <div className="bg-blue-600 rounded-full p-3">
+                          <Phone className="w-6 h-6 text-white" />
+                        </div>
                       </div>
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <h3 className="text-white text-2xl font-bold mb-2">Healthcare Receptionist</h3>
+                        <p className="text-white/90 text-sm leading-relaxed">
+                          Handles patient inquiries, suggests doctors based on symptoms, and schedules appointments.
+                        </p>
+                      </div>
+                      {selectedCategory === category.name && isCallActive && (
+                        <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
+                          <Phone className="w-4 h-4 text-white mr-2" />
+                          <span className="text-sm text-white font-medium">{callStatus}</span>
+                        </div>
+                      )}
                     </div>
                   ) : (
-                    <span className="text-2xl">{category.icon}</span>
-                  )}
-                  <div className="flex-1">
-                    <span className="text-lg font-medium text-gray-700">{category.name}</span>
-                    {selectedCategory === category.name && isCallActive && (
-                      <div className="flex items-center mt-1">
-                        <Phone className="w-4 h-4 text-green-500 mr-2" />
-                        <span className="text-sm text-green-600">{callStatus}</span>
+                    <div 
+                      onClick={() => startCall(category)}
+                      className={`flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer ${
+                        selectedCategory === category.name ? 'ring-2 ring-blue-500 bg-blue-50' : ''
+                      } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
+                      <span className="text-2xl">{category.icon}</span>
+                      <div className="flex-1">
+                        <span className="text-lg font-medium text-gray-700">{category.name}</span>
+                        {selectedCategory === category.name && isCallActive && (
+                          <div className="flex items-center mt-1">
+                            <Phone className="w-4 h-4 text-green-500 mr-2" />
+                            <span className="text-sm text-green-600">{callStatus}</span>
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
