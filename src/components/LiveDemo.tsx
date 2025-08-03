@@ -159,7 +159,7 @@ const LiveDemo = () => {
                   {category.name === "Healthcare Receptionist" ? (
                     <div 
                       onClick={() => startCall(category)}
-                      className={`relative w-full h-96 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                      className={`relative w-full h-[450px] rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
                         selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
                       } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
@@ -207,7 +207,7 @@ const LiveDemo = () => {
                   ) : category.name === "Hotel Receptionist" ? (
                     <div 
                       onClick={() => startCall(category)}
-                      className={`relative w-full h-96 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                      className={`relative w-full h-[450px] rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
                         selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
                       } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
@@ -255,7 +255,7 @@ const LiveDemo = () => {
                   ) : category.name === "Restaurant Table Reservation" ? (
                     <div 
                       onClick={() => startCall(category)}
-                      className={`relative w-full h-96 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                      className={`relative w-full h-[450px] rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
                         selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
                       } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
