@@ -323,13 +323,23 @@ const LiveDemo = () => {
                ))}
              </div>
 
+            {/* Call Status */}
+            {selectedCategory && callStatus === 'Connecting...' && (
+              <div className="text-center mb-8">
+                <div className="flex items-center justify-center space-x-2 text-blue-600">
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+                  <span className="font-medium">Starting call...</span>
+                </div>
+              </div>
+            )}
+
             {/* Call Controls */}
-            {isCallActive && (
+            {isCallActive && callStatus === 'Call started' && (
               <div className="text-center mb-8">
                 <div className="space-y-4">
                   <div className="flex items-center justify-center space-x-2 text-green-600">
                     <Phone className="w-5 h-5" />
-                    <span className="font-medium">Live Call Active</span>
+                    <span className="font-medium">Live Call Connected</span>
                   </div>
                   <Button 
                     onClick={endCall}
@@ -344,35 +354,33 @@ const LiveDemo = () => {
               </div>
             )}
 
-            {/* Live Transcription */}
-            <div className="w-full">
-              <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
-                LIVE TRANSCRIPT
-              </p>
-              <div className="bg-white rounded-lg p-6 shadow-sm min-h-[300px] max-h-[400px] overflow-y-auto">
-                {transcript ? (
-                  <div className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">
-                    {transcript}
-                  </div>
-                ) : (
-                  <div className="flex items-center justify-center h-full text-gray-400">
-                    {isCallActive ? (
+            {/* Live Transcription - Only show when call is connected */}
+            {isCallActive && callStatus === 'Call started' && (
+              <div className="w-full">
+                <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
+                  LIVE TRANSCRIPT
+                </p>
+                <div className="bg-white rounded-lg p-6 shadow-sm min-h-[300px] max-h-[400px] overflow-y-auto">
+                  {transcript ? (
+                    <div className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">
+                      {transcript}
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center h-full text-gray-400">
                       <div className="text-center">
                         <div className="animate-pulse mb-2">●</div>
                         <p>Listening for speech...</p>
                       </div>
-                    ) : (
-                      <p>Start a call to see live transcription</p>
-                    )}
+                    </div>
+                  )}
+                </div>
+                {selectedCategory && (
+                  <div className="mt-4 text-sm text-gray-600">
+                    <strong>Active Agent:</strong> {selectedCategory}
                   </div>
                 )}
               </div>
-              {isCallActive && selectedCategory && (
-                <div className="mt-4 text-sm text-gray-600">
-                  <strong>Active Agent:</strong> {selectedCategory}
-                </div>
-              )}
-            </div>
+            )}
           </div>
         </div>
       </div>
