@@ -170,7 +170,23 @@ const LiveDemo = () => {
                     selectedCategory === category.name ? 'ring-2 ring-blue-500 bg-blue-50' : ''
                   } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
-                  <span className="text-2xl">{category.icon}</span>
+                  {category.name === "Healthcare Receptionist" ? (
+                    <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-gray-100">
+                      <video 
+                        autoPlay 
+                        loop 
+                        muted 
+                        className="absolute inset-0 w-full h-full object-cover"
+                      >
+                        <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
+                      </video>
+                      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <span className="text-white text-xs font-medium text-center px-1">Healthcare Receptionist</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <span className="text-2xl">{category.icon}</span>
+                  )}
                   <div className="flex-1">
                     <span className="text-lg font-medium text-gray-700">{category.name}</span>
                     {selectedCategory === category.name && isCallActive && (
