@@ -95,7 +95,7 @@ const Footer = () => {
           </div>
 
           {/* Social Media */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
             <div className="flex space-x-4">
               <a href="#" className="text-white/80 hover:text-white transition-colors">
                 <Linkedin className="h-6 w-6" />
