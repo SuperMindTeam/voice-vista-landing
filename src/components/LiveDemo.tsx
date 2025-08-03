@@ -147,7 +147,7 @@ const LiveDemo = () => {
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Experience Calls
+              Experience a Live Call
             </h2>
           </div>
 
