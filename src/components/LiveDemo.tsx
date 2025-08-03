@@ -21,12 +21,12 @@ const LiveDemo = () => {
     { 
       icon: "🏨", 
       name: "Hotel Receptionist", 
-      agentId: "hotel-receptionist-agent-id" 
+      agentId: "68fa64a2-7948-4817-a697-a76c953862f6" 
     },
     { 
       icon: "🍽️", 
       name: "Restaurant Table Reservation", 
-      agentId: "restaurant-agent-id" 
+      agentId: "4fd6f84c-77fa-4b82-8f5f-b595ed5c74aa" 
     }
   ];
 
