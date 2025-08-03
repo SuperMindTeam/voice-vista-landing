@@ -41,12 +41,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           
           {/* Logo Card */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
             <div className="flex items-center justify-center">
               <img 
                 src="/lovable-uploads/WhiteLogo.png" 
                 alt="SuperMind Logo" 
-                className="h-8 w-8"
+                className="h-12 w-12"
               />
             </div>
           </div>
@@ -76,11 +76,11 @@ const Footer = () => {
           </div>
 
           {/* Contact Card */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-2 border border-white/20 h-fit">
-            <h3 className="font-medium text-sm mb-1 text-white">Contact</h3>
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
+            <h3 className="font-medium text-lg mb-4 text-white">Contact</h3>
             <div className="flex items-center">
-              <Mail className="h-3 w-3 text-white mr-2" />
-              <span className="text-white/80 text-xs">hello@getsupermind.com</span>
+              <Mail className="h-4 w-4 text-white mr-2" />
+              <span className="text-white/80 text-sm">hello@getsupermind.com</span>
             </div>
           </div>
         </div>
