@@ -31,9 +31,9 @@ const Footer = () => {
 
   return (
     <footer 
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat bg-gray-800"
       style={{
-        backgroundImage: "url('/footer-bg.png')"
+        backgroundImage: "url('/lovable-uploads/Screenshot 2025-08-03 020531.png')"
       }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
@@ -85,10 +85,10 @@ const Footer = () => {
         {/* Second Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
-          {/* United Kingdom Location */}
+          {/* Ireland Location */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <h3 className="font-medium text-lg mb-2 text-white">United Kingdom</h3>
-            <p className="text-white/80 text-sm">United Kingdom, Brickfields Workspace, London, E2 8HD</p>
+            <h3 className="font-medium text-lg mb-2 text-white">Ireland</h3>
+            <p className="text-white/80 text-sm">Ireland, 123 Summerhill, Dublin</p>
           </div>
 
           {/* Social Media */}
