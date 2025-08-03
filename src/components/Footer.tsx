@@ -88,12 +88,6 @@ const Footer = () => {
         {/* Second Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
-          {/* Ireland Location */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <h3 className="font-medium text-lg mb-2 text-white">Ireland</h3>
-            <p className="text-white/80 text-sm">Ireland, 123 Summerhill, Dublin</p>
-          </div>
-
           {/* Social Media */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
             <div className="flex space-x-4">
@@ -111,7 +105,6 @@ const Footer = () => {
             <div className="space-y-2">
               <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">Privacy Policy</a>
               <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">Terms & Conditions</a>
-              <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">Website Tracking Policy</a>
             </div>
           </div>
         </div>
