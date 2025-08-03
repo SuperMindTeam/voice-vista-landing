@@ -91,7 +91,7 @@ const LiveDemo = () => {
             if (message.role === 'assistant') {
               setTranscript(prev => prev + (prev ? '\n\n' : '') + 'AGENT: ' + message.transcript);
             } else if (message.role === 'user') {
-              setTranscript(prev => prev + (prev ? '\n\n' : '') + 'YOU: ' + message.transcript);
+              setTranscript(prev => prev + (prev ? '\n\n\n' : '') + 'YOU: ' + message.transcript);
             }
           }
         });
