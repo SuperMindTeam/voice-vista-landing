@@ -38,7 +38,7 @@ const Footer = () => {
     >
       <div className="absolute inset-0 bg-black/40"></div>
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           
           {/* Left Column */}
           <div className="space-y-6">
@@ -64,6 +64,9 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+          {/* Middle Column - Transparent Spacer */}
+          <div className="hidden md:block"></div>
 
           {/* Right Column */}
           <div className="space-y-6">
