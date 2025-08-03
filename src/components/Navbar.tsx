@@ -55,7 +55,7 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center">
             <Button size="sm" className={cn("text-sm font-medium shadow-sm", isScrolled ? "bg-black hover:bg-black/90 text-white" : "bg-white hover:bg-white/90 text-black")} onClick={() => window.open('https://forms.gle/zpiozAUmedjgyR678', '_blank')}>
-              Get started
+              Book a Call
             </Button>
           </div>
 
