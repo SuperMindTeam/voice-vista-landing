@@ -24,11 +24,6 @@ const LiveDemo = () => {
       agentId: "hotel-receptionist-agent-id" 
     },
     { 
-      icon: "🛒", 
-      name: "E-commerce Support Agent", 
-      agentId: "ecommerce-agent-id" 
-    },
-    { 
       icon: "🍽️", 
       name: "Restaurant Table Reservation", 
       agentId: "restaurant-agent-id" 
@@ -149,9 +144,16 @@ const LiveDemo = () => {
     <section className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-            {/* Left side - Categories */}
-            <div className="space-y-4">
+          {/* Section Heading */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Experience Calls
+            </h2>
+          </div>
+
+          <div className="space-y-8">
+            {/* Categories Row */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {categories.map((category, index) => (
                 <div key={index}>
                   {category.name === "Healthcare Receptionist" ? (
@@ -222,40 +224,6 @@ const LiveDemo = () => {
                         </div>
                       )}
                     </div>
-                  ) : category.name === "E-commerce Support Agent" ? (
-                    <div 
-                      onClick={() => startCall(category)}
-                      className={`relative w-full h-80 rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
-                        selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
-                      } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    >
-                      <video 
-                        autoPlay 
-                        loop 
-                        muted 
-                        className="absolute inset-0 w-full h-full object-cover"
-                      >
-                        <source src="/lovable-uploads/hotel.webm" type="video/webm" />
-                      </video>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                      <div className="absolute top-4 left-4">
-                        <div className="bg-blue-600 rounded-full p-3">
-                          <Phone className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                      <div className="absolute bottom-6 left-6 right-6">
-                        <h3 className="text-white text-2xl font-bold mb-2">E-commerce Support Agent</h3>
-                        <p className="text-white/90 text-sm leading-relaxed">
-                          Assists customers with product inquiries, order tracking, returns, and general shopping support.
-                        </p>
-                      </div>
-                      {selectedCategory === category.name && isCallActive && (
-                        <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
-                          <Phone className="w-4 h-4 text-white mr-2" />
-                          <span className="text-sm text-white font-medium">{callStatus}</span>
-                        </div>
-                      )}
-                    </div>
                   ) : category.name === "Restaurant Table Reservation" ? (
                     <div 
                       onClick={() => startCall(category)}
@@ -313,20 +281,13 @@ const LiveDemo = () => {
               ))}
             </div>
 
-            {/* Center - Main content */}
-            <div className="text-center lg:col-span-1">
-              <div className="mb-6">
-                <p className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">
-                  HEARING IS BELIEVING
-                </p>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Experience a live call with
-                  <br />
-                  <span className="text-blue-600">our AI agents</span>
-                </h2>
+            {/* Call Controls and Live Transcript */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              {/* Call Controls */}
+              <div className="text-center">
                 {!isCallActive ? (
-                  <p className="text-gray-600 mb-4">
-                    Click on any category to start a live call
+                  <p className="text-gray-600 text-lg">
+                    Click on any category above to start a live call
                   </p>
                 ) : (
                   <div className="space-y-4">
@@ -346,36 +307,36 @@ const LiveDemo = () => {
                   </div>
                 )}
               </div>
-            </div>
 
-            {/* Right side - Live Transcription */}
-            <div className="text-center lg:text-left">
-              <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
-                LIVE TRANSCRIPT
-              </p>
-              <div className="bg-white rounded-lg p-6 shadow-sm min-h-[300px] max-h-[400px] overflow-y-auto">
-                {transcript ? (
-                  <div className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">
-                    {transcript}
-                  </div>
-                ) : (
-                  <div className="flex items-center justify-center h-full text-gray-400">
-                    {isCallActive ? (
-                      <div className="text-center">
-                        <div className="animate-pulse mb-2">●</div>
-                        <p>Listening for speech...</p>
-                      </div>
-                    ) : (
-                      <p>Start a call to see live transcription</p>
-                    )}
+              {/* Live Transcription */}
+              <div>
+                <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
+                  LIVE TRANSCRIPT
+                </p>
+                <div className="bg-white rounded-lg p-6 shadow-sm min-h-[300px] max-h-[400px] overflow-y-auto">
+                  {transcript ? (
+                    <div className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">
+                      {transcript}
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center h-full text-gray-400">
+                      {isCallActive ? (
+                        <div className="text-center">
+                          <div className="animate-pulse mb-2">●</div>
+                          <p>Listening for speech...</p>
+                        </div>
+                      ) : (
+                        <p>Start a call to see live transcription</p>
+                      )}
+                    </div>
+                  )}
+                </div>
+                {isCallActive && selectedCategory && (
+                  <div className="mt-4 text-sm text-gray-600">
+                    <strong>Active Agent:</strong> {selectedCategory}
                   </div>
                 )}
               </div>
-              {isCallActive && selectedCategory && (
-                <div className="mt-4 text-sm text-gray-600">
-                  <strong>Active Agent:</strong> {selectedCategory}
-                </div>
-              )}
             </div>
           </div>
         </div>
