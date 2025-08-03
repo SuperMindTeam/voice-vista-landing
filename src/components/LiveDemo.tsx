@@ -157,149 +157,239 @@ const LiveDemo = () => {
               {categories.map((category, index) => (
                 <div key={index}>
                   {category.name === "Healthcare Receptionist" ? (
-                    <div 
-                      onClick={() => startCall(category)}
-                      className={`relative w-full h-[450px] rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
-                        selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
-                      } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    >
-                      <video 
-                        autoPlay 
-                        loop 
-                        muted 
-                        className="absolute inset-0 w-full h-full object-cover"
+                    <>
+                      <div 
+                        onClick={() => startCall(category)}
+                        className={`relative w-full h-[450px] rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                          selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
+                        } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
-                        <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
-                      </video>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                      <div className="absolute top-4 left-4">
-                        <div className="bg-blue-600 rounded-full p-3">
-                          <Phone className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                      <div className="absolute bottom-20 left-6 right-6">
-                        <h3 className="text-white text-2xl font-bold mb-2">Healthcare Receptionist</h3>
-                        <p className="text-white/90 text-sm leading-relaxed">
-                          Handles patient inquiries, suggests doctors based on symptoms, and schedules appointments.
-                        </p>
-                      </div>
-                      {selectedCategory === category.name && isCallActive && (
-                        <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
-                          <Phone className="w-4 h-4 text-white mr-2" />
-                          <span className="text-sm text-white font-medium">{callStatus}</span>
-                        </div>
-                      )}
-                      {/* iPhone-style slider */}
-                      {!isCallActive && (
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
-                            <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
-                              <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
-                            </div>
-                            <div className="flex-1 text-center">
-                              <span className="text-white text-xl font-medium">Click to start call</span>
-                            </div>
-                            <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                        <video 
+                          autoPlay 
+                          loop 
+                          muted 
+                          className="absolute inset-0 w-full h-full object-cover"
+                        >
+                          <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
+                        </video>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div className="absolute top-4 left-4">
+                          <div className="bg-blue-600 rounded-full p-3">
+                            <Phone className="w-6 h-6 text-white" />
                           </div>
                         </div>
+                        <div className="absolute bottom-20 left-6 right-6">
+                          <h3 className="text-white text-2xl font-bold mb-2">Healthcare Receptionist</h3>
+                          <p className="text-white/90 text-sm leading-relaxed">
+                            Handles patient inquiries, suggests doctors based on symptoms, and schedules appointments.
+                          </p>
+                        </div>
+                        {selectedCategory === category.name && isCallActive && (
+                          <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
+                            <Phone className="w-4 h-4 text-white mr-2" />
+                            <span className="text-sm text-white font-medium">{callStatus}</span>
+                          </div>
+                        )}
+                        {/* iPhone-style slider */}
+                        {!isCallActive && (
+                          <div className="absolute bottom-4 left-4 right-4">
+                            <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
+                              <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
+                                <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
+                              </div>
+                              <div className="flex-1 text-center">
+                                <span className="text-white text-xl font-medium">Click to start call</span>
+                              </div>
+                              <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      {/* Mobile Call Status for this card */}
+                      {selectedCategory === category.name && (
+                        <div className="mt-4 text-center md:hidden">
+                          {callStatus === 'Connecting...' && (
+                            <div className="flex items-center justify-center space-x-2 text-blue-600 mb-4">
+                              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+                              <span className="font-medium">Starting call...</span>
+                            </div>
+                          )}
+                          {isCallActive && (
+                            <div className="space-y-4">
+                              <div className="flex items-center justify-center space-x-2 text-green-600">
+                                <Phone className="w-5 h-5" />
+                                <span className="font-medium">Live Call Connected</span>
+                              </div>
+                              <Button 
+                                onClick={endCall}
+                                size="lg" 
+                                variant="destructive" 
+                                className="rounded-full px-8 py-3 text-lg font-medium"
+                              >
+                                <PhoneOff className="w-5 h-5 mr-2" />
+                                End Call
+                              </Button>
+                            </div>
+                          )}
+                        </div>
                       )}
-                    </div>
+                    </>
                   ) : category.name === "Hotel Receptionist" ? (
-                    <div 
-                      onClick={() => startCall(category)}
-                      className={`relative w-full h-[450px] rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
-                        selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
-                      } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    >
-                      <video 
-                        autoPlay 
-                        loop 
-                        muted 
-                        className="absolute inset-0 w-full h-full object-cover"
+                    <>
+                      <div 
+                        onClick={() => startCall(category)}
+                        className={`relative w-full h-[450px] rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                          selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
+                        } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
-                        <source src="/lovable-uploads/hotel.webm" type="video/webm" />
-                      </video>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                      <div className="absolute top-4 left-4">
-                        <div className="bg-blue-600 rounded-full p-3">
-                          <Phone className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                      <div className="absolute bottom-20 left-6 right-6">
-                        <h3 className="text-white text-2xl font-bold mb-2">Hotel Receptionist</h3>
-                        <p className="text-white/90 text-sm leading-relaxed">
-                          Assists with room bookings, provides hotel information, and handles guest services inquiries.
-                        </p>
-                      </div>
-                      {selectedCategory === category.name && isCallActive && (
-                        <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
-                          <Phone className="w-4 h-4 text-white mr-2" />
-                          <span className="text-sm text-white font-medium">{callStatus}</span>
-                        </div>
-                      )}
-                      {/* iPhone-style slider */}
-                      {!isCallActive && (
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
-                            <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
-                              <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
-                            </div>
-                            <div className="flex-1 text-center">
-                              <span className="text-white text-lg font-medium">Click to start call</span>
-                            </div>
-                            <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                        <video 
+                          autoPlay 
+                          loop 
+                          muted 
+                          className="absolute inset-0 w-full h-full object-cover"
+                        >
+                          <source src="/lovable-uploads/hotel.webm" type="video/webm" />
+                        </video>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div className="absolute top-4 left-4">
+                          <div className="bg-blue-600 rounded-full p-3">
+                            <Phone className="w-6 h-6 text-white" />
                           </div>
                         </div>
+                        <div className="absolute bottom-20 left-6 right-6">
+                          <h3 className="text-white text-2xl font-bold mb-2">Hotel Receptionist</h3>
+                          <p className="text-white/90 text-sm leading-relaxed">
+                            Assists with room bookings, provides hotel information, and handles guest services inquiries.
+                          </p>
+                        </div>
+                        {selectedCategory === category.name && isCallActive && (
+                          <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
+                            <Phone className="w-4 h-4 text-white mr-2" />
+                            <span className="text-sm text-white font-medium">{callStatus}</span>
+                          </div>
+                        )}
+                        {/* iPhone-style slider */}
+                        {!isCallActive && (
+                          <div className="absolute bottom-4 left-4 right-4">
+                            <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
+                              <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
+                                <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
+                              </div>
+                              <div className="flex-1 text-center">
+                                <span className="text-white text-lg font-medium">Click to start call</span>
+                              </div>
+                              <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      {/* Mobile Call Status for this card */}
+                      {selectedCategory === category.name && (
+                        <div className="mt-4 text-center md:hidden">
+                          {callStatus === 'Connecting...' && (
+                            <div className="flex items-center justify-center space-x-2 text-blue-600 mb-4">
+                              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+                              <span className="font-medium">Starting call...</span>
+                            </div>
+                          )}
+                          {isCallActive && (
+                            <div className="space-y-4">
+                              <div className="flex items-center justify-center space-x-2 text-green-600">
+                                <Phone className="w-5 h-5" />
+                                <span className="font-medium">Live Call Connected</span>
+                              </div>
+                              <Button 
+                                onClick={endCall}
+                                size="lg" 
+                                variant="destructive" 
+                                className="rounded-full px-8 py-3 text-lg font-medium"
+                              >
+                                <PhoneOff className="w-5 h-5 mr-2" />
+                                End Call
+                              </Button>
+                            </div>
+                          )}
+                        </div>
                       )}
-                    </div>
+                    </>
                   ) : category.name === "Restaurant Table Reservation" ? (
-                    <div 
-                      onClick={() => startCall(category)}
-                      className={`relative w-full h-[450px] rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
-                        selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
-                      } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    >
-                      <video 
-                        autoPlay 
-                        loop 
-                        muted 
-                        className="absolute inset-0 w-full h-full object-cover"
+                    <>
+                      <div 
+                        onClick={() => startCall(category)}
+                        className={`relative w-full h-[450px] rounded-2xl overflow-hidden cursor-pointer transition-all hover:shadow-lg ${
+                          selectedCategory === category.name ? 'ring-2 ring-blue-500' : ''
+                        } ${isCallActive && selectedCategory !== category.name ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
-                        <source src="/lovable-uploads/hotel.webm" type="video/webm" />
-                      </video>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                      <div className="absolute top-4 left-4">
-                        <div className="bg-blue-600 rounded-full p-3">
-                          <Phone className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                      <div className="absolute bottom-20 left-6 right-6">
-                        <h3 className="text-white text-2xl font-bold mb-2">Restaurant Table Reservation</h3>
-                        <p className="text-white/90 text-sm leading-relaxed">
-                          Handles table bookings, menu inquiries, special requests, and restaurant information.
-                        </p>
-                      </div>
-                      {selectedCategory === category.name && isCallActive && (
-                        <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
-                          <Phone className="w-4 h-4 text-white mr-2" />
-                          <span className="text-sm text-white font-medium">{callStatus}</span>
-                        </div>
-                      )}
-                      {/* iPhone-style slider */}
-                      {!isCallActive && (
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
-                            <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
-                              <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
-                            </div>
-                            <div className="flex-1 text-center">
-                              <span className="text-white text-lg font-medium">Click to start call</span>
-                            </div>
-                            <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                        <video 
+                          autoPlay 
+                          loop 
+                          muted 
+                          className="absolute inset-0 w-full h-full object-cover"
+                        >
+                          <source src="/lovable-uploads/hotel.webm" type="video/webm" />
+                        </video>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div className="absolute top-4 left-4">
+                          <div className="bg-blue-600 rounded-full p-3">
+                            <Phone className="w-6 h-6 text-white" />
                           </div>
                         </div>
+                        <div className="absolute bottom-20 left-6 right-6">
+                          <h3 className="text-white text-2xl font-bold mb-2">Restaurant Table Reservation</h3>
+                          <p className="text-white/90 text-sm leading-relaxed">
+                            Handles table bookings, menu inquiries, special requests, and restaurant information.
+                          </p>
+                        </div>
+                        {selectedCategory === category.name && isCallActive && (
+                          <div className="absolute top-4 right-4 flex items-center bg-green-500 rounded-full px-3 py-1">
+                            <Phone className="w-4 h-4 text-white mr-2" />
+                            <span className="text-sm text-white font-medium">{callStatus}</span>
+                          </div>
+                        )}
+                        {/* iPhone-style slider */}
+                        {!isCallActive && (
+                          <div className="absolute bottom-4 left-4 right-4">
+                            <div className="relative bg-gray-400 rounded-full h-12 flex items-center overflow-hidden">
+                              <div className="absolute inset-y-1 left-1 w-10 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse">
+                                <Phone className="w-5 h-5 text-green-500 fill-green-500 animate-[bounce-horizontal_1s_ease-in-out_infinite]" fill="currentColor" />
+                              </div>
+                              <div className="flex-1 text-center">
+                                <span className="text-white text-lg font-medium">Click to start call</span>
+                              </div>
+                              <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      {/* Mobile Call Status for this card */}
+                      {selectedCategory === category.name && (
+                        <div className="mt-4 text-center md:hidden">
+                          {callStatus === 'Connecting...' && (
+                            <div className="flex items-center justify-center space-x-2 text-blue-600 mb-4">
+                              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+                              <span className="font-medium">Starting call...</span>
+                            </div>
+                          )}
+                          {isCallActive && (
+                            <div className="space-y-4">
+                              <div className="flex items-center justify-center space-x-2 text-green-600">
+                                <Phone className="w-5 h-5" />
+                                <span className="font-medium">Live Call Connected</span>
+                              </div>
+                              <Button 
+                                onClick={endCall}
+                                size="lg" 
+                                variant="destructive" 
+                                className="rounded-full px-8 py-3 text-lg font-medium"
+                              >
+                                <PhoneOff className="w-5 h-5 mr-2" />
+                                End Call
+                              </Button>
+                            </div>
+                          )}
+                        </div>
                       )}
-                    </div>
+                    </>
                   ) : (
                     <div 
                       onClick={() => startCall(category)}
@@ -320,7 +410,7 @@ const LiveDemo = () => {
                      </div>
                    )}
                   </div>
-               ))}
+                ))}
              </div>
 
             {/* Call Status - Desktop */}
@@ -354,38 +444,6 @@ const LiveDemo = () => {
               </div>
             )}
 
-            {/* Mobile Call Status - Below selected category */}
-            <div className="md:hidden">
-              {categories.map((category, index) => (
-                selectedCategory === category.name && (
-                  <div key={`mobile-status-${index}`} className="mt-4 text-center">
-                    {callStatus === 'Connecting...' && (
-                      <div className="flex items-center justify-center space-x-2 text-blue-600 mb-4">
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
-                        <span className="font-medium">Starting call...</span>
-                      </div>
-                    )}
-                    {isCallActive && (
-                      <div className="space-y-4">
-                        <div className="flex items-center justify-center space-x-2 text-green-600">
-                          <Phone className="w-5 h-5" />
-                          <span className="font-medium">Live Call Connected</span>
-                        </div>
-                        <Button 
-                          onClick={endCall}
-                          size="lg" 
-                          variant="destructive" 
-                          className="rounded-full px-8 py-3 text-lg font-medium"
-                        >
-                          <PhoneOff className="w-5 h-5 mr-2" />
-                          End Call
-                        </Button>
-                      </div>
-                    )}
-                  </div>
-                )
-              ))}
-            </div>
 
             {/* Live Transcription - Only show when call is active and on desktop */}
             {isCallActive && (
