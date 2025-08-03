@@ -33,7 +33,7 @@ const Footer = () => {
     <footer 
       className="relative bg-cover bg-center bg-no-repeat bg-gray-800"
       style={{
-        backgroundImage: "url('/lovable-uploads/Screenshot 2025-08-03 020531.png')"
+        backgroundImage: "url('./lovable-uploads/Screenshot%202025-08-03%20020531.png')"
       }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
