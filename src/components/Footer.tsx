@@ -54,7 +54,7 @@ const Footer = () => {
             </div>
 
             {/* Use Cases Card */}
-            <div className="bg-[#777066]/100 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div className="bg-[#777066]/100 backdrop-blur-md rounded-2xl p-6 border-transparent shadow-md">
               <h3 className="font-medium text-lg mb-4 text-white">Use Cases</h3>
               <div className="space-y-2">
                 <p className="text-white/80">Healthcare</p>
@@ -71,7 +71,7 @@ const Footer = () => {
           {/* Right Column */}
           <div className="space-y-6">
             {/* Contact Card */}
-            <div className="bg-[#777066]/100 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
+            <div className="bg-[#777066]/100 backdrop-blur-md rounded-2xl p-6 border-transparent shadow-md h-fit">
               <h3 className="font-medium text-lg mb-4 text-white">Contact</h3>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 text-white mr-2" />
@@ -80,7 +80,7 @@ const Footer = () => {
             </div>
 
             {/* Social Media */}
-            <div className="bg-[#777066]/100 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
+            <div className="bg-[#777066]/100 backdrop-blur-md rounded-2xl p-6 border-transparent shadow-md h-fit">
               <div className="flex justify-center items-center space-x-4">
                 <a href="#" className="text-white/80 hover:text-white transition-colors">
                   <Linkedin className="h-8 w-8" />
