@@ -46,7 +46,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/WhiteLogo.png" 
                 alt="SuperMind Logo" 
-                className="h-12 w-12"
+                className="h-15 w-25"
               />
             </div>
           </div>
