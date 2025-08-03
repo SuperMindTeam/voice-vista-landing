@@ -33,7 +33,7 @@ const Footer = () => {
     <footer 
       className="relative bg-cover bg-center bg-no-repeat bg-gray-800"
       style={{
-        backgroundImage: "url('./lovable-uploads/Screenshot%202025-08-03%20020531.png')"
+        backgroundImage: "url('./lovable-uploads/background.png')"
       }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
@@ -80,7 +80,7 @@ const Footer = () => {
             <h3 className="font-medium text-lg mb-4 text-white">Contact</h3>
             <div className="flex items-center">
               <Mail className="h-4 w-4 text-white mr-2" />
-              <span className="text-white/80 text-sm">hello@getsupermind.com</span>
+              <span className="text-white/80">hello@getsupermind.com</span>
             </div>
           </div>
         </div>
