@@ -33,7 +33,7 @@ const Footer = () => {
     <footer 
       className="relative min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('/footer-background.png')"
+        backgroundImage: "url('/footer-bg.png')"
       }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
@@ -48,12 +48,14 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Team Card */}
+          {/* Use Cases Card */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <h3 className="font-medium text-lg mb-4 text-white">Team</h3>
+            <h3 className="font-medium text-lg mb-4 text-white">Use Cases</h3>
             <div className="space-y-2">
-              <p className="text-white/80">Ashish</p>
-              <p className="text-white/80">Vaibhav</p>
+              <p className="text-white/80">Healthcare</p>
+              <p className="text-white/80">Hotel</p>
+              <p className="text-white/80">E-commerce</p>
+              <p className="text-white/80">Restaurant</p>
             </div>
           </div>
 
@@ -73,29 +75,15 @@ const Footer = () => {
           {/* Contact Card */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
             <h3 className="font-medium text-lg mb-4 text-white">Contact</h3>
-            <div className="space-y-3">
-              <div className="flex items-center">
-                <Mail className="h-4 w-4 text-white mr-2" />
-                <span className="text-white/80 text-sm">hello@getsupermind.com</span>
-              </div>
-              <div className="flex items-center">
-                <Phone className="h-4 w-4 text-white mr-2" />
-                <a href={phoneDisplay.link} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white text-sm">
-                  {phoneDisplay.number}
-                </a>
-              </div>
+            <div className="flex items-center">
+              <Mail className="h-4 w-4 text-white mr-2" />
+              <span className="text-white/80 text-sm">hello@getsupermind.com</span>
             </div>
           </div>
         </div>
 
         {/* Second Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          
-          {/* San Francisco Location */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <h3 className="font-medium text-lg mb-2 text-white">San Francisco</h3>
-            <p className="text-white/80 text-sm">United States, 677 Harrison Street, San Francisco, CA 94107</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
           {/* United Kingdom Location */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
