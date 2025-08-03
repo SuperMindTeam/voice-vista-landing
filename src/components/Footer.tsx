@@ -62,19 +62,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quicklinks Card */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <h3 className="font-medium text-lg mb-4 text-white">Quicklinks</h3>
-            <div className="space-y-2">
-              <a href="#" className="block text-white/80 hover:text-white transition-colors">Home</a>
-              <a href="#" className="block text-white/80 hover:text-white transition-colors">Company</a>
-              <a href="#" className="block text-white/80 hover:text-white transition-colors">Partners</a>
-              <a href="#" className="block text-white/80 hover:text-white transition-colors">Blog</a>
-              <a href="#" className="block text-white/80 hover:text-white transition-colors">Tips</a>
-              <a href="#" className="block text-white/80 hover:text-white transition-colors">Security</a>
-            </div>
-          </div>
-
           {/* Contact Card */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
             <h3 className="font-medium text-lg mb-4 text-white">Contact</h3>
