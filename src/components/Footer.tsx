@@ -43,7 +43,7 @@ const Footer = () => {
           {/* Left Column */}
           <div className="space-y-6">
             {/* Logo Card */}
-            <div className="bg-[#777066]/100 backdrop-blur-md rounded-2xl p-6 border border-white/20 h-fit">
+            <div className="bg-[#777066]/100 backdrop-blur-md rounded-2xl p-6 border-transparent shadow-md h-fit">
               <div className="flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/WhiteLogo.png" 
