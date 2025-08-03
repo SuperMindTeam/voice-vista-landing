@@ -87,6 +87,7 @@ const LiveDemo = () => {
           console.log('VAPI message:', message);
           
           if (message.type === 'transcript' && message.transcriptType === 'final') {
+            console.log('Processing final transcript:', message.role, message.transcript);
             // Only process final transcripts to avoid duplicates
             if (message.role === 'assistant') {
               setTranscript(prev => prev + (prev ? '\n\n' : '') + 'AGENT: ' + message.transcript);
@@ -206,7 +207,7 @@ const LiveDemo = () => {
               </p>
               <div className="bg-white rounded-lg p-6 shadow-sm min-h-[300px] max-h-[400px] overflow-y-auto">
                 {transcript ? (
-                  <div className="text-gray-800 text-sm leading-relaxed">
+                  <div className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">
                     {transcript}
                   </div>
                 ) : (
