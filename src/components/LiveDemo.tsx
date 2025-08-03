@@ -4,12 +4,12 @@ import { Mic } from 'lucide-react';
 
 const LiveDemo = () => {
   const categories = [
-    { icon: "🐾", name: "Vet Care" },
-    { icon: "🔬", name: "Dermatology" },
-    { icon: "🦴", name: "Orthopedics" },
-    { icon: "👂", name: "ENT" },
+    { icon: "🏥", name: "Healthcare Receptionist" },
+    { icon: "🏨", name: "Hotel Receptionist" },
+    { icon: "🛒", name: "E-commerce Support Agent" },
+    { icon: "🍽️", name: "Restaurant Table Reservation" },
     { icon: "🦷", name: "Dentist" },
-    { icon: "🚨", name: "Urgent Care" }
+    { icon: "🚗", name: "Automotive Service Scheduling" }
   ];
 
   return (
