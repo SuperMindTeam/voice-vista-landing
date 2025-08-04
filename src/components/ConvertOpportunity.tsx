@@ -7,7 +7,7 @@ const ConvertOpportunity = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900">
-              Convert every opportunity
+              Convert every <br>opportunity</br>
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               SuperMind AI agents automatically book jobs across all channels—calls, text, web-chat, online widgets, and third-party platforms—directly into your CRM or FSM, following your operational rules for flawless execution. By handling routine bookings, our AI lets your team focus solely on mission-critical interactions that drive growth.
