@@ -77,7 +77,6 @@ const ConvertOpportunity = () => {
                     `}
                     style={{
                       backgroundColor: '#F3ECE6',
-                      transform: index === 0 ? 'translateY(-10px)' : 'translateY(0)',
                       opacity: index === queue.length - 1 ? 0.7 : 1,
                       marginBottom: '8px'
                     }}
@@ -105,7 +104,7 @@ const ConvertOpportunity = () => {
       <style jsx>{`
         @keyframes slide-in-top {
           from {
-            transform: translateY(-20px);
+            transform: translateY(-30px);
             opacity: 0;
           }
           to {
