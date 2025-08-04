@@ -34,17 +34,16 @@ const DentalAI = () => {
     <div className="min-h-screen" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <main>
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center bg-white">
+        <section className="flex items-center bg-white">
           <div 
             className="mx-auto"
             style={{
               background: 'linear-gradient(135deg, #4d9e4d 0%, #00846c 100%)',
               maxWidth: '1280px',
-              width: '100%',
-              minHeight: '100vh'
+              width: '100%'
             }}
           >
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-4 px-8" style={{ minHeight: '80vh' }}>
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-8 px-8">
               {/* Left Content */}
               <div className="space-y-8">
                 <h1 className="text-4xl lg:text-6xl font-bold text-white">
