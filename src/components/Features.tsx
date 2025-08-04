@@ -89,35 +89,6 @@ const Features = () => {
         
         <CostComparisonSection />
       </div>
-      
-      {/* Convert every opportunity section */}
-      <div className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-white">
-                Convert every opportunity
-              </h2>
-              <p className="text-lg text-white/90 leading-relaxed">
-                SuperMind AI agents automatically book jobs across all channels—calls, text, web-chat, online widgets, and third-party platforms—directly into your CRM or FSM, following your operational rules for flawless execution. By handling routine bookings, our AI lets your team focus solely on mission-critical interactions that drive growth.
-              </p>
-            </div>
-            
-            <div className="relative flex justify-center">
-              <video 
-                className="w-4/5 h-96 object-cover rounded-xl shadow-2xl"
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-              >
-                <source src="/lovable-uploads/inBoundCalls.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
