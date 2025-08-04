@@ -37,7 +37,7 @@ const Hero = () => {
 
   const StatBoxes = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-8 max-w-3xl mx-auto">
-      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-4 md:p-4 flex items-center justify-center md:justify-start gap-2">
+      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center justify-center md:justify-start gap-2">
         <div className="bg-black/10 rounded-full p-1 md:p-2 flex-shrink-0">
           <SmileIcon className="w-4 h-4 md:w-5 md:h-5" />
         </div>
@@ -47,7 +47,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-4 md:p-4 flex items-center justify-center md:justify-start gap-2">
+      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center justify-center md:justify-start gap-2">
         <div className="bg-black/10 rounded-full p-1 md:p-2 flex-shrink-0">
           <Phone className="w-4 h-4 md:w-5 md:h-5" />
         </div>
@@ -57,7 +57,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-4 md:p-4 flex items-center justify-center md:justify-start gap-2">
+      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center justify-center md:justify-start gap-2">
         <div className="bg-black/10 rounded-full p-1 md:p-2 flex-shrink-0">
           <DollarSign className="w-4 h-4 md:w-5 md:h-5" />
         </div>
