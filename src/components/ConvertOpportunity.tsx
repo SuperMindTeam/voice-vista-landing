@@ -47,7 +47,7 @@ const ConvertOpportunity = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative flex justify-center">
             <div className="w-4/5 space-y-6">
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900">
+              <h2 className="text-3xl md:text-5xl font-sanomat font-bold text-gray-900">
                 Convert every opportunity
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">

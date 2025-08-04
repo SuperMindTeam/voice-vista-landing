@@ -42,7 +42,7 @@ const Hero = () => {
           <SmileIcon className="w-4 h-4 md:w-5 md:h-5" style={{ marginLeft: '1px' }} />
         </div>
         <div className="min-w-0 text-center md:text-left">
-          <h3 className="font-display text-lg md:text-xl font-semibold truncate">99%</h3>
+          <h3 className="font-sanomat text-lg md:text-xl font-semibold truncate">99%</h3>
           <p className="text-sm md:text-sm text-black/80 truncate">User Satisfaction</p>
         </div>
       </div>
@@ -52,7 +52,7 @@ const Hero = () => {
           <Phone className="w-4 h-4 md:w-5 md:h-5" style={{ marginLeft: '-1px' }} />
         </div>
         <div className="min-w-0 text-center md:text-left">
-          <h3 className="font-display text-lg md:text-xl font-semibold truncate">24x7</h3>
+          <h3 className="font-sanomat text-lg md:text-xl font-semibold truncate">24x7</h3>
           <p className="text-sm md:text-sm text-black/80 truncate">Always Available</p>
         </div>
       </div>
@@ -62,7 +62,7 @@ const Hero = () => {
           <DollarSign className="w-4 h-4 md:w-5 md:h-5" style={{ marginLeft: '-1px' }} />
         </div>
         <div className="min-w-0 text-center md:text-left">
-          <h3 className="font-display text-lg md:text-xl font-semibold truncate">80%</h3>
+          <h3 className="font-sanomat text-lg md:text-xl font-semibold truncate">80%</h3>
           <p className="text-sm md:text-sm text-black/80 truncate">Cost Reduction</p>
         </div>
       </div>
@@ -93,7 +93,7 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center text-center"
           >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-sanomat font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
               Cut Costs.<br />Automate Reception.
             </h1>
             
@@ -123,7 +123,7 @@ const Hero = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
               <div className="text-left">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight mt-4 mb-6 text-white">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-sanomat font-semibold tracking-tight mt-4 mb-6 text-white">
                   Cut Costs.<br />Automate Reception.
                 </h1>
                 

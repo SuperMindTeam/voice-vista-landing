@@ -90,7 +90,7 @@ const AnalyticsQueue = () => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative flex justify-center">
+          <div className="relative flex justify-center order-2 lg:order-1">
             <div className="w-4/5 h-96 rounded-xl shadow-2xl p-6 overflow-hidden" style={{ backgroundColor: '#122429' }}>
               <div className="relative h-full flex flex-col justify-end">
                 {queue.map((item, index) => (
@@ -115,9 +115,9 @@ const AnalyticsQueue = () => {
             </div>
           </div>
           
-          <div className="relative flex justify-center">
+          <div className="relative flex justify-center order-1 lg:order-2">
             <div className="w-4/5 space-y-6">
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900">
+              <h2 className="text-3xl md:text-5xl font-sanomat font-bold text-gray-900">
                 Generate the next lead
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">

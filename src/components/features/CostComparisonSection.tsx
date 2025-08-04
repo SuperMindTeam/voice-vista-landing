@@ -18,7 +18,7 @@ const CostComparisonSection = () => {
 
   return (
     <div className="text-center mb-16 -mt-8">
-      <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-white">
+      <h2 className="text-3xl md:text-5xl font-sanomat font-bold mb-4 text-white">
         80% Decrease <br />in Costs vs Humans
       </h2>
       <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
