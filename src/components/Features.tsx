@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
 import CostComparison from './features/CostComparison';
-import TryItZone from './features/TryItZone';
+import CostComparisonSection from './features/CostComparisonSection';
 import FeaturesList from './features/FeaturesList';
 import { useGeolocation } from '@/hooks/use-geolocation';
 
@@ -87,9 +87,7 @@ const Features = () => {
         {/* Added anchor for Demo Zone section after the cost table */}
         <div id="demozone" className="pt-10"></div>
         
-        <div className="bg-white py-10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 rounded-2xl">
-          <TryItZone />
-        </div>
+        <CostComparisonSection />
         <FeaturesList />
       </div>
     </section>
