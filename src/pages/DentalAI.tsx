@@ -37,12 +37,17 @@ const DentalAI = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="min-h-screen bg-background flex items-center">
+        <section 
+          className="min-h-screen flex items-center"
+          style={{
+            background: 'linear-gradient(135deg, #4d9e4d 0%, #00846c 100%)'
+          }}
+        >
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
               <div className="space-y-8">
-                <h1 className="font-serif text-4xl lg:text-6xl font-bold text-foreground">
+                <h1 className="font-serif text-4xl lg:text-6xl font-bold text-white">
                   AI built for Dental Practices.
                 </h1>
                 
@@ -53,41 +58,48 @@ const DentalAI = () => {
                     return (
                       <div
                         key={index}
-                        className="bg-card border border-border rounded-xl p-4 text-center hover:shadow-lg transition-all duration-300"
+                        className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center hover:shadow-lg hover:bg-white/15 transition-all duration-300"
                       >
                         <div className="flex justify-center mb-2">
-                          <IconComponent className="h-6 w-6 text-primary" />
+                          <IconComponent className="h-6 w-6 text-white" />
                         </div>
-                        <div className="text-xl font-bold text-foreground mb-1">
+                        <div className="text-xl font-bold text-white mb-1">
                           {stat.value}
                         </div>
-                        <div className="text-xs text-muted-foreground">
+                        <div className="text-xs text-white/80">
                           {stat.label}
                         </div>
                       </div>
                     );
                   })}
                 </div>
-
+                
                 {/* CTA Button */}
                 <Button 
                   onClick={handleGetSolution}
                   size="lg"
-                  className="w-full sm:w-auto"
+                  className="w-full sm:w-auto bg-white text-green-700 hover:bg-white/90 font-semibold"
                 >
                   Get Dental Solution
                 </Button>
               </div>
 
               {/* Right Video */}
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ aspectRatio: '0.6/1.4' }}>
+              <div className="relative flex justify-center">
+                <div 
+                  className="rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-sm"
+                  style={{ 
+                    width: '300px',
+                    height: '500px',
+                    maxWidth: '100%'
+                  }}
+                >
                   <video
                     autoPlay
                     muted
                     loop
                     playsInline
-                    className="w-3/5 h-full object-cover mx-auto"
+                    className="w-full h-full object-cover"
                   >
                     <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
                     Your browser does not support the video tag.
