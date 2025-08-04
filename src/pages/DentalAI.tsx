@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Phone, Users, Clock, TrendingUp } from 'lucide-react';
 
@@ -46,7 +44,7 @@ const DentalAI = () => {
               minHeight: '100vh'
             }}
           >
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-8 px-8 min-h-screen">
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-4 px-8" style={{ minHeight: '80vh' }}>
               {/* Left Content */}
               <div className="space-y-8">
                 <h1 className="text-4xl lg:text-6xl font-bold text-white">
@@ -88,35 +86,90 @@ const DentalAI = () => {
 
               {/* Right Video */}
               <div className="relative flex justify-center">
-                {/* Black rectangle with rounded top corners */}
+                {/* Outer hollow rectangle (phone frame) */}
                 <div 
-                  className="bg-black shadow-2xl"
+                  className="relative"
                   style={{ 
-                    width: '280px',
-                    height: '420px',
+                    width: '320px',
+                    height: '460px',
                     maxWidth: '100%',
-                    borderTopLeftRadius: '20px',
-                    borderTopRightRadius: '20px',
-                    borderBottomLeftRadius: '0px',
-                    borderBottomRightRadius: '0px'
+                    border: '3px solid black',
+                    borderTopLeftRadius: '25px',
+                    borderTopRightRadius: '25px',
+                    borderBottomLeftRadius: '5px',
+                    borderBottomRightRadius: '5px',
+                    backgroundColor: 'transparent'
                   }}
                 >
-                  {/* Video on top of black rectangle */}
-                  <div className="p-4">
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="w-full h-full object-cover rounded-t-lg"
-                      style={{
-                        width: '100%',
-                        height: '380px'
-                      }}
-                    >
-                      <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
-                      Your browser does not support the video tag.
-                    </video>
+                  {/* Volume buttons (left side) */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      left: '-6px',
+                      top: '80px',
+                      width: '4px',
+                      height: '30px',
+                      backgroundColor: 'black',
+                      borderRadius: '2px'
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      position: 'absolute',
+                      left: '-6px',
+                      top: '120px',
+                      width: '4px',
+                      height: '30px',
+                      backgroundColor: 'black',
+                      borderRadius: '2px'
+                    }}
+                  ></div>
+
+                  {/* Power button (right side) */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      right: '-6px',
+                      top: '100px',
+                      width: '4px',
+                      height: '50px',
+                      backgroundColor: 'black',
+                      borderRadius: '2px'
+                    }}
+                  ></div>
+
+                  {/* Inner black rectangle with gap */}
+                  <div 
+                    className="bg-black shadow-2xl absolute"
+                    style={{ 
+                      width: '280px',
+                      height: '420px',
+                      top: '20px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      borderTopLeftRadius: '20px',
+                      borderTopRightRadius: '20px',
+                      borderBottomLeftRadius: '0px',
+                      borderBottomRightRadius: '0px'
+                    }}
+                  >
+                    {/* Video on top of black rectangle */}
+                    <div className="p-4">
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover rounded-t-lg"
+                        style={{
+                          width: '100%',
+                          height: '380px'
+                        }}
+                      >
+                        <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
                   </div>
                 </div>
               </div>
