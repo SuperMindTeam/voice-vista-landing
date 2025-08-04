@@ -36,7 +36,7 @@ const ConvertOpportunity = () => {
         setCurrentIndex(prev => prev + 1);
         return [newItem, ...newQueue];
       });
-    }, 2000);
+    }, 800);
 
     return () => clearInterval(interval);
   }, [currentIndex]);
@@ -55,36 +55,38 @@ const ConvertOpportunity = () => {
           </div>
           
           <div className="relative flex justify-center">
-            <div className="w-4/5 h-96 bg-gray-50 rounded-xl shadow-2xl p-6 overflow-hidden">
+            <div className="w-4/5 h-96 rounded-xl shadow-2xl p-6 overflow-hidden" style={{ backgroundColor: '#122429' }}>
               {/* Header */}
               <div className="flex items-center justify-center mb-4">
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-white">
                   <div className="w-4 h-4 rounded-full bg-green-500 mr-2"></div>
                   <span className="text-sm font-medium">Resolved</span>
                 </div>
               </div>
               
               {/* Queue Container */}
-              <div className="space-y-3 relative">
+              <div className="relative">
                 {queue.map((item, index) => (
                   <div
                     key={item.id}
                     className={`
-                      flex items-center justify-between p-4 bg-white rounded-lg shadow-sm border border-gray-200
+                      flex items-center justify-between p-4 rounded-lg shadow-sm border border-gray-200
                       transition-all duration-500 ease-in-out transform
                       ${index === 0 ? 'animate-slide-in-top' : ''}
                       ${index === queue.length - 1 ? 'animate-slide-out-bottom opacity-80' : ''}
                     `}
                     style={{
+                      backgroundColor: '#F3ECE6',
                       transform: index === 0 ? 'translateY(-10px)' : 'translateY(0)',
-                      opacity: index === queue.length - 1 ? 0.7 : 1
+                      opacity: index === queue.length - 1 ? 0.7 : 1,
+                      marginBottom: '8px'
                     }}
                   >
                     <div className="flex items-center space-x-3">
                       {item.type === 'phone' ? (
-                        <Phone className="w-5 h-5 text-gray-500" />
+                        <Phone className="w-5 h-5 text-green-600 fill-current" />
                       ) : (
-                        <MessageSquare className="w-5 h-5 text-gray-500" />
+                        <MessageSquare className="w-5 h-5 text-black fill-current" />
                       )}
                       <span className="font-medium text-gray-800">{item.name}</span>
                     </div>
