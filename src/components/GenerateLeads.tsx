@@ -121,7 +121,7 @@ const AnalyticsQueue = () => {
                 Generate the next lead
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Netic's Cultivate engine taps into customer data to proactively identify and capture sales opportunities. It launches targeted autonomous engagement campaigns for memberships or upsells relevant services in real time.
+                SuperMind Lead Engine analyzes customer data in real time to spot sales opportunities — then instantly launches personalized outreach to upsell services or drive memberships, without human input.
               </p>
             </div>
           </div>
