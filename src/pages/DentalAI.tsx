@@ -37,14 +37,17 @@ const DentalAI = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section 
-          className="min-h-screen flex items-center"
-          style={{
-            background: 'linear-gradient(135deg, #4d9e4d 0%, #00846c 100%)'
-          }}
-        >
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <section className="min-h-screen flex items-center bg-white">
+          <div 
+            className="mx-auto"
+            style={{
+              background: 'linear-gradient(135deg, #4d9e4d 0%, #00846c 100%)',
+              maxWidth: '1280px',
+              width: '100%',
+              minHeight: '100vh'
+            }}
+          >
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 px-8 min-h-screen">
               {/* Left Content */}
               <div className="space-y-8">
                 <h1 className="font-serif text-4xl lg:text-6xl font-bold text-white">
