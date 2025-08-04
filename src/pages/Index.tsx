@@ -6,7 +6,7 @@ import Features from '@/components/Features';
 import ConvertOpportunity from '@/components/ConvertOpportunity';
 import LiveDemo from '@/components/LiveDemo';
 import HowItTransforms from '@/components/HowItTransforms';
-import GenerateLeads from '@/components/GenerateLeads';
+import AnalyticsQueue from '@/components/GenerateLeads';
 
 import Footer from '@/components/Footer';
 
@@ -46,7 +46,7 @@ const Index = () => {
         <LiveDemo />
         <Features />
         <ConvertOpportunity />
-        <GenerateLeads />
+        <AnalyticsQueue />
         <HowItTransforms />
       </main>
       <Footer />
