@@ -53,15 +53,15 @@ const DentalAI = () => {
                     return (
                       <div
                         key={index}
-                        className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300"
+                        className="bg-card border border-border rounded-xl p-4 text-center hover:shadow-lg transition-all duration-300"
                       >
-                        <div className="flex justify-center mb-3">
-                          <IconComponent className="h-8 w-8 text-primary" />
+                        <div className="flex justify-center mb-2">
+                          <IconComponent className="h-6 w-6 text-primary" />
                         </div>
-                        <div className="text-2xl font-bold text-foreground mb-1">
+                        <div className="text-xl font-bold text-foreground mb-1">
                           {stat.value}
                         </div>
-                        <div className="text-sm text-muted-foreground">
+                        <div className="text-xs text-muted-foreground">
                           {stat.label}
                         </div>
                       </div>
@@ -81,13 +81,13 @@ const DentalAI = () => {
 
               {/* Right Video */}
               <div className="relative">
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ aspectRatio: '0.6/1.4' }}>
                   <video
                     autoPlay
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover"
+                    className="w-3/5 h-full object-cover mx-auto"
                   >
                     <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
                     Your browser does not support the video tag.

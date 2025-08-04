@@ -51,6 +51,9 @@ const Navbar = () => {
             <a href="#features-list" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
               Features
             </a>
+            <a href="/dental-ai-receptionist" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
+              Dental
+            </a>
           </nav>
 
           <div className="hidden md:flex items-center">
@@ -116,6 +119,13 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
           >
             Features
+          </a>
+          <a 
+            href="/dental-ai-receptionist" 
+            className="text-lg font-medium text-gray-700"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Dental
           </a>
           <div className="pt-6 border-t">
             <Button 
