@@ -49,7 +49,7 @@ const Hero = () => {
       
       <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center justify-center md:justify-start gap-2">
         <div className="bg-black/10 rounded-full w-8 h-8 md:w-10 md:h-10 flex-shrink-0 flex items-center justify-center">
-          <Phone className="w-4 h-4 md:w-5 md:h-5" />
+          <Phone className="w-4 h-4 md:w-5 md:h-5" style={{ marginLeft: '-1px' }} />
         </div>
         <div className="min-w-0 text-center md:text-left">
           <h3 className="font-display text-lg md:text-xl font-semibold truncate">24x7</h3>
@@ -59,7 +59,7 @@ const Hero = () => {
       
       <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center justify-center md:justify-start gap-2">
         <div className="bg-black/10 rounded-full w-8 h-8 md:w-10 md:h-10 flex-shrink-0 flex items-center justify-center">
-          <DollarSign className="w-4 h-4 md:w-5 md:h-5" />
+          <DollarSign className="w-4 h-4 md:w-5 md:h-5" style={{ marginLeft: '-1px' }} />
         </div>
         <div className="min-w-0 text-center md:text-left">
           <h3 className="font-display text-lg md:text-xl font-semibold truncate">80%</h3>
