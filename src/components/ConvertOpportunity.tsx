@@ -45,13 +45,15 @@ const ConvertOpportunity = () => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900">
-              Convert every opportunity
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              SuperMind AI agents automatically book jobs across all channels—calls, text, web-chat, online widgets, and third-party platforms—directly into your CRM or FSM, following your operational rules for flawless execution. By handling routine bookings, our AI lets your team focus solely on mission-critical interactions that drive growth.
-            </p>
+          <div className="relative flex justify-center">
+            <div className="w-4/5 space-y-6">
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900">
+                Convert every opportunity
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                SuperMind AI agents automatically book jobs across all channels—calls, text, web-chat, online widgets, and third-party platforms—directly into your CRM or FSM, following your operational rules for flawless execution. By handling routine bookings, our AI lets your team focus solely on mission-critical interactions that drive growth.
+              </p>
+            </div>
           </div>
           
           <div className="relative flex justify-center">
@@ -101,7 +103,7 @@ const ConvertOpportunity = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         @keyframes slide-in-top {
           from {
             transform: translateY(-30px);

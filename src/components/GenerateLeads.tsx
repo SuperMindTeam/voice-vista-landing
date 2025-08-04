@@ -128,7 +128,7 @@ const AnalyticsQueue = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         @keyframes slide-in-bottom {
           from {
             transform: translateY(30px);
