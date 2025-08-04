@@ -152,22 +152,59 @@ const DentalAI = () => {
                       borderBottomRightRadius: '0px'
                     }}
                   >
-                    {/* Video on top of black rectangle */}
-                    <div className="p-4">
+                    {/* Video positioned so rectangles' edges align with video center */}
+                    <div 
+                      className="absolute bg-white rounded-lg overflow-hidden shadow-lg"
+                      style={{
+                        width: '120px',
+                        height: '120px',
+                        top: '100px',
+                        left: '-60px', // Half of video width (120px / 2 = 60px)
+                        zIndex: 10
+                      }}
+                    >
                       <video
                         autoPlay
                         muted
                         loop
                         playsInline
-                        className="w-full h-full object-cover rounded-t-lg"
-                        style={{
-                          width: '100%',
-                          height: '380px'
-                        }}
+                        className="w-full h-full object-cover"
                       >
                         <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
                         Your browser does not support the video tag.
                       </video>
+                    </div>
+
+                    {/* Text and button next to video */}
+                    <div 
+                      className="absolute"
+                      style={{
+                        top: '100px',
+                        left: '80px', // Right side of video (video left -60px + video width 120px + gap 20px)
+                        zIndex: 10
+                      }}
+                    >
+                      {/* "I'm ready to talk!" text */}
+                      <div 
+                        className="text-white font-medium mb-3"
+                        style={{
+                          fontSize: '16px',
+                          textShadow: '0 1px 2px rgba(0,0,0,0.5)'
+                        }}
+                      >
+                        I'm ready to talk!
+                      </div>
+
+                      {/* Call button */}
+                      <button
+                        className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 shadow-lg"
+                        style={{
+                          fontSize: '14px'
+                        }}
+                      >
+                        <Phone className="w-4 h-4" />
+                        Click to Call AI
+                      </button>
                     </div>
                   </div>
                 </div>
