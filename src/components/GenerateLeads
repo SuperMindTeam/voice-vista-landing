@@ -88,6 +88,50 @@ const AnalyticsQueue = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
+      <style>
+        {`
+          @keyframes slide-in-bottom {
+            from {
+              transform: translateY(30px);
+              opacity: 0;
+            }
+            to {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+          
+          @keyframes slide-in-top {
+            from {
+              transform: translateY(-30px);
+              opacity: 0;
+            }
+            to {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+          
+          @keyframes slide-out-bottom {
+            to {
+              transform: translateY(20px);
+              opacity: 0;
+            }
+          }
+          
+          .animate-slide-in-bottom {
+            animation: slide-in-bottom 0.5s ease-out;
+          }
+          
+          .animate-slide-in-top {
+            animation: slide-in-top 0.5s ease-out;
+          }
+          
+          .animate-slide-out-bottom {
+            animation: slide-out-bottom 0.5s ease-in;
+          }
+        `}
+      </style>
       <div className="flex items-center gap-12">
         {/* Left side - Text content */}
         <div className="flex-1">
@@ -125,49 +169,6 @@ const AnalyticsQueue = () => {
           </div>
         </div>
       </div>
-      
-      <style jsx>{`
-        @keyframes slide-in-bottom {
-          from {
-            transform: translateY(30px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes slide-in-top {
-          from {
-            transform: translateY(-30px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes slide-out-bottom {
-          to {
-            transform: translateY(20px);
-            opacity: 0;
-          }
-        }
-        
-        .animate-slide-in-bottom {
-          animation: slide-in-bottom 0.5s ease-out;
-        }
-        
-        .animate-slide-in-top {
-          animation: slide-in-top 0.5s ease-out;
-        }
-        
-        .animate-slide-out-bottom {
-          animation: slide-out-bottom 0.5s ease-in;
-        }
-      `}</style>
     </div>
   );
 };
