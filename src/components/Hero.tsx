@@ -43,7 +43,7 @@ const Hero = () => {
         </div>
         <div className="min-w-0 text-center md:text-left">
           <h3 className="font-display text-lg md:text-xl font-semibold truncate">99%</h3>
-          <p className="text-sm md:text-sm text-black/80 truncate">Customer Satisfaction</p>
+          <p className="text-sm md:text-sm text-black/80 truncate">User Satisfaction</p>
         </div>
       </div>
       
