@@ -87,40 +87,40 @@ const AnalyticsQueue = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      <div className="flex items-center gap-12">
-        {/* Left side - Text content */}
-        <div className="flex-1">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Generate the next lead
-          </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Netic's Cultivate engine taps into customer data to proactively identify and capture sales opportunities. It launches targeted autonomous engagement campaigns for memberships or upsells relevant services in real time.
-          </p>
-        </div>
-        
-        {/* Right side - Animation container */}
-        <div className="w-full max-w-lg">
-          <div className="rounded-xl shadow-2xl p-6 h-96 overflow-hidden" style={{ backgroundColor: '#122429' }}>
-            <div className="relative h-full flex flex-col justify-end">
-              {queue.map((item, index) => (
-                <div
-                  key={item.id}
-                  className={`
-                    flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200
-                    transition-all duration-500 ease-in-out transform
-                    ${isInitializing ? 'animate-slide-in-bottom' : ''}
-                  `}
-                  style={{
-                    marginBottom: index === queue.length - 1 ? '0px' : '12px'
-                  }}
-                >
-                  {getIcon(item.icon)}
-                  <span className="text-gray-800 font-medium text-sm flex-1">
-                    {item.text}
-                  </span>
-                </div>
-              ))}
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900">
+              Generate the next lead
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Netic's Cultivate engine taps into customer data to proactively identify and capture sales opportunities. It launches targeted autonomous engagement campaigns for memberships or upsells relevant services in real time.
+            </p>
+          </div>
+          
+          <div className="relative flex justify-center">
+            <div className="w-4/5 h-96 rounded-xl shadow-2xl p-6 overflow-hidden" style={{ backgroundColor: '#122429' }}>
+              <div className="relative h-full flex flex-col justify-end">
+                {queue.map((item, index) => (
+                  <div
+                    key={item.id}
+                    className={`
+                      flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200
+                      transition-all duration-500 ease-in-out transform
+                      ${isInitializing ? 'animate-slide-in-bottom' : ''}
+                    `}
+                    style={{
+                      marginBottom: index === queue.length - 1 ? '0px' : '12px'
+                    }}
+                  >
+                    {getIcon(item.icon)}
+                    <span className="text-gray-800 font-medium text-sm flex-1">
+                      {item.text}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -168,7 +168,7 @@ const AnalyticsQueue = () => {
           animation: slide-out-bottom 0.5s ease-in;
         }
       `}</style>
-    </div>
+    </section>
   );
 };
 
