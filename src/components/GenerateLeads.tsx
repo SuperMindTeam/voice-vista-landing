@@ -115,13 +115,15 @@ const AnalyticsQueue = () => {
             </div>
           </div>
           
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900">
-              Generate the next lead
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Netic's Cultivate engine taps into customer data to proactively identify and capture sales opportunities. It launches targeted autonomous engagement campaigns for memberships or upsells relevant services in real time.
-            </p>
+          <div className="relative flex justify-center">
+            <div className="w-4/5 space-y-6">
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900">
+                Generate the next lead
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Netic's Cultivate engine taps into customer data to proactively identify and capture sales opportunities. It launches targeted autonomous engagement campaigns for memberships or upsells relevant services in real time.
+              </p>
+            </div>
           </div>
         </div>
       </div>
