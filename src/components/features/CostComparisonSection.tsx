@@ -17,10 +17,10 @@ const CostComparisonSection = () => {
   ];
 
   return (
-    <section className="py-16 px-4" style={{ backgroundColor: '#34A6B2' }}>
+    <section className="py-16 px-4" style={{ backgroundColor: '#767067' }}>
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-white">
-          80% Decrease in Costs vs Humans
+          80% Decrease <br />in Costs vs Humans
         </h2>
         <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
           AI operators are less expensive than humans
