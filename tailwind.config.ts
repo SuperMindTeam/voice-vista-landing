@@ -67,7 +67,7 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				display: ['Inter', 'sans-serif'],
-				sanomat: ['Inter', 'sans-serif'],
+				sanomat: ['Source Sans 3', 'Inter', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
