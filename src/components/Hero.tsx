@@ -42,7 +42,7 @@ const Hero = () => {
           <SmileIcon className="w-4 h-4 md:w-5 md:h-5" style={{ marginLeft: '1px' }} />
         </div>
         <div className="min-w-0 text-center md:text-left">
-          <h3 className="font-display text-lg md:text-xl font-semibold truncate">100%</h3>
+          <h3 className="font-display text-lg md:text-xl font-semibold truncate">99%</h3>
           <p className="text-sm md:text-sm text-black/80 truncate">User Satisfaction</p>
         </div>
       </div>
