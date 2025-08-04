@@ -84,13 +84,13 @@ const DentalAI = () => {
               </div>
 
               {/* Right Video */}
-              <div className="relative flex justify-center">
+              <div className="relative flex justify-center" style={{ overflow: 'hidden' }}>
                 {/* Outer hollow rectangle (phone frame) */}
                 <div 
                   className="relative"
                   style={{ 
                     width: '320px',
-                    height: '460px',
+                    height: '600px', // Much taller to extend well beyond container
                     maxWidth: '100%',
                     border: '3px solid black',
                     borderTopLeftRadius: '25px',
@@ -142,7 +142,7 @@ const DentalAI = () => {
                     className="bg-black shadow-2xl absolute"
                     style={{ 
                       width: '280px',
-                      height: '420px',
+                      height: '560px', // Increased to match outer rectangle
                       top: '20px',
                       left: '50%',
                       transform: 'translateX(-50%)',
@@ -156,10 +156,10 @@ const DentalAI = () => {
                     <div 
                       className="absolute bg-white rounded-lg overflow-hidden shadow-lg"
                       style={{
-                        width: '120px',
-                        height: '120px',
-                        top: '100px',
-                        left: '-60px', // Half of video width (120px / 2 = 60px)
+                        width: '160px', // Increased from 120px
+                        height: '160px', // Increased from 120px
+                        top: '80px',
+                        left: '-80px', // Adjusted: Half of new video width (160px / 2 = 80px)
                         zIndex: 10
                       }}
                     >
@@ -179,8 +179,8 @@ const DentalAI = () => {
                     <div 
                       className="absolute"
                       style={{
-                        top: '100px',
-                        left: '80px', // Right side of video (video left -60px + video width 120px + gap 20px)
+                        top: '80px', // Adjusted to align with new video position
+                        left: '100px', // Adjusted: video ends at -80px + 160px + gap 20px
                         zIndex: 10
                       }}
                     >
