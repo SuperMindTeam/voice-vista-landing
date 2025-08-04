@@ -33,8 +33,7 @@ const DentalAI = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <div className="min-h-screen" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <main>
         {/* Hero Section */}
         <section className="min-h-screen flex items-center bg-white">
@@ -47,10 +46,10 @@ const DentalAI = () => {
               minHeight: '100vh'
             }}
           >
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 px-8 min-h-screen">
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-8 px-8 min-h-screen">
               {/* Left Content */}
               <div className="space-y-8">
-                <h1 className="font-serif text-4xl lg:text-6xl font-bold text-white">
+                <h1 className="text-4xl lg:text-6xl font-bold text-white">
                   AI built for Dental Practices.
                 </h1>
                 
@@ -89,31 +88,42 @@ const DentalAI = () => {
 
               {/* Right Video */}
               <div className="relative flex justify-center">
+                {/* Black rectangle with rounded top corners */}
                 <div 
-                  className="rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-sm"
+                  className="bg-black shadow-2xl"
                   style={{ 
-                    width: '300px',
-                    height: '500px',
-                    maxWidth: '100%'
+                    width: '280px',
+                    height: '420px',
+                    maxWidth: '100%',
+                    borderTopLeftRadius: '20px',
+                    borderTopRightRadius: '20px',
+                    borderBottomLeftRadius: '0px',
+                    borderBottomRightRadius: '0px'
                   }}
                 >
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover"
-                  >
-                    <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
-                    Your browser does not support the video tag.
-                  </video>
+                  {/* Video on top of black rectangle */}
+                  <div className="p-4">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover rounded-t-lg"
+                      style={{
+                        width: '100%',
+                        height: '380px'
+                      }}
+                    >
+                      <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
