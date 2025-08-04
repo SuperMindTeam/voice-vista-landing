@@ -43,7 +43,7 @@ const DentalAI = () => {
               width: '100%'
             }}
           >
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-8 px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-12 px-8">
               {/* Left Content */}
               <div className="space-y-8">
                 <h1 className="text-4xl lg:text-6xl font-bold text-white">
@@ -84,13 +84,13 @@ const DentalAI = () => {
               </div>
 
               {/* Right Video */}
-              <div className="relative flex justify-center" style={{ overflow: 'hidden' }}>
+              <div className="relative flex justify-center" style={{ overflow: 'hidden', height: '450px' }}>
                 {/* Outer hollow rectangle (phone frame) */}
                 <div 
                   className="relative"
                   style={{ 
                     width: '320px',
-                    height: '600px', // Much taller to extend well beyond container
+                    height: '550px', // Taller than container to get cut off
                     maxWidth: '100%',
                     border: '3px solid black',
                     borderTopLeftRadius: '25px',
@@ -142,7 +142,7 @@ const DentalAI = () => {
                     className="bg-black shadow-2xl absolute"
                     style={{ 
                       width: '280px',
-                      height: '560px', // Increased to match outer rectangle
+                      height: '510px', // Adjusted to match outer rectangle
                       top: '20px',
                       left: '50%',
                       transform: 'translateX(-50%)',
