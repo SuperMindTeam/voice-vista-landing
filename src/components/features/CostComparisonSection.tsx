@@ -35,7 +35,7 @@ const CostComparisonSection = () => {
               <img 
                 src={card.image}
                 alt={card.text}
-                className="w-full h-64 object-cover rounded-lg"
+                className="w-full h-80 object-cover rounded-lg"
               />
             </div>
             <p className="text-gray-800 text-lg font-medium leading-relaxed">
