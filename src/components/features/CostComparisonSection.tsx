@@ -17,7 +17,7 @@ const CostComparisonSection = () => {
   ];
 
   return (
-    <div className="text-center mb-16">
+    <div className="text-center mb-16 -mt-8">
       <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-white">
         80% Decrease <br />in Costs vs Humans
       </h2>
@@ -29,7 +29,7 @@ const CostComparisonSection = () => {
         {cards.map((card, index) => (
           <div 
             key={index}
-            className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-96 flex flex-col"
+            className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-[540px] flex flex-col"
           >
             <div className="flex-1 mb-4">
               <img 
