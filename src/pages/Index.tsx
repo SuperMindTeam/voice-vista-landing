@@ -5,9 +5,7 @@ import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import ConvertOpportunity from '@/components/ConvertOpportunity';
 import LiveDemo from '@/components/LiveDemo';
-import HowItTransforms from '@/components/HowItTransforms';
 import AnalyticsQueue from '@/components/GenerateLeads';
-
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -47,7 +45,6 @@ const Index = () => {
         <Features />
         <ConvertOpportunity />
         <AnalyticsQueue />
-        <HowItTransforms />
       </main>
       <Footer />
     </div>
