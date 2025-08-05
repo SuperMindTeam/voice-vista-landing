@@ -39,6 +39,12 @@ const Hero = () => {
     <div className="flex items-center gap-4 mt-8 max-w-md mx-auto">
       <div className="relative">
         <Mic className="w-12 h-12 text-white bg-white/20 rounded-full p-3" />
+        {/* Handwritten mic SVG */}
+        <img 
+          src="/lovable-uploads/HandwrittenMic.svg" 
+          alt="Handwritten mic" 
+          className="absolute -bottom-2 -right-2 w-6 h-6"
+        />
         {/* Hand-drawn style arrow */}
         <svg 
           className="absolute -right-20 -top-2 w-16 h-8 text-white" 
@@ -56,7 +62,7 @@ const Hero = () => {
         </svg>
       </div>
       <div className="ml-8">
-        <p className="text-lg font-semibold text-white">Talk to SuperMind!</p>
+        <p className="text-lg font-semibold text-white font-serif">Experience a Live AI Call</p>
       </div>
     </div>
   );
@@ -90,7 +96,7 @@ const Hero = () => {
             </h1>
             
             {/* Decorative line */}
-            <div className="w-64 h-0.5 bg-white/40 mb-6 mx-auto"></div>
+            <div className="w-80 h-0.5 bg-white/40 mb-6 mx-auto"></div>
             
             <div className="text-center">
               <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-2xl mb-10 font-bold">
@@ -123,7 +129,7 @@ const Hero = () => {
                 </h1>
                 
                 {/* Decorative line */}
-                <div className="w-24 h-0.5 bg-white/40 mb-6"></div>
+                <div className="w-80 h-0.5 bg-white/40 mb-6"></div>
                 
                 <div>
                   <p className="text-2xl md:text-3xl lg:text-4xl text-white mb-10 animate-fade-in animate-delay-100 font-bold text-left">
