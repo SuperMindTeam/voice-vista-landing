@@ -117,7 +117,7 @@ const Hero = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
               <div className="text-left">
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-sanomat font-semibold tracking-tight mt-4 mb-6 text-white">
-                  Cut Costs.<br />Answering Calls 24 hours/7 days.
+                  Cut Costs<br />Answering Calls 24 hours
                 </h1>
                 
                 <div>
