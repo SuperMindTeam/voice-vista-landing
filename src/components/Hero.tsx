@@ -36,43 +36,25 @@ const Hero = () => {
   };
 
   const CallToAction = () => (
-    <div className="flex items-center gap-4 mt-8 max-w-md mx-auto">
-      <div className="relative">
-        <Mic className="w-12 h-12 text-white bg-white/20 rounded-full p-3" />
-        {/* Handwritten mic SVG */}
-        <img 
-          src="/lovable-uploads/HandwrittenMic.svg" 
-          alt="Handwritten mic" 
-          className="absolute bottom-0 right-0 text-white"
-          style={{ 
-            filter: 'brightness(0) invert(1)',
-            transform: 'scale(5)',
-            transformOrigin: 'bottom right',
-            width: '100px',
-            height: '100px'
-          }}
-        />
-        {/* Hand-drawn style arrow */}
-        <svg 
-          className="absolute -right-20 -top-2 w-16 h-8 text-white" 
-          viewBox="0 0 64 32" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-        >
-          <path 
-            d="M2 16 C10 8, 20 12, 30 16 C40 20, 50 12, 58 16" 
-            strokeDasharray="2,2"
-            className="animate-pulse"
-          />
-          <path d="M54 12 L58 16 L54 20" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
-      <div className="ml-8">
-        <p className="text-lg font-semibold text-white font-times">Experience a Live AI Call</p>
-      </div>
+  <div className="flex items-center gap-4 mt-8 max-w-md mx-auto">
+    <div className="relative">
+      {/* Handwritten mic SVG */}
+      <img 
+        src="/lovable-uploads/HandwrittenMic.svg" 
+        alt="Handwritten mic" 
+        className="text-white"
+        style={{ 
+          filter: 'brightness(0) invert(1)',
+          transform: 'scale(5)',
+          transformOrigin: 'bottom right',
+          width: '100px',
+          height: '100px'
+        }}
+      />
     </div>
-  );
+  </div>
+);
+
 
   return (
     <section className="relative min-h-screen pt-32 pb-16 overflow-hidden">
