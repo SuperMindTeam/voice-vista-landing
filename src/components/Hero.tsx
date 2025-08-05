@@ -43,7 +43,7 @@ const Hero = () => {
         <img 
           src="/lovable-uploads/HandwrittenMic.svg" 
           alt="Handwritten mic" 
-          className="absolute bottom-0 right-0 w-20 h-20 text-white"
+          className="absolute bottom-0 right-0 w-80 h-80 text-white"
           style={{ filter: 'brightness(0) invert(1)' }}
         />
         {/* Hand-drawn style arrow */}
