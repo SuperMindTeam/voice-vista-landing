@@ -46,7 +46,7 @@ const Hero = () => {
           className="absolute bottom-0 right-0 text-white"
           style={{ 
             filter: 'brightness(0) invert(1)',
-            transform: 'scale(2)',
+            transform: 'scale(5)',
             transformOrigin: 'bottom right',
             width: '100px',
             height: '100px'
