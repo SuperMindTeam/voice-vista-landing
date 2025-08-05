@@ -46,12 +46,12 @@ const Hero = () => {
       />
     </div>
     
-    {/* Handwritten mic SVG positioned relative to center */}
-    <div className="relative left-20">
+    {/* Handwritten mic SVG positioned bottom right of gradient logo */}
+    <div className="absolute left-1/2 transform -translate-x-1/2 translate-x-12 translate-y-8">
       <img 
         src="/lovable-uploads/HandwrittenMic.svg" 
         alt="Handwritten mic" 
-        className="w-58 h-42"
+        className="w-40 h-28"
         style={{ 
           filter: 'brightness(0) invert(1)'
         }}
