@@ -52,24 +52,7 @@ const Hero = () => {
             height: '100px'
           }}
         />
-        {/* Hand-drawn style arrow */}
-        <svg 
-          className="absolute -right-20 -top-2 w-16 h-8 text-white" 
-          viewBox="0 0 64 32" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2"
-        >
-          <path 
-            d="M2 16 C10 8, 20 12, 30 16 C40 20, 50 12, 58 16" 
-            strokeDasharray="2,2"
-            className="animate-pulse"
-          />
-          <path d="M54 12 L58 16 L54 20" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-      </div>
-      <div className="ml-8">
-        <p className="text-lg font-semibold text-white font-times">Experience a Live AI Call</p>
       </div>
     </div>
   );
