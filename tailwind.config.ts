@@ -70,6 +70,7 @@ export default {
 				sans: ['Inter', 'sans-serif'],
 				display: ['Inter', 'sans-serif'],
 				sanomat: ['Times New Roman', 'serif'],
+				'times': ['Times New Roman', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

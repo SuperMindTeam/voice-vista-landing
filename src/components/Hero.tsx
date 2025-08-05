@@ -62,7 +62,7 @@ const Hero = () => {
         </svg>
       </div>
       <div className="ml-8">
-        <p className="text-lg font-semibold text-white font-serif">Experience a Live AI Call</p>
+        <p className="text-lg font-semibold text-white font-times">Experience a Live AI Call</p>
       </div>
     </div>
   );
