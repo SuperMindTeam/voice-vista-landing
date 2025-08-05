@@ -36,9 +36,9 @@ const Hero = () => {
   };
 
   const CallToAction = () => (
-  <div className="relative flex justify-center items-center mt-8 w-full">
-    {/* New gradient SVG in absolute center */}
-    <div className="flex justify-center">
+  <div className="relative mt-8 w-full flex justify-center">
+    {/* New gradient SVG in absolute center of hero */}
+    <div className="absolute left-1/2 transform -translate-x-1/2">
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
         alt="Gradient mic" 
@@ -46,8 +46,8 @@ const Hero = () => {
       />
     </div>
     
-    {/* Handwritten mic SVG next to it */}
-    <div className="relative ml-8">
+    {/* Handwritten mic SVG positioned relative to center */}
+    <div className="relative left-20">
       <img 
         src="/lovable-uploads/HandwrittenMic.svg" 
         alt="Handwritten mic" 
