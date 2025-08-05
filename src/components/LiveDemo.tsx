@@ -174,7 +174,7 @@ const LiveDemo = () => {
                         </video>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                         <div className="absolute top-4 left-4">
-                          <div className="bg-blue-600 rounded-full p-3">
+                          <div className="bg-green-600 rounded-full p-3">
                             <Phone className="w-6 h-6 text-white" />
                           </div>
                         </div>
