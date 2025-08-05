@@ -234,7 +234,7 @@ const LiveDemo = () => {
                         </div>
                       )}
                     </>
-                  ) : category.name === "Hotel Receptionist" ? (
+                  ) : category.name === "Hotel Concierge" ? (
                     <>
                       <div 
                         onClick={() => startCall(category)}
@@ -257,7 +257,7 @@ const LiveDemo = () => {
                           </div>
                         </div>
                         <div className="absolute bottom-20 left-6 right-6">
-                          <h3 className="text-white text-2xl font-bold mb-2">Hotel Receptionist</h3>
+                          <h3 className="text-white text-2xl font-bold mb-2">Hotel Concierge</h3>
                           <p className="text-white/90 text-sm leading-relaxed">
                             Assists with room bookings, provides hotel information, and handles guest services inquiries.
                           </p>
@@ -312,7 +312,7 @@ const LiveDemo = () => {
                         </div>
                       )}
                     </>
-                  ) : category.name === "Restaurant Table Reservation" ? (
+                  ) : category.name === "Restaurant Reservation" ? (
                     <>
                       <div 
                         onClick={() => startCall(category)}
@@ -335,7 +335,7 @@ const LiveDemo = () => {
                           </div>
                         </div>
                         <div className="absolute bottom-20 left-6 right-6">
-                          <h3 className="text-white text-2xl font-bold mb-2">Restaurant Table Reservation</h3>
+                          <h3 className="text-white text-2xl font-bold mb-2">Restaurant Reservation</h3>
                           <p className="text-white/90 text-sm leading-relaxed">
                             Handles table bookings, menu inquiries, special requests, and restaurant information.
                           </p>
