@@ -83,7 +83,7 @@ const Hero = () => {
           <source src="/hero-background-video.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/35 md:bg-black/35"></div>
+        <div className="absolute inset-0 bg-black/30 md:bg-black/30"></div>
         <div className="absolute inset-0 bg-black/72 md:bg-black/0"></div>
       </div>
       
