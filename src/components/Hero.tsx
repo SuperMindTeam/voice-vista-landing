@@ -90,7 +90,7 @@ const Hero = () => {
             </h1>
             
             {/* Decorative line */}
-            <div className="w-24 h-0.5 bg-white/40 mb-6 mx-auto"></div>
+            <div className="w-34 h-0.5 bg-white/40 mb-6 mx-auto"></div>
             
             <div className="text-center">
               <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-2xl mb-10 font-bold">
