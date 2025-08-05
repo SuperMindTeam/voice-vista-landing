@@ -36,24 +36,12 @@ const Hero = () => {
   };
 
   const CallToAction = () => (
-    <div className="flex items-center gap-4 mt-8 max-w-md mx-auto">
-      <div className="relative">
-        <Mic className="w-12 h-12 text-white bg-white/20 rounded-full p-3" />
-        {/* Handwritten mic SVG */}
-        <img 
-          src="/lovable-uploads/HandwrittenMic.svg" 
-          alt="Handwritten mic" 
-          className="absolute bottom-0 right-0 text-white"
-          style={{ 
-            filter: 'brightness(0) invert(1)',
-            transform: 'scale(5)',
-            transformOrigin: 'bottom right',
-            width: '100px',
-            height: '100px'
-          }}
-        />
-        </svg>
-      </div>
+    <div className="flex items-center justify-center mt-8">
+      <img 
+        src="/lovable-uploads/new-mic-icon.svg" 
+        alt="Voice AI microphone" 
+        className="w-16 h-16"
+      />
     </div>
   );
 
