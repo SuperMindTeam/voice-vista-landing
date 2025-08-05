@@ -85,20 +85,22 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center text-center"
           >
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-sanomat font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-sanomat font-semibold tracking-tight mb-6 max-w-5xl text-white text-center">
               Cut Costs<br />Calls Answered 24 hours
             </h1>
             
+            {/* Decorative line */}
+            <div className="w-24 h-0.5 bg-white/40 mb-6 mx-auto"></div>
             
             <div className="text-center">
-              <p className="text-2xl md:text-3xl lg:text-4xl text-white max-w-2xl mb-10 font-bold">
+              <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-2xl mb-10 font-bold">
                 Instant Answers, Zero Wait Time.
               </p>
               
               <div className="mb-12">
                 <Button 
                   size="lg" 
-                  variant="custom"
+                  variant="white"
                   className="shadow-md"
                   onClick={handleFreeTrialClick}
                 >
@@ -115,20 +117,23 @@ const Hero = () => {
             className="flex flex-col items-center transition-all duration-700 opacity-0 translate-y-10"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
-              <div className="text-left">
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-sanomat font-semibold tracking-tight mt-4 mb-6 text-white">
+              <div className="text-left max-w-none">
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-sanomat font-semibold tracking-tight mt-4 mb-6 text-white max-w-5xl">
                   Cut Costs<br />Calls Answered 24 hours
                 </h1>
                 
+                {/* Decorative line */}
+                <div className="w-24 h-0.5 bg-white/40 mb-6"></div>
+                
                 <div>
-                  <p className="text-3xl md:text-4xl lg:text-5xl text-white mb-10 animate-fade-in animate-delay-100 font-bold text-left">
+                  <p className="text-2xl md:text-3xl lg:text-4xl text-white mb-10 animate-fade-in animate-delay-100 font-bold text-left">
                     Instant Answers, Zero Wait Time.
                   </p>
                   
                   <div className="mb-8 animate-fade-in animate-delay-200 text-left">
                     <Button 
                       size="lg" 
-                      variant="custom"
+                      variant="white"
                       className="shadow-md"
                       onClick={handleFreeTrialClick}
                     >
