@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { SmileIcon, Phone, DollarSign } from 'lucide-react';
+import { SmileIcon, Phone, DollarSign, Mic } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
@@ -35,36 +35,28 @@ const Hero = () => {
     window.open("https://forms.gle/zpiozAUmedjgyR678", "_blank");
   };
 
-  const StatBoxes = () => (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-8 max-w-3xl mx-auto">
-      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center justify-center md:justify-start gap-2">
-        <div className="bg-black/10 rounded-full w-8 h-8 md:w-10 md:h-10 flex-shrink-0 flex items-center justify-center">
-          <SmileIcon className="w-4 h-4 md:w-5 md:h-5" style={{ marginLeft: '1px' }} />
-        </div>
-        <div className="min-w-0 text-center md:text-left">
-          <h3 className="font-sanomat text-lg md:text-xl font-semibold truncate">99%</h3>
-          <p className="text-sm md:text-sm text-black/80 truncate">User Satisfaction</p>
-        </div>
+  const CallToAction = () => (
+    <div className="flex items-center gap-4 mt-8 max-w-md mx-auto">
+      <div className="relative">
+        <Mic className="w-12 h-12 text-white bg-white/20 rounded-full p-3" />
+        {/* Hand-drawn style arrow */}
+        <svg 
+          className="absolute -right-20 -top-2 w-16 h-8 text-white" 
+          viewBox="0 0 64 32" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2"
+        >
+          <path 
+            d="M2 16 C10 8, 20 12, 30 16 C40 20, 50 12, 58 16" 
+            strokeDasharray="2,2"
+            className="animate-pulse"
+          />
+          <path d="M54 12 L58 16 L54 20" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </div>
-      
-      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center justify-center md:justify-start gap-2">
-        <div className="bg-black/10 rounded-full w-8 h-8 md:w-10 md:h-10 flex-shrink-0 flex items-center justify-center">
-          <Phone className="w-4 h-4 md:w-5 md:h-5" style={{ marginLeft: '-1px' }} />
-        </div>
-        <div className="min-w-0 text-center md:text-left">
-          <h3 className="font-sanomat text-lg md:text-xl font-semibold truncate">24x7</h3>
-          <p className="text-sm md:text-sm text-black/80 truncate">Always Available</p>
-        </div>
-      </div>
-      
-      <div className="rounded-full overflow-hidden shadow-lg bg-white text-black p-3 md:p-4 flex items-center justify-center md:justify-start gap-2">
-        <div className="bg-black/10 rounded-full w-8 h-8 md:w-10 md:h-10 flex-shrink-0 flex items-center justify-center">
-          <DollarSign className="w-4 h-4 md:w-5 md:h-5" style={{ marginLeft: '-1px' }} />
-        </div>
-        <div className="min-w-0 text-center md:text-left">
-          <h3 className="font-sanomat text-lg md:text-xl font-semibold truncate">80%</h3>
-          <p className="text-sm md:text-sm text-black/80 truncate">Cost Reduction</p>
-        </div>
+      <div className="ml-8">
+        <p className="text-lg font-semibold text-white">Talk to SuperMind!</p>
       </div>
     </div>
   );
@@ -87,26 +79,27 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/72 md:bg-black/0"></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {isMobile ? (
           <div 
             ref={heroRef}
             className="flex flex-col items-center text-center"
           >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-sanomat font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-sanomat font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
               Cut Costs.<br />Automate Reception.
             </h1>
             
             
             <div className="text-center">
-              <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-2xl mb-10 font-bold">
+              <p className="text-2xl md:text-3xl lg:text-4xl text-white max-w-2xl mb-10 font-bold">
                 Instant Answers, Zero Wait Time.
               </p>
               
               <div className="mb-12">
                 <Button 
                   size="lg" 
-                  className="bg-white hover:bg-white/90 text-black shadow-md"
+                  variant="custom"
+                  className="shadow-md"
                   onClick={handleFreeTrialClick}
                 >
                   Start 1 Month Free Trial
@@ -114,7 +107,7 @@ const Hero = () => {
               </div>
             </div>
             
-            <StatBoxes />
+            <CallToAction />
           </div>
         ) : (
           <div 
@@ -123,19 +116,20 @@ const Hero = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
               <div className="text-left">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-sanomat font-semibold tracking-tight mt-4 mb-6 text-white">
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-sanomat font-semibold tracking-tight mt-4 mb-6 text-white">
                   Cut Costs.<br />Automate Reception.
                 </h1>
                 
                 <div>
-                  <p className="text-xl md:text-2xl lg:text-3xl text-white mb-10 animate-fade-in animate-delay-100 font-bold text-left">
+                  <p className="text-3xl md:text-4xl lg:text-5xl text-white mb-10 animate-fade-in animate-delay-100 font-bold text-left">
                     Instant Answers, Zero Wait Time.
                   </p>
                   
                   <div className="mb-8 animate-fade-in animate-delay-200 text-left">
                     <Button 
                       size="lg" 
-                      className="bg-white hover:bg-white/90 text-black shadow-md"
+                      variant="custom"
+                      className="shadow-md"
                       onClick={handleFreeTrialClick}
                     >
                       Start 1 Month Free Trial
@@ -146,7 +140,7 @@ const Hero = () => {
               
             </div>
             
-            <StatBoxes />
+            <CallToAction />
           </div>
         )}
       </div>

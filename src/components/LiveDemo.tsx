@@ -146,7 +146,7 @@ const LiveDemo = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Heading */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-times">
               Experience a Live AI Call
             </h1>
           </div>

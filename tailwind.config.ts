@@ -23,6 +23,8 @@ export default {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
+				'button-custom': 'hsl(var(--button-custom))',
+				'button-custom-foreground': 'hsl(var(--button-custom-foreground))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {

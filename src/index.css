@@ -35,6 +35,10 @@
     --input: 214 32% 91%;
     --ring: 221 83% 53%;
 
+    /* Custom button colors */
+    --button-custom: 40 8% 44%;
+    --button-custom-foreground: 0 0% 100%;
+
     --radius: 0.75rem;
   }
 
