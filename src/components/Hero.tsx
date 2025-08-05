@@ -85,7 +85,7 @@ const Hero = () => {
             ref={heroRef}
             className="flex flex-col items-center text-center"
           >
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-sanomat font-semibold tracking-tight mb-6 max-w-6xl text-white text-center">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-sanomat font-semibold tracking-tight mb-6 max-w-8xl text-white text-center">
               Cut Costs<br />Calls Answered 24 hours
             </h1>
             
