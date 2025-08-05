@@ -86,7 +86,7 @@ const Hero = () => {
             className="flex flex-col items-center text-center"
           >
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-sanomat font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
-              Cut Costs<br />Calls Answered 24/7
+              Cut Costs<br />Calls Answered 24 hours
             </h1>
             
             
@@ -117,7 +117,7 @@ const Hero = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12 max-w-7xl mx-auto">
               <div className="text-left">
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-sanomat font-semibold tracking-tight mt-4 mb-6 text-white">
-                  Cut Costs<br />Calls Answered 24/7
+                  Cut Costs<br />Calls Answered 24 hours
                 </h1>
                 
                 <div>
