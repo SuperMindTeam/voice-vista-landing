@@ -36,13 +36,13 @@ const Hero = () => {
   };
 
   const CallToAction = () => (
-  <div className="flex items-center justify-center gap-6 mt-8 max-w-md mx-auto">
-    {/* New gradient SVG in center */}
+  <div className="flex items-center justify-center gap-8 mt-8 max-w-4xl mx-auto">
+    {/* New gradient SVG in center - bigger */}
     <div className="relative">
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
         alt="Gradient mic" 
-        className="w-16 h-16"
+        className="w-32 h-32"
       />
     </div>
     
