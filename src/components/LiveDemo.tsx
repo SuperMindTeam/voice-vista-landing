@@ -181,7 +181,7 @@ const LiveDemo = () => {
                         <div className="absolute bottom-20 left-6 right-6">
                           <h3 className="text-white text-2xl font-bold mb-2">Healthcare Receptionist</h3>
                           <p className="text-white/90 text-sm leading-relaxed">
-                            Handles patient inquiries, suggests doctors based on symptoms, and schedules appointments.
+                            Schedules appointment, patient inquiries, & suggests doctors based on symptoms.
                           </p>
                         </div>
                         {selectedCategory === category.name && isCallActive && (
@@ -259,7 +259,7 @@ const LiveDemo = () => {
                         <div className="absolute bottom-20 left-6 right-6">
                           <h3 className="text-white text-2xl font-bold mb-2">Hotel Concierge</h3>
                           <p className="text-white/90 text-sm leading-relaxed">
-                            Assists with room bookings, provides hotel information, and handles guest services inquiries.
+                            Assists with room bookings, provides hotel information, & handles guest inquiries.
                           </p>
                         </div>
                         {selectedCategory === category.name && isCallActive && (
@@ -337,7 +337,7 @@ const LiveDemo = () => {
                         <div className="absolute bottom-20 left-6 right-6">
                           <h3 className="text-white text-2xl font-bold mb-2">Restaurant Reservation</h3>
                           <p className="text-white/90 text-sm leading-relaxed">
-                            Handles table bookings, menu inquiries, special requests, and restaurant information.
+                            Handles table bookings, menu inquiries, special requests, & restaurant information.
                           </p>
                         </div>
                         {selectedCategory === category.name && isCallActive && (
