@@ -86,7 +86,7 @@ const Hero = () => {
             className="flex flex-col items-center text-center"
           >
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-sanomat font-semibold tracking-tight mb-6 max-w-4xl text-white text-center">
-              Cut Costs.<br />Automate Reception.
+              Cut Costs.<br />Answering Calls 24 hours/7 days.
             </h1>
             
             
