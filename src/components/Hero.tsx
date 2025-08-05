@@ -46,9 +46,8 @@ const Hero = () => {
           className="absolute -bottom-32 -right-32 text-white"
           style={{ 
             filter: 'brightness(0) invert(1)',
-            width: '400px',
-            height: '400px',
-            border: '2px solid red' // Debug border to see if element is there
+            transform: 'scale(5)',
+            transformOrigin: 'center'
           }}
         />
         {/* Hand-drawn style arrow */}
