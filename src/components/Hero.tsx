@@ -35,31 +35,23 @@ const Hero = () => {
     window.open("https://forms.gle/zpiozAUmedjgyR678", "_blank");
   };
 
-const CallToAction = () => (
-  <div className="flex items-center justify-center mt-8 max-w-md mx-auto relative">
-    {/* Center SVG */}
-    <img 
-      src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
-      alt="Center image" 
-      className="text-white"
-      style={{ 
-        filter: 'brightness(0) invert(1)'
-      }}
-    />
-    
-    {/* Handwritten mic SVG - bottom right corner */}
-    <img 
-      src="/lovable-uploads/HandwrittenMic.svg" 
-      alt="Handwritten mic" 
-      className="absolute bottom-0 right-0 text-white"
-      style={{ 
-        filter: 'brightness(0) invert(1)',
-        transform: 'scale(5)',
-        transformOrigin: 'bottom right',
-        width: '100px',
-        height: '100px'
-      }}
-    />
+  const CallToAction = () => (
+  <div className="flex items-center gap-4 mt-8 max-w-md mx-auto">
+    <div className="relative">
+      {/* Handwritten mic SVG */}
+      <img 
+        src="/lovable-uploads/HandwrittenMic.svg" 
+        alt="Handwritten mic" 
+        className="text-white"
+        style={{ 
+          filter: 'brightness(0) invert(1)',
+          transform: 'scale(5)',
+          transformOrigin: 'bottom right',
+          width: '100px',
+          height: '100px'
+        }}
+      />
+    </div>
   </div>
 );
 
