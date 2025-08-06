@@ -38,15 +38,13 @@ const Hero = () => {
   const CallToAction = () => (
   <div className="relative mt-8 w-full flex justify-center">
     {/* New gradient SVG positioned on the right side */}
-    <div className="absolute right-16 -translate-y-24 translate-x-4">
+    <div className="absolute right-8 -translate-y-6">
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
         alt="Gradient mic" 
         className="w-32 h-32"
       />
     </div>
-  </div>
-
     
     {/* Handwritten mic SVG positioned bottom right of gradient logo */}
   <div className="absolute left-1/2 transform -translate-x-1/2 translate-x-12 -translate-y-10">
