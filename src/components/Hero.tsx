@@ -47,11 +47,11 @@ const Hero = () => {
     </div>
     
     {/* Handwritten mic SVG positioned far right */}
-  <div className="absolute right-4 -translate-y-[28rem]">
+  <div className="absolute right-2 -translate-y-[28rem]">
       <img 
         src="/lovable-uploads/HandwrittenMic.svg" 
         alt="Handwritten mic" 
-        className="w-60 h-44"
+        className="w-72 h-52"
         style={{ 
           filter: 'brightness(0) invert(1)'
         }}
