@@ -42,7 +42,7 @@ const Hero = () => {
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
         alt="Gradient mic" 
-        className="w-32 h-32"
+        className="w-48 h-48"
       />
     </div>
     
@@ -51,7 +51,7 @@ const Hero = () => {
       <img 
         src="/lovable-uploads/HandwrittenMic.svg" 
         alt="Handwritten mic" 
-        className="w-40 h-28"
+        className="w-52 h-36"
         style={{ 
           filter: 'brightness(0) invert(1)'
         }}
