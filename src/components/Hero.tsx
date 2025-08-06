@@ -42,7 +42,7 @@ const Hero = () => {
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
         alt="Gradient mic" 
-        className="w-48 h-48 -translate-y-4"
+        className="w-48 h-48 -translate-y-16" // Increased from -translate-y-4 to -translate-y-16
       />
       <img 
         src="/lovable-uploads/HandwrittenMic.svg" 
@@ -55,6 +55,7 @@ const Hero = () => {
     </div>
   </div>
 );
+
 
 
   return (
