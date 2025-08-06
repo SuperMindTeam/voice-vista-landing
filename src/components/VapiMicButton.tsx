@@ -141,7 +141,7 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
         return (
           // Much larger microphone icon 
           <svg 
-            className="w-16 h-16 text-white"
+            className="w-20 h-20 text-white"
             fill="currentColor" 
             viewBox="0 0 24 24"
           >
