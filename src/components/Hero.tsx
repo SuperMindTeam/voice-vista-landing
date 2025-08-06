@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { SmileIcon, Phone, DollarSign, Mic } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import Vapi from '@vapi-ai/web';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -35,6 +36,16 @@ const Hero = () => {
     window.open("https://forms.gle/zpiozAUmedjgyR678", "_blank");
   };
 
+  const handleVapiCall = async () => {
+    try {
+      const vapi = new Vapi("5c30d4e2-a0e4-440d-bb90-8474c37f2a52");
+      
+      await vapi.start("8fd5e116-6607-46b7-bdba-6e936c48d53c");
+    } catch (error) {
+      console.error("Error starting VAPI call:", error);
+    }
+  };
+
   const CallToAction = ({ isMobileLayout = false }) => (
   <div className={isMobileLayout ? "relative mt-20 w-full flex justify-center" : "relative mt-8 w-full flex justify-center"}>
     {/* Container for both SVGs */}
@@ -54,12 +65,13 @@ const Hero = () => {
         src="/lovable-uploads/NewHandWrittenMic4.svg" 
         alt="Handwritten mic" 
         className={isMobileLayout 
-          ? "w-48 h-32" 
-          : "w-72 h-52 translate-x-24 -translate-y-40"
+          ? "w-48 h-32 cursor-pointer hover:scale-105 transition-transform" 
+          : "w-72 h-52 translate-x-24 -translate-y-40 cursor-pointer hover:scale-105 transition-transform"
         }
         style={{ 
           filter: 'brightness(0) invert(1)'
         }}
+        onClick={handleVapiCall}
       />
     </div>
   </div>
