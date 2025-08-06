@@ -72,28 +72,51 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
     switch (callState) {
       case 'connecting':
         return (
-          <div className="w-8 h-8 border-3 border-white/30 border-t-white rounded-full animate-spin" />
+          <div 
+            className="w-8 h-8 rounded-full"
+            style={{
+              border: '3px solid rgba(255, 255, 255, 0.3)',
+              borderTop: '3px solid white',
+              animation: 'spin 1s linear infinite'
+            }}
+          />
         );
       case 'connected':
         return (
-          <div className="relative flex items-center justify-center">
-            {/* Main animated orb with gradient flow */}
-            <div className="relative w-16 h-16 rounded-full bg-gradient-to-r from-[#4CA154] via-[#3a7a41] via-[#5cb85c] via-[#2e7d32] via-[#66bb6a] to-[#388e3c] bg-[length:400%_400%] animate-gradient-flow shadow-[0_0_30px_rgba(76,161,84,0.4),0_0_60px_rgba(58,122,65,0.3)]">
-              
+          <div className="relative w-20 h-20 flex items-center justify-center">
+            {/* Main animated orb - exactly like original */}
+            <div 
+              className="w-20 h-20 rounded-full relative"
+              style={{
+                background: 'linear-gradient(45deg, #4CA154, #3a7a41, #5cb85c, #2e7d32, #66bb6a, #388e3c)',
+                backgroundSize: '400% 400%',
+                animation: 'gradient-flow 3s ease-in-out infinite, pulse-orb 2s ease-in-out infinite alternate',
+                boxShadow: '0 0 30px rgba(76, 161, 84, 0.4), 0 0 60px rgba(58, 122, 65, 0.3)'
+              }}
+            >
               {/* Rotating white ring */}
-              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-spin-slow" />
+              <div 
+                className="absolute -inset-2.5 rounded-full"
+                style={{
+                  background: 'linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent)',
+                  animation: 'rotate 4s linear infinite'
+                }}
+              />
               
               {/* Shimmer effect */}
-              <div className="absolute top-3 left-3 w-4 h-4 bg-white/30 rounded-full blur-sm animate-shimmer" />
-              
-              {/* Pulsing animation */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#4CA154] to-[#3a7a41] animate-pulse-subtle" />
+              <div 
+                className="absolute top-4 left-4 w-5 h-5 bg-white/30 rounded-full"
+                style={{
+                  filter: 'blur(8px)',
+                  animation: 'shimmer 2.5s ease-in-out infinite alternate'
+                }}
+              />
             </div>
             
             {/* End call button positioned at bottom */}
             <button 
               onClick={handleEndCall}
-              className="absolute -bottom-6 w-12 h-12 rounded-full bg-gradient-to-br from-[#ff4757] to-[#e84118] shadow-[0_8px_24px_rgba(255,71,87,0.3)] hover:shadow-[0_12px_32px_rgba(255,71,87,0.4)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center group"
+              className="absolute -bottom-8 w-12 h-12 rounded-full bg-gradient-to-br from-[#ff4757] to-[#e84118] shadow-[0_8px_24px_rgba(255,71,87,0.3)] hover:shadow-[0_12px_32px_rgba(255,71,87,0.4)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center group"
             >
               {/* End call icon */}
               <svg 
@@ -110,9 +133,9 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
         );
       default:
         return (
-          // Microphone icon - same as original design
+          // Larger microphone icon - same as original design
           <svg 
-            className="w-8 h-8 text-white" 
+            className="w-12 h-12 text-white" 
             fill="currentColor" 
             viewBox="0 0 24 24"
           >
@@ -126,12 +149,22 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
     <>
       {/* Custom CSS for animations */}
       <style jsx>{`
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        
         @keyframes gradient-flow {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
         }
         
-        @keyframes spin-slow {
+        @keyframes pulse-orb {
+          0% { transform: scale(1); }
+          100% { transform: scale(1.05); }
+        }
+        
+        @keyframes rotate {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
@@ -140,34 +173,13 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
           0% { opacity: 0.3; transform: translate(0, 0); }
           100% { opacity: 0.8; transform: translate(5px, -5px); }
         }
-        
-        @keyframes pulse-subtle {
-          0% { transform: scale(1); }
-          100% { transform: scale(1.05); }
-        }
-        
-        .animate-gradient-flow {
-          animation: gradient-flow 3s ease-in-out infinite;
-        }
-        
-        .animate-spin-slow {
-          animation: spin-slow 4s linear infinite;
-        }
-        
-        .animate-shimmer {
-          animation: shimmer 2.5s ease-in-out infinite alternate;
-        }
-        
-        .animate-pulse-subtle {
-          animation: pulse-subtle 2s ease-in-out infinite alternate;
-        }
       `}</style>
       
       <Button
         onClick={callState === 'idle' ? handleVapiCall : undefined}
         disabled={callState === 'connecting'}
         className={`
-          ${callState === 'connected' ? 'w-32 h-32' : 'w-20 h-20'} 
+          ${callState === 'connected' ? 'w-36 h-36' : 'w-20 h-20'} 
           rounded-full 
           bg-gradient-to-br from-[#4CA154] to-[#3d8043]
           hover:from-[#5cb164] hover:to-[#4CA154]
