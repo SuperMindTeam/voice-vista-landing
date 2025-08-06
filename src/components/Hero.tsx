@@ -4,8 +4,7 @@ import { Button } from '@/components/ui/button';
 import { SmileIcon, Phone, DollarSign, Mic } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import Vapi from '@vapi-ai/web';
-import { supabase } from '@/integrations/supabase/client';
+import VapiMicButton from './VapiMicButton';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -37,41 +36,10 @@ const Hero = () => {
     window.open("https://forms.gle/zpiozAUmedjgyR678", "_blank");
   };
 
-  const handleVapiCall = async () => {
-    try {
-      console.log("Fetching VAPI config...");
-      
-      // Fetch the VAPI config from Supabase edge function
-      const { data, error } = await supabase.functions.invoke('vapi-config');
-      
-      if (error) {
-        console.error("Error fetching VAPI config:", error);
-        return;
-      }
-      
-      console.log("VAPI config response:", data);
-      
-      if (!data?.publicKey) {
-        console.error("No public key received from VAPI config");
-        return;
-      }
-      
-      console.log("Initializing VAPI with key:", data.publicKey.substring(0, 10) + "...");
-      
-      const vapi = new Vapi(data.publicKey);
-      
-      console.log("Starting VAPI call with assistant ID:", "8fd5e116-6607-46b7-bdba-6e936c48d53c");
-      await vapi.start("8fd5e116-6607-46b7-bdba-6e936c48d53c");
-      
-      console.log("VAPI call started successfully");
-    } catch (error) {
-      console.error("Error starting VAPI call:", error);
-    }
-  };
 
   const CallToAction = ({ isMobileLayout = false }) => (
   <div className={isMobileLayout ? "relative mt-20 w-full flex justify-center" : "relative mt-8 w-full flex justify-center"}>
-    {/* Container for both SVGs */}
+    {/* Container for gradient mic and VAPI button */}
     <div className={isMobileLayout 
       ? "flex flex-col items-center space-y-4" 
       : "absolute right-6 -translate-y-[24rem] flex flex-col items-end space-y-[-1rem]"
@@ -84,18 +52,15 @@ const Hero = () => {
           : "w-48 h-48 -translate-x-12 -translate-y-14"
         }
       />
-      <img 
-        src="/lovable-uploads/NewHandWrittenMic4.svg" 
-        alt="Handwritten mic" 
-        className={isMobileLayout 
-          ? "w-48 h-32 cursor-pointer hover:scale-105 transition-transform" 
-          : "w-72 h-52 translate-x-24 -translate-y-40 cursor-pointer hover:scale-105 transition-transform"
-        }
-        style={{ 
-          filter: 'brightness(0) invert(1)'
-        }}
-        onClick={handleVapiCall}
-      />
+      <div className={isMobileLayout 
+        ? "flex justify-center" 
+        : "translate-x-24 -translate-y-40"
+      }>
+        <VapiMicButton 
+          assistantId="8fd5e116-6607-46b7-bdba-6e936c48d53c"
+          className="hover:scale-105 transition-transform"
+        />
+      </div>
     </div>
   </div>
 );
