@@ -130,9 +130,6 @@ const Hero = () => {
                 <div className="w-80 h-0.5 bg-white/40 mb-6"></div>
                 
                 <div>
-                  <p className="text-2xl md:text-3xl lg:text-4xl text-white mb-10 animate-fade-in animate-delay-100 font-bold text-left">
-                    Instant Answers, Zero Wait Time.
-                  </p>
                   
                   <div className="mb-8 animate-fade-in animate-delay-200 text-left">
                     <Button 
