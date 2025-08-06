@@ -5,6 +5,7 @@ import { SmileIcon, Phone, DollarSign, Mic } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import Vapi from '@vapi-ai/web';
+import { supabase } from '@/integrations/supabase/client';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -38,9 +39,31 @@ const Hero = () => {
 
   const handleVapiCall = async () => {
     try {
-      const vapi = new Vapi("5c30d4e2-a0e4-440d-bb90-8474c37f2a52");
+      console.log("Fetching VAPI config...");
       
+      // Fetch the VAPI config from Supabase edge function
+      const { data, error } = await supabase.functions.invoke('vapi-config');
+      
+      if (error) {
+        console.error("Error fetching VAPI config:", error);
+        return;
+      }
+      
+      console.log("VAPI config response:", data);
+      
+      if (!data?.publicKey) {
+        console.error("No public key received from VAPI config");
+        return;
+      }
+      
+      console.log("Initializing VAPI with key:", data.publicKey.substring(0, 10) + "...");
+      
+      const vapi = new Vapi(data.publicKey);
+      
+      console.log("Starting VAPI call with assistant ID:", "8fd5e116-6607-46b7-bdba-6e936c48d53c");
       await vapi.start("8fd5e116-6607-46b7-bdba-6e936c48d53c");
+      
+      console.log("VAPI call started successfully");
     } catch (error) {
       console.error("Error starting VAPI call:", error);
     }
