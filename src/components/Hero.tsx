@@ -41,7 +41,7 @@ const Hero = () => {
   <div className={isMobileLayout ? "relative mt-16 w-full flex justify-center" : "relative mt-8 w-full flex justify-center"}>
     <div className={isMobileLayout 
       ? "flex justify-center" 
-      : "absolute right-6 -translate-y-[22rem] flex justify-center"
+      : "absolute right-2 -translate-y-[24rem] flex justify-center"
     }>
       <VapiMicButton 
         assistantId="8fd5e116-6607-46b7-bdba-6e936c48d53c"

@@ -10,6 +10,7 @@ interface VapiMicButtonProps {
 
 const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId }) => {
   const [callState, setCallState] = useState<'idle' | 'connecting' | 'connected'>('idle');
+  const [vapiInstance, setVapiInstance] = useState<Vapi | null>(null);
 
   const handleVapiCall = async () => {
     try {
@@ -36,6 +37,7 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
       console.log("Initializing VAPI with key:", data.publicKey.substring(0, 10) + "...");
       
       const vapi = new Vapi(data.publicKey);
+      setVapiInstance(vapi);
       
       // Set up event listeners
       vapi.on('call-start', () => {
@@ -64,8 +66,12 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
   };
 
   const handleEndCall = () => {
+    console.log("Ending VAPI call...");
+    if (vapiInstance) {
+      vapiInstance.stop();
+      setVapiInstance(null);
+    }
     setCallState('idle');
-    // Add VAPI end call logic here if needed
   };
 
   const renderContent = () => {
@@ -135,7 +141,7 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
         return (
           // Much larger microphone icon 
           <svg 
-            className="w-24 h-24 text-white" 
+            className="w-28 h-28 text-white"
             fill="currentColor" 
             viewBox="0 0 24 24"
           >
@@ -184,8 +190,8 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
           onClick={callState === 'idle' ? handleVapiCall : undefined}
           disabled={callState === 'connecting'}
           className={`
-            w-24 h-24
-            rounded-full 
+            w-28 h-28
+            rounded-full
             bg-gradient-to-br from-[#4CA154] to-[#3d8043]
             hover:from-[#5cb164] hover:to-[#4CA154]
             shadow-lg hover:shadow-xl
