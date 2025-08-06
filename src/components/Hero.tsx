@@ -38,7 +38,7 @@ const Hero = () => {
   const CallToAction = () => (
   <div className="relative mt-8 w-full flex justify-center">
     {/* New gradient SVG positioned on the left side */}
-    <div className="absolute right-24 -translate-y-[30rem]">
+    <div className="absolute right-16 -translate-y-[30rem]">
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
         alt="Gradient mic" 
@@ -51,7 +51,7 @@ const Hero = () => {
       <img 
         src="/lovable-uploads/HandwrittenMic.svg" 
         alt="Handwritten mic" 
-        className="w-52 h-36"
+        className="w-60 h-44"
         style={{ 
           filter: 'brightness(0) invert(1)'
         }}
