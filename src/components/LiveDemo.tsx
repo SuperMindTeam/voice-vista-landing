@@ -170,7 +170,7 @@ const LiveDemo = () => {
                           muted 
                           className="absolute inset-0 w-full h-full object-cover"
                         >
-                          <source src="/lovable-uploads/healthcareVideo.webm" type="video/webm" />
+                          <source src="/lovable-uploads/SuperMind_Healthcare.mp4" type="video/mp4" />
                         </video>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                         <div className="absolute top-4 left-4">
