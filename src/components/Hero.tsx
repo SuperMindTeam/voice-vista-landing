@@ -100,9 +100,6 @@ const Hero = () => {
             <div className="w-80 h-0.5 bg-white/40 mb-6 mx-auto"></div>
             
             <div className="text-center">
-              <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-2xl mb-10 font-bold">
-                Instant Answers, Zero Wait Time.
-              </p>
               
               <div className="mb-12">
                 <Button 
