@@ -42,7 +42,7 @@ const Hero = () => {
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
         alt="Gradient mic" 
-        className="w-42 h-42"
+        className="w-32 h-32"
       />
     </div>
     
