@@ -89,10 +89,10 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
         );
       case 'connected':
         return (
-          <div className="relative w-20 h-20 flex items-center justify-center">
+          <div className="relative w-32 h-32 flex items-center justify-center">
             {/* Main animated orb - exactly like original */}
-            <div 
-              className="w-20 h-20 rounded-full relative"
+            <div
+              className="w-32 h-32 rounded-full relative"
               style={{
                 background: 'linear-gradient(45deg, #4CA154, #3a7a41, #5cb85c, #2e7d32, #66bb6a, #388e3c)',
                 backgroundSize: '400% 400%',
@@ -111,7 +111,7 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
               
               {/* Shimmer effect */}
               <div 
-                className="absolute top-4 left-4 w-5 h-5 bg-white/30 rounded-full"
+                className="absolute top-6 left-6 w-6 h-6 bg-white/30 rounded-full"
                 style={{
                   filter: 'blur(8px)',
                   animation: 'shimmer 2.5s ease-in-out infinite alternate'
@@ -141,7 +141,7 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
         return (
           // Much larger microphone icon 
           <svg 
-            className="w-28 h-28 text-white"
+            className="w-16 h-16 text-white"
             fill="currentColor" 
             viewBox="0 0 24 24"
           >
@@ -190,7 +190,7 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
           onClick={callState === 'idle' ? handleVapiCall : undefined}
           disabled={callState === 'connecting'}
           className={`
-            w-28 h-28
+            w-32 h-32
             rounded-full
             bg-gradient-to-br from-[#4CA154] to-[#3d8043]
             hover:from-[#5cb164] hover:to-[#4CA154]
