@@ -39,28 +39,14 @@ const Hero = () => {
 
   const CallToAction = ({ isMobileLayout = false }) => (
   <div className={isMobileLayout ? "relative mt-20 w-full flex justify-center" : "relative mt-8 w-full flex justify-center"}>
-    {/* Container for gradient mic and VAPI button */}
     <div className={isMobileLayout 
-      ? "flex flex-col items-center space-y-4" 
-      : "absolute right-6 -translate-y-[24rem] flex flex-col items-end space-y-[-1rem]"
+      ? "flex justify-center" 
+      : "absolute right-6 -translate-y-[20rem] flex justify-center"
     }>
-      <img 
-        src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
-        alt="Gradient mic" 
-        className={isMobileLayout 
-          ? "w-32 h-32" 
-          : "w-48 h-48 -translate-x-12 -translate-y-14"
-        }
+      <VapiMicButton 
+        assistantId="8fd5e116-6607-46b7-bdba-6e936c48d53c"
+        className="hover:scale-105 transition-transform"
       />
-      <div className={isMobileLayout 
-        ? "flex justify-center" 
-        : "translate-x-24 -translate-y-40"
-      }>
-        <VapiMicButton 
-          assistantId="8fd5e116-6607-46b7-bdba-6e936c48d53c"
-          className="hover:scale-105 transition-transform"
-        />
-      </div>
     </div>
   </div>
 );

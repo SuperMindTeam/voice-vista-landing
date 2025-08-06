@@ -70,11 +70,12 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
         return <Loader2 className="w-6 h-6 animate-spin text-white" />;
       case 'connected':
         return (
-          <div className="relative">
-            <Mic className="w-6 h-6 text-white" />
-            {/* Animated orb effect */}
-            <div className="absolute inset-0 rounded-full bg-white/20 animate-ping" />
-            <div className="absolute inset-0 rounded-full bg-white/10 animate-pulse" />
+          <div className="relative flex items-center justify-center">
+            {/* Animated orb - multiple layers for better effect */}
+            <div className="absolute w-8 h-8 rounded-full bg-white/30 animate-ping" />
+            <div className="absolute w-6 h-6 rounded-full bg-white/50 animate-pulse" />
+            <div className="absolute w-4 h-4 rounded-full bg-white/70 animate-bounce" />
+            <div className="w-3 h-3 rounded-full bg-white" />
           </div>
         );
       default:
@@ -87,12 +88,11 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
       onClick={handleVapiCall}
       disabled={callState === 'connecting'}
       className={`
-        w-16 h-16 rounded-full 
+        w-20 h-20 rounded-full 
         bg-gradient-to-br from-[#4CA154] to-[#3d8043]
         hover:from-[#5cb164] hover:to-[#4CA154]
         shadow-lg hover:shadow-xl
         transition-all duration-300
-        ${callState === 'connected' ? 'animate-pulse' : ''}
         ${className}
       `}
       variant="ghost"
