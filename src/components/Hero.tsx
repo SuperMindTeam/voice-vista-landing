@@ -45,7 +45,7 @@ const Hero = () => {
         className="w-48 h-48 -translate-x-12 -translate-y-14"
       />
       <img 
-        src="/lovable-uploads/NewHandwrittenMic.svg" 
+        src="/lovable-uploads/NewHandwrittenMic2.svg" 
         alt="Handwritten mic" 
         className="w-72 h-52 -mr-12 -translate-y-32"
         style={{ 
