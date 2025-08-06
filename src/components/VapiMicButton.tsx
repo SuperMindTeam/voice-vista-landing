@@ -133,9 +133,9 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
         );
       default:
         return (
-          // Much larger microphone icon - same as original design
+          // Much larger microphone icon 
           <svg 
-            className="w-16 h-16 text-white" 
+            className="w-24 h-24 text-white" 
             fill="currentColor" 
             viewBox="0 0 24 24"
           >
@@ -148,7 +148,7 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
   return (
     <>
       {/* Custom CSS for animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes spin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
@@ -175,23 +175,29 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
         }
       `}</style>
       
-      <Button
-        onClick={callState === 'idle' ? handleVapiCall : undefined}
-        disabled={callState === 'connecting'}
-        className={`
-          ${callState === 'connected' ? 'w-36 h-36' : 'w-20 h-20'} 
-          rounded-full 
-          bg-gradient-to-br from-[#4CA154] to-[#3d8043]
-          hover:from-[#5cb164] hover:to-[#4CA154]
-          shadow-lg hover:shadow-xl
-          transition-all duration-500
-          relative
-          ${className}
-        `}
-        variant="ghost"
-      >
-        {renderContent()}
-      </Button>
+        {callState === 'connected' ? (
+        <div className={`relative ${className}`}>
+          {renderContent()}
+        </div>
+      ) : (
+        <Button
+          onClick={callState === 'idle' ? handleVapiCall : undefined}
+          disabled={callState === 'connecting'}
+          className={`
+            w-24 h-24
+            rounded-full 
+            bg-gradient-to-br from-[#4CA154] to-[#3d8043]
+            hover:from-[#5cb164] hover:to-[#4CA154]
+            shadow-lg hover:shadow-xl
+            transition-all duration-500
+            relative
+            ${className}
+          `}
+          variant="ghost"
+        >
+          {renderContent()}
+        </Button>
+      )}
     </>
   );
 };
