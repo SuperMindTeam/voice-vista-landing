@@ -38,7 +38,7 @@ const Hero = () => {
   const CallToAction = () => (
   <div className="relative mt-8 w-full flex justify-center">
     {/* Container for both SVGs */}
-    <div className="absolute right-2 -translate-y-[30rem] flex items-center">
+    <div className="absolute right-1 -translate-y-[30rem] flex items-center">
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
         alt="Gradient mic" 
