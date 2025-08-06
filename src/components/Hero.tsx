@@ -46,7 +46,6 @@ const Hero = () => {
       />
     </div>
   </div>
-);
 
     
     {/* Handwritten mic SVG positioned bottom right of gradient logo */}
