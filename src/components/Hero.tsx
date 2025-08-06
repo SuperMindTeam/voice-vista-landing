@@ -35,19 +35,28 @@ const Hero = () => {
     window.open("https://forms.gle/zpiozAUmedjgyR678", "_blank");
   };
 
-  const CallToAction = () => (
-  <div className="relative mt-8 w-full flex justify-center">
+  const CallToAction = ({ isMobileLayout = false }) => (
+  <div className={isMobileLayout ? "relative mt-8 w-full flex justify-center" : "relative mt-8 w-full flex justify-center"}>
     {/* Container for both SVGs */}
-    <div className="absolute right-6 -translate-y-[30rem] flex flex-col items-end space-y-[-1rem]">
+    <div className={isMobileLayout 
+      ? "flex flex-col items-center space-y-4" 
+      : "absolute right-6 -translate-y-[30rem] flex flex-col items-end space-y-[-1rem]"
+    }>
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
         alt="Gradient mic" 
-        className="w-48 h-48 -translate-x-12 -translate-y-14"
+        className={isMobileLayout 
+          ? "w-32 h-32" 
+          : "w-48 h-48 -translate-x-12 -translate-y-14"
+        }
       />
       <img 
         src="/lovable-uploads/NewHandWrittenMic4.svg" 
         alt="Handwritten mic" 
-        className="w-72 h-52 translate-x-24 -translate-y-40"
+        className={isMobileLayout 
+          ? "w-48 h-32" 
+          : "w-72 h-52 translate-x-24 -translate-y-40"
+        }
         style={{ 
           filter: 'brightness(0) invert(1)'
         }}
@@ -107,7 +116,7 @@ const Hero = () => {
               </div>
             </div>
             
-            <CallToAction />
+            <CallToAction isMobileLayout={true} />
           </div>
         ) : (
           <div 
