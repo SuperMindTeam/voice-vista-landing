@@ -36,11 +36,11 @@ const Hero = () => {
   };
 
   const CallToAction = ({ isMobileLayout = false }) => (
-  <div className={isMobileLayout ? "relative mt-16 w-full flex justify-center" : "relative mt-8 w-full flex justify-center"}>
+  <div className={isMobileLayout ? "relative mt-20 w-full flex justify-center" : "relative mt-8 w-full flex justify-center"}>
     {/* Container for both SVGs */}
     <div className={isMobileLayout 
       ? "flex flex-col items-center space-y-4" 
-      : "absolute right-6 -translate-y-[26rem] flex flex-col items-end space-y-[-1rem]"
+      : "absolute right-6 -translate-y-[24rem] flex flex-col items-end space-y-[-1rem]"
     }>
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
