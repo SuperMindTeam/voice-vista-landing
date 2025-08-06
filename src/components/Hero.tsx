@@ -38,16 +38,16 @@ const Hero = () => {
   const CallToAction = () => (
   <div className="relative mt-8 w-full flex justify-center">
     {/* Container for both SVGs */}
-    <div className="absolute right-1 -translate-y-[30rem] flex items-center">
+    <div className="absolute right-8 -translate-y-[30rem] flex flex-col items-end space-y-[-1rem]">
       <img 
         src="/lovable-uploads/d16122e6-44c7-4082-ba99-a318c5e3213c.svg" 
         alt="Gradient mic" 
-        className="w-48 h-48 -translate-y-16" // Increased from -translate-y-4 to -translate-y-16
+        className="w-48 h-48"
       />
       <img 
         src="/lovable-uploads/HandwrittenMic.svg" 
         alt="Handwritten mic" 
-        className="w-72 h-52 -ml-8"
+        className="w-72 h-52 -mr-12"
         style={{ 
           filter: 'brightness(0) invert(1)'
         }}
@@ -55,6 +55,7 @@ const Hero = () => {
     </div>
   </div>
 );
+
 
 
 
