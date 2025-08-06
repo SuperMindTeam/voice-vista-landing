@@ -187,23 +187,31 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
           {renderContent()}
         </div>
       ) : (
-        <Button
-          onClick={callState === 'idle' ? handleVapiCall : undefined}
-          disabled={callState === 'connecting'}
-          className={`
-            w-32 h-32
-            rounded-full
-            bg-gradient-to-br from-[#4CA154] to-[#3d8043]
-            hover:from-[#5cb164] hover:to-[#4CA154]
-            shadow-lg hover:shadow-xl
-            transition-all duration-500
-            relative
-            ${className}
-          `}
-          variant="ghost"
-        >
-          {renderContent()}
-        </Button>
+        <div className={`relative ${className}`} style={{ transform: 'translate(-16px, -16px)' }}>
+          <Button
+            onClick={callState === 'idle' ? handleVapiCall : undefined}
+            disabled={callState === 'connecting'}
+            className={`
+              w-32 h-32
+              rounded-full
+              bg-gradient-to-br from-[#4CA154] to-[#3d8043]
+              hover:from-[#5cb164] hover:to-[#4CA154]
+              shadow-lg hover:shadow-xl
+              transition-all duration-500
+              relative
+            `}
+            variant="ghost"
+          >
+            {renderContent()}
+          </Button>
+          
+          {/* Handwritten mic SVG positioned at bottom right */}
+          <img 
+            src="/lovable-uploads/NewHandWrittenMic4.svg" 
+            alt="Handwritten mic"
+            className="absolute -bottom-2 -right-2 w-12 h-12 pointer-events-none"
+          />
+        </div>
       )}
     </>
   );
