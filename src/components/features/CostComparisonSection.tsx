@@ -19,10 +19,10 @@ const CostComparisonSection = () => {
   return (
     <div className="text-center mb-16 -mt-8">
       <h2 className="text-3xl md:text-5xl font-sanomat font-bold mb-4 text-white">
-        80% Decrease <br />in Costs vs Humans
+        80% Decrease in Costs
       </h2>
       <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
-        AI operators are less expensive than humans
+        AI v/s Humans
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
