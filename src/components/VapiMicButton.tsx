@@ -209,7 +209,8 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
           <img 
             src="/lovable-uploads/NewHandWrittenMic4.svg" 
             alt="Handwritten mic"
-            className="absolute -bottom-4 -right-4 w-[500px] h-[500px] pointer-events-none"
+            className="absolute -bottom-4 -right-4 pointer-events-none"
+            style={{ width: '600px', height: '600px' }}
           />
         </div>
       )}
