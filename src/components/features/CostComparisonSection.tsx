@@ -21,9 +21,10 @@ const CostComparisonSection = () => {
       <h2 className="text-3xl md:text-5xl font-sanomat font-bold mb-4 text-white">
         80% Decrease in Costs
       </h2>
-      <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto">
+     <p className="text-4xl text-white/90 mb-12 max-w-3xl mx-auto">
         AI v/s Humans
-      </p>
+     </p>
+
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {cards.map((card, index) => (
