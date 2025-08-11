@@ -29,11 +29,11 @@ const CostComparisonSection = () => {
             key={index}
             className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-[600px] flex flex-col"
           >
-            <div className="flex-1 mb-4">
+            <div className="flex-1 mb-1">
               <img 
                 src={card.image}
                 alt={card.text}
-                className="w-full h-96 object-cover rounded-lg"
+                className="w-full h-[420px] object-cover rounded-lg"
               />
             </div>
             <p className="text-gray-800 text-xl font-bold leading-relaxed">
