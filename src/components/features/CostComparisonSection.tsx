@@ -38,11 +38,11 @@ const CostComparisonSection = () => {
 
               {index === 0 && (
                 <div className="absolute inset-0 pointer-events-none">
-                  {/* Connector line going through center of all elements */}
-                  <div className="absolute top-6 left-1/2 bottom-6 border-l border-dotted border-indigo-500/80" />
+                  {/* Connector line going through right side elements */}
+                  <div className="absolute top-6 right-20 bottom-6 border-l border-dotted border-indigo-500/80" />
 
                   {/* Top: Inbound Call Answered */}
-                  <div className="absolute top-6 left-1/2 -translate-x-1/2 animate-fade-in">
+                  <div className="absolute top-6 right-20 -translate-x-1/2 animate-fade-in">
                     <div className="px-4 py-1.5 rounded-full bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
                       <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -51,25 +51,8 @@ const CostComparisonSection = () => {
                     </div>
                   </div>
 
-                  {/* Mia voice pill */}
-                  <div className="absolute top-20 left-1/2 -translate-x-1/2 animate-fade-in animate-delay-200">
-                    <div className="px-4 py-3 rounded-2xl bg-white/95 shadow-lg flex items-center gap-3 min-w-[280px]">
-                      <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                      </div>
-                      <span className="text-black font-medium text-lg">Mia</span>
-                      <div className="flex items-center gap-1">
-                        {[...Array(12)].map((_, i) => (
-                          <div key={i} className={`bg-indigo-500 rounded-full ${i % 3 === 0 ? 'w-1 h-8' : i % 3 === 1 ? 'w-1 h-6' : 'w-1 h-4'}`} />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Mid: status tags */}
-                  <div className="absolute top-36 left-1/2 -translate-x-1/2 space-y-3 animate-fade-in animate-delay-300">
+                  {/* Mid: status tags (moved up) */}
+                  <div className="absolute top-20 right-20 -translate-x-1/2 space-y-3 animate-fade-in animate-delay-300">
                     <div className="px-4 py-1.5 rounded-md bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
                       <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -84,17 +67,17 @@ const CostComparisonSection = () => {
                     </div>
                   </div>
 
-                  {/* Message bubble */}
-                  <div className="absolute top-56 left-1/2 -translate-x-1/2 animate-fade-in animate-delay-500">
-                    <div className="bg-white rounded-lg p-4 shadow-lg max-w-[320px] text-center">
-                      <p className="text-gray-800 text-sm leading-relaxed">
-                        Thanks for calling, Jason. Your appointment is confirmed for Mon, Aug 18 @ 3pm.
-                      </p>
-                    </div>
+                  {/* Calendar image replacing message bubble */}
+                  <div className="absolute top-36 right-20 -translate-x-1/2 animate-fade-in animate-delay-500">
+                    <img 
+                      src="/public/lovable-uploads/calender.jpg"
+                      alt="Calendar"
+                      className="w-32 h-32 object-cover rounded-lg shadow-lg"
+                    />
                   </div>
 
-                  {/* Bottom: delivery + success */}
-                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 space-y-2 animate-fade-in animate-delay-700">
+                  {/* Bottom: delivery + success (moved up) */}
+                  <div className="absolute bottom-6 right-20 -translate-x-1/2 space-y-2 animate-fade-in animate-delay-700">
                     <div className="px-4 py-1.5 rounded-md bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
                       <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
