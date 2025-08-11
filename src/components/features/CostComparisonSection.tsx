@@ -3,7 +3,7 @@ import React from 'react';
 const CostComparisonSection = () => {
   const cards = [
     {
-      image: "/lovable-uploads/PhoneCaller.png",
+      image: "/lovable-uploads/Inbound.jpg",
       text: "Automate appointment booking & reminders"
     },
     {
