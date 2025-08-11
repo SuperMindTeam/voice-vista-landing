@@ -81,7 +81,7 @@ const Features = () => {
   const currencyData = getCurrencyData(countryCode, isEurope);
   
   return (
-    <section id="features" className="py-20" style={{ backgroundColor: '#767067' }}>
+    <section id="features" className="py-20" style={{ backgroundColor: '#b39d86' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Added anchor for Demo Zone section after the cost table */}
