@@ -39,9 +39,9 @@ const CostComparisonSection = () => {
               {index === 0 && (
                 <div className="absolute inset-0 pointer-events-none">
                   {/* Top-right: Inbound Call Answered */}
-                  <div className="absolute top-6 right-6 translate-x-1/2 animate-fade-in">
-                    <div className="px-3 py-1 rounded-full bg-white/90 text-indigo-600 text-xs font-semibold shadow flex items-center gap-1">
-                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <div className="absolute top-6 right-10 animate-fade-in">
+                    <div className="px-4 py-1.5 rounded-full bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
+                      <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span>Inbound Call Answered</span>
@@ -49,18 +49,18 @@ const CostComparisonSection = () => {
                   </div>
 
                   {/* Connector line */}
-                  <div className="absolute top-10 right-6 bottom-12 border-l border-dotted border-indigo-500/80" />
+                  <div className="absolute top-6 right-10 bottom-6 border-l border-dotted border-indigo-500/80" />
 
                   {/* Mid-right: status tags */}
-                  <div className="absolute top-28 right-6 translate-x-1/2 space-y-3 animate-fade-in animate-delay-300">
-                    <div className="px-3 py-1 rounded-md bg-white/90 text-indigo-600 text-xs font-semibold shadow flex items-center gap-1">
-                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <div className="absolute top-28 right-10 space-y-3 animate-fade-in animate-delay-300">
+                    <div className="px-4 py-1.5 rounded-md bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
+                      <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span>Patient ID Verified</span>
                     </div>
-                    <div className="px-3 py-1 rounded-md bg-white/90 text-indigo-600 text-xs font-semibold shadow flex items-center gap-1">
-                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <div className="px-4 py-1.5 rounded-md bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
+                      <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span>Appt Scheduled</span>
@@ -68,7 +68,7 @@ const CostComparisonSection = () => {
                   </div>
 
                   {/* Message bubble */}
-                  <div className="absolute right-6 bottom-24 max-w-[60%] animate-fade-in animate-delay-500">
+                  <div className="absolute right-10 -translate-x-1/2 bottom-24 max-w-[60%] animate-fade-in animate-delay-500">
                     <img
                       src="/lovable-uploads/calender.jpg"
                       alt="Appointment confirmation calendar"
@@ -77,15 +77,15 @@ const CostComparisonSection = () => {
                   </div>
 
                   {/* Bottom-right: delivery + success */}
-                  <div className="absolute right-6 translate-x-1/2 bottom-6 space-y-2 animate-fade-in animate-delay-700">
-                    <div className="px-3 py-1 rounded-md bg-white/90 text-indigo-600 text-xs font-semibold shadow flex items-center gap-1">
-                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <div className="absolute right-10 bottom-6 space-y-2 animate-fade-in animate-delay-700">
+                    <div className="px-4 py-1.5 rounded-md bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
+                      <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span>SMS Delivered</span>
                     </div>
-                    <div className="px-3 py-1 rounded-md bg-white/90 text-gray-800 text-xs font-semibold shadow flex items-center gap-1">
-                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <div className="px-4 py-1.5 rounded-md bg-white/90 text-gray-800 text-sm font-semibold shadow flex items-center gap-1">
+                      <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span>Successful Call</span>
