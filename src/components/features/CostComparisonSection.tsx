@@ -38,10 +38,10 @@ const CostComparisonSection = () => {
 
               {index === 0 && (
                 <div className="absolute inset-0 pointer-events-none">
-                  {/* Connector line going through right side elements */}
-                  <div className="absolute top-6 right-16 bottom-6 border-l-4 border-dotted border-gray-600" />
+                  {/* Connector line */}
+                  <div className="absolute top-6 right-16 bottom-6 border-l border-dotted border-indigo-500/80" />
 
-                  {/* Top: Inbound Call Answered */}
+                  {/* Top-right: Inbound Call Answered */}
                   <div className="absolute top-6 right-4 animate-fade-in">
                     <div className="px-4 py-1.5 rounded-full bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
                       <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -51,8 +51,8 @@ const CostComparisonSection = () => {
                     </div>
                   </div>
 
-                  {/* Mid: status tags (moved up) */}
-                  <div className="absolute top-20 right-4 space-y-3 animate-fade-in animate-delay-300">
+                  {/* Mid-right: status tags */}
+                  <div className="absolute top-28 right-4 space-y-3 animate-fade-in animate-delay-300">
                     <div className="px-4 py-1.5 rounded-md bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
                       <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -61,23 +61,23 @@ const CostComparisonSection = () => {
                     </div>
                     <div className="px-4 py-1.5 rounded-md bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
                       <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7-25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span>Appt Scheduled</span>
                     </div>
                   </div>
 
-                  {/* Calendar image replacing message bubble */}
-                  <div className="absolute top-36 right-4 animate-fade-in animate-delay-500">
-                    <img 
-                      src="/public/lovable-uploads/calender.jpg"
-                      alt="Calendar"
-                      className="w-32 h-32 object-cover rounded-lg shadow-lg"
+                  {/* Message bubble */}
+                  <div className="absolute right-16 -translate-x-1/2 bottom-24 max-w-[60%] animate-fade-in animate-delay-500">
+                    <img
+                      src="/lovable-uploads/calender.jpg"
+                      alt="Appointment confirmation calendar"
+                      className="rounded-2xl shadow-xl w-56 h-32 object-cover"
                     />
                   </div>
 
-                  {/* Bottom: delivery + success (moved up) */}
-                  <div className="absolute bottom-6 right-4 space-y-2 animate-fade-in animate-delay-700">
+                  {/* Bottom-right: delivery + success */}
+                  <div className="absolute right-4 bottom-6 space-y-2 animate-fade-in animate-delay-700">
                     <div className="px-4 py-1.5 rounded-md bg-white/90 text-indigo-600 text-sm font-semibold shadow flex items-center gap-1">
                       <svg className="w-4 h-4 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
