@@ -10,10 +10,6 @@ const CostComparisonSection = () => {
       image: "/lovable-uploads/80a9a018-2c20-4f9d-96ba-b07242658a40.png", 
       text: "24 hours availability for your front desk"
     },
-    {
-      image: "/lovable-uploads/dee07438-1695-4ee4-8811-ab427fded354.png",
-      text: "High Conversion Rates"
-    }
   ];
 
   return (
@@ -27,7 +23,7 @@ const CostComparisonSection = () => {
      </p>
 
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {cards.map((card, index) => (
           <div 
             key={index}
@@ -44,43 +40,56 @@ const CostComparisonSection = () => {
                 <div className="absolute inset-0 pointer-events-none">
                   {/* Top-right: Inbound Call Answered */}
                   <div className="absolute top-4 right-4 animate-fade-in">
-                    <div className="px-3 py-1 rounded-full bg-white/90 text-indigo-600 text-xs font-semibold shadow">
-                      Inbound Call Answered
+                    <div className="px-3 py-1 rounded-full bg-white/90 text-indigo-600 text-xs font-semibold shadow flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Inbound Call Answered</span>
                     </div>
                   </div>
 
-                  {/* Mid-right: Mia voice pill with waveform */}
-                  <div className="absolute top-20 right-6 animate-fade-in animate-delay-200">
-                    <div className="flex items-center gap-3 px-4 py-2 bg-white rounded-full shadow-lg">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 shadow" />
-                      <span className="font-medium text-gray-800">Mia</span>
-                      <div className="flex items-end gap-1">
-                        <span className="w-1 h-2 bg-indigo-500 rounded-sm pulse" style={{ animationDelay: '0ms' }} />
-                        <span className="w-1 h-3 bg-indigo-500/90 rounded-sm pulse" style={{ animationDelay: '150ms' }} />
-                        <span className="w-1 h-4 bg-indigo-500 rounded-sm pulse" style={{ animationDelay: '300ms' }} />
-                        <span className="w-1 h-3 bg-indigo-500/90 rounded-sm pulse" style={{ animationDelay: '450ms' }} />
-                        <span className="w-1 h-2 bg-indigo-500 rounded-sm pulse" style={{ animationDelay: '600ms' }} />
-                      </div>
-                    </div>
-                  </div>
+                  {/* Connector line */}
+                  <div className="absolute top-12 right-6 bottom-20 border-l border-dotted border-indigo-500/70" />
 
                   {/* Mid-right: status tags */}
                   <div className="absolute top-44 right-6 space-y-2 animate-fade-in animate-delay-300">
-                    <div className="px-3 py-1 rounded-md bg-white/90 text-indigo-600 text-xs font-semibold shadow">Patient ID Verified</div>
-                    <div className="px-3 py-1 rounded-md bg-white/90 text-indigo-600 text-xs font-semibold shadow">Appt Scheduled</div>
+                    <div className="px-3 py-1 rounded-md bg-white/90 text-indigo-600 text-xs font-semibold shadow flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Patient ID Verified</span>
+                    </div>
+                    <div className="px-3 py-1 rounded-md bg-white/90 text-indigo-600 text-xs font-semibold shadow flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Appt Scheduled</span>
+                    </div>
                   </div>
 
                   {/* Message bubble */}
                   <div className="absolute left-6 bottom-20 max-w-[75%] animate-fade-in animate-delay-500">
-                    <div className="bg-white rounded-2xl shadow-xl p-4 text-gray-900 text-sm md:text-base">
-                      Thanks for calling, Jason. Your appointment is confirmed for Mon, Aug 18 @ 3pm.
-                    </div>
+                    <img
+                      src="/lovable-uploads/calender.jpg"
+                      alt="Appointment confirmation calendar"
+                      className="rounded-2xl shadow-xl w-full h-40 object-cover"
+                    />
                   </div>
 
                   {/* Bottom-right: delivery + success */}
                   <div className="absolute right-6 bottom-6 space-y-2 animate-fade-in animate-delay-700">
-                    <div className="px-3 py-1 rounded-md bg-white/90 text-indigo-600 text-xs font-semibold shadow">SMS Delivered</div>
-                    <div className="px-3 py-1 rounded-md bg-white/90 text-gray-800 text-xs font-semibold shadow">Successful Call</div>
+                    <div className="px-3 py-1 rounded-md bg-white/90 text-indigo-600 text-xs font-semibold shadow flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>SMS Delivered</span>
+                    </div>
+                    <div className="px-3 py-1 rounded-md bg-white/90 text-gray-800 text-xs font-semibold shadow flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Successful Call</span>
+                    </div>
                   </div>
                 </div>
               )}
