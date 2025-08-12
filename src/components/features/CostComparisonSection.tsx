@@ -27,16 +27,16 @@ const CostComparisonSection = () => {
         {cards.map((card, index) => (
           <div 
             key={index}
-            className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
+            className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden"
           >
             <div className="mb-2">
               <img 
                 src={card.image}
                 alt={card.text}
-                className="w-full h-[420px] object-cover rounded-lg"
+                className="w-full h-[420px] object-cover"
               />
             </div>
-            <p className="text-gray-800 text-xl font-bold leading-relaxed">
+            <p className="text-gray-800 text-xl font-bold leading-relaxed px-8 pb-8 pt-2">
               {card.text}
             </p>
           </div>
