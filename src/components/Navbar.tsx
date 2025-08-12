@@ -42,17 +42,11 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
-              Pricing
-            </a>
-            <a href="#demozone" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
+            <a href="#live-demo" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
               Demo Zone
             </a>
-            <a href="#features-list" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
+            <a href="#cost-comparison" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
               Features
-            </a>
-            <a href="/dental-ai-receptionist" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
-              Dental
             </a>
           </nav>
 
@@ -100,32 +94,18 @@ const Navbar = () => {
         
         <nav className="flex flex-col px-8 py-4 space-y-6">
           <a 
-            href="#features" 
-            className="text-lg font-medium text-gray-700"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Pricing
-          </a>
-          <a 
-            href="#demozone" 
+            href="#live-demo" 
             className="text-lg font-medium text-gray-700"
             onClick={() => setMobileMenuOpen(false)}
           >
             Demo Zone
           </a>
           <a 
-            href="#features-list" 
+            href="#cost-comparison" 
             className="text-lg font-medium text-gray-700"
             onClick={() => setMobileMenuOpen(false)}
           >
             Features
-          </a>
-          <a 
-            href="/dental-ai-receptionist" 
-            className="text-lg font-medium text-gray-700"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Dental
           </a>
           <div className="pt-6 border-t">
             <Button 
