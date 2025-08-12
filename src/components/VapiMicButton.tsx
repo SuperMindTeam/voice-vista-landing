@@ -17,6 +17,22 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
       setCallState('connecting');
       console.log("Fetching VAPI config...");
       
+      // Check microphone permissions first on mobile devices
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        try {
+          console.log("Requesting microphone permissions...");
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          console.log("Microphone permission granted");
+          // Stop the test stream
+          stream.getTracks().forEach(track => track.stop());
+        } catch (permissionError) {
+          console.error("Microphone permission denied:", permissionError);
+          alert("Please allow microphone access to use voice features");
+          setCallState('idle');
+          return;
+        }
+      }
+      
       // Fetch the VAPI config from Supabase edge function
       const { data, error } = await supabase.functions.invoke('vapi-config');
       
@@ -39,21 +55,46 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
       const vapi = new Vapi(data.publicKey);
       setVapiInstance(vapi);
       
-      // Set up event listeners
+      // Set up event listeners with timeout for connection
+      let connectionTimeout: NodeJS.Timeout | null = null;
+      
       vapi.on('call-start', () => {
         console.log("Call started");
+        if (connectionTimeout) {
+          clearTimeout(connectionTimeout);
+          connectionTimeout = null;
+        }
         setCallState('connected');
       });
       
       vapi.on('call-end', () => {
         console.log("Call ended");
+        if (connectionTimeout) {
+          clearTimeout(connectionTimeout);
+          connectionTimeout = null;
+        }
         setCallState('idle');
       });
       
       vapi.on('error', (error) => {
         console.error("VAPI error:", error);
+        if (connectionTimeout) {
+          clearTimeout(connectionTimeout);
+          connectionTimeout = null;
+        }
         setCallState('idle');
+        alert("Connection failed. Please check your internet connection and try again.");
       });
+      
+      // Set a connection timeout for mobile devices (30 seconds)
+      connectionTimeout = setTimeout(() => {
+        console.error("Connection timeout - call failed to start within 30 seconds");
+        if (vapi) {
+          vapi.stop();
+        }
+        setCallState('idle');
+        alert("Connection timeout. Please try again.");
+      }, 30000);
       
       console.log("Starting VAPI call with assistant ID:", assistantId);
       await vapi.start(assistantId);
@@ -62,6 +103,15 @@ const VapiMicButton: React.FC<VapiMicButtonProps> = ({ className, assistantId })
     } catch (error) {
       console.error("Error starting VAPI call:", error);
       setCallState('idle');
+      if (error instanceof Error) {
+        if (error.message.includes("Permission denied") || error.message.includes("NotAllowedError")) {
+          alert("Microphone access is required. Please enable microphone permissions and try again.");
+        } else if (error.message.includes("network") || error.message.includes("fetch")) {
+          alert("Network error. Please check your internet connection and try again.");
+        } else {
+          alert("Failed to start call. Please try again.");
+        }
+      }
     }
   };
 
