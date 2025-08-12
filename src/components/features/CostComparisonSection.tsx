@@ -23,20 +23,20 @@ const CostComparisonSection = () => {
      </p>
 
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-4 md:px-0">
         {cards.map((card, index) => (
           <div 
             key={index}
-            className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden"
+            className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden max-w-full"
           >
-            <div className="mb-2">
+            <div className="mb-2 w-full">
               <img 
                 src={card.image}
                 alt={card.text}
-                className="w-full h-[420px] object-cover"
+                className="w-full h-[300px] md:h-[420px] object-cover object-center"
               />
             </div>
-            <p className="text-gray-800 text-xl font-bold leading-relaxed px-8 pb-8 pt-2">
+            <p className="text-gray-800 text-lg md:text-xl font-bold leading-relaxed px-4 md:px-8 pb-4 md:pb-8 pt-2">
               {card.text}
             </p>
           </div>
