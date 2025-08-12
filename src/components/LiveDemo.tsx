@@ -16,7 +16,7 @@ const LiveDemo = () => {
     { 
       icon: "🏥", 
       name: "Healthcare Receptionist", 
-      agentId: "d275f9a8-d5dd-4c94-ac99-75b1729a0cbc" 
+      agentId: "8fd5e116-6607-46b7-bdba-6e936c48d53c" 
     },
     { 
       icon: "🏨", 
