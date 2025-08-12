@@ -168,6 +168,8 @@ const LiveDemo = () => {
                           autoPlay 
                           loop 
                           muted 
+                          playsInline
+                          controls={false}
                           className="absolute inset-0 w-full h-full object-cover"
                         >
                           <source src="/lovable-uploads/SuperMind_Dental.mp4" type="video/mp4" />
@@ -246,6 +248,8 @@ const LiveDemo = () => {
                           autoPlay 
                           loop 
                           muted 
+                          playsInline
+                          controls={false}
                           className="absolute inset-0 w-full h-full object-cover"
                         >
                           <source src="/lovable-uploads/SuperMind_Hotel.mp4" type="video/mp4" />
@@ -324,6 +328,8 @@ const LiveDemo = () => {
                           autoPlay 
                           loop 
                           muted 
+                          playsInline
+                          controls={false}
                           className="absolute inset-0 w-full h-full object-cover"
                         >
                           <source src="/lovable-uploads/Supermind_Restaurant.mp4" type="video/mp4" />
