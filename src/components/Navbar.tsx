@@ -38,13 +38,13 @@ const Navbar = () => {
         )}
       >
         <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
+          <a href="/" className="flex items-center">
             <img 
               src={isDemoPage || isScrolled ? "/lovable-uploads/BlackLogo.png" : "/lovable-uploads/WhiteLogo.png"} 
               alt="SuperMind Logo" 
               className="h-10 w-auto"
             />
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
