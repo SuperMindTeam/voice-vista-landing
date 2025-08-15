@@ -3,10 +3,16 @@ import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { MicIcon, Menu, X } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Force white navbar on demo page
+  const isDemoPage = location.pathname === '/demo';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,15 +32,15 @@ const Navbar = () => {
       <header
         className={cn(
           'w-full transition-all duration-300 ease-in-out px-6 py-4',
-          isScrolled 
+          isDemoPage || isScrolled 
             ? 'bg-white/95 backdrop-blur-md shadow-lg' 
             : 'bg-transparent'
         )}
       >
         <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <div className="flex items-center">
+          <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
             <img 
-              src={isScrolled ? "/lovable-uploads/BlackLogo.png" : "/lovable-uploads/WhiteLogo.png"} 
+              src={isDemoPage || isScrolled ? "/lovable-uploads/BlackLogo.png" : "/lovable-uploads/WhiteLogo.png"} 
               alt="SuperMind Logo" 
               className="h-10 w-auto"
             />
@@ -42,16 +48,16 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#live-demo" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
+            <a href="#live-demo" className={cn("text-[15px] font-medium transition-colors", isDemoPage || isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
               Demo Zone
             </a>
-            <a href="#cost-comparison" className={cn("text-[15px] font-medium transition-colors", isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
+            <a href="#cost-comparison" className={cn("text-[15px] font-medium transition-colors", isDemoPage || isScrolled ? "text-gray-700 hover:text-blue-600" : "text-white hover:text-gray-200")}>
               Features
             </a>
           </nav>
 
           <div className="hidden md:flex items-center">
-            <Button size="sm" className={cn("text-sm font-medium shadow-sm", isScrolled ? "bg-black hover:bg-black/90 text-white" : "bg-white hover:bg-white/90 text-black")} onClick={() => window.open('https://forms.gle/zpiozAUmedjgyR678', '_blank')}>
+            <Button size="sm" className={cn("text-sm font-medium shadow-sm", isDemoPage || isScrolled ? "bg-black hover:bg-black/90 text-white" : "bg-white hover:bg-white/90 text-black")} onClick={() => navigate('/demo')}>
               Book a Call
             </Button>
           </div>
@@ -62,9 +68,9 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
-              <X className={cn("h-6 w-6", isScrolled ? "text-gray-700" : "text-white")} />
+              <X className={cn("h-6 w-6", isDemoPage || isScrolled ? "text-gray-700" : "text-white")} />
             ) : (
-              <Menu className={cn("h-6 w-6", isScrolled ? "text-gray-700" : "text-white")} />
+              <Menu className={cn("h-6 w-6", isDemoPage || isScrolled ? "text-gray-700" : "text-white")} />
             )}
           </button>
         </div>
@@ -112,10 +118,10 @@ const Navbar = () => {
               className="w-full bg-[#B8D393] hover:bg-[#A6C27D] text-black"
               onClick={() => {
                 setMobileMenuOpen(false);
-                window.open('https://forms.gle/zpiozAUmedjgyR678', '_blank');
+                navigate('/demo');
               }}
             >
-              Free Trial
+              Book a Call
             </Button>
           </div>
         </nav>
