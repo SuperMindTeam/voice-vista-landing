@@ -5,10 +5,12 @@ import { SmileIcon, Phone, DollarSign, Mic } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import VapiMicButton from './VapiMicButton';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,7 +35,7 @@ const Hero = () => {
   }, []);
 
   const handleFreeTrialClick = () => {
-    window.open("https://forms.gle/zpiozAUmedjgyR678", "_blank");
+    navigate('/demo');
   };
 
 
