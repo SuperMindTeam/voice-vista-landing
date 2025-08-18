@@ -42,7 +42,7 @@ const Hero = () => {
   const CallToAction = ({ isMobileLayout = false }) => (
   <div className={isMobileLayout 
     ? "relative mt-16 w-full flex justify-center" 
-    : "relative mt-8 w-full flex justify-center md:absolute md:bottom-8 md:left-1/2 md:transform md:-translate-x-1/2 lg:relative lg:mt-8 lg:right-2 lg:transform-none lg:-translate-y-[24rem]"
+    : "relative mt-8 w-full flex justify-center md:absolute md:bottom-4 md:left-1/2 md:transform md:-translate-x-1/2 lg:relative lg:mt-8 lg:right-2 lg:transform-none lg:-translate-y-[24rem]"
   }>
     <VapiMicButton 
       assistantId="8fd5e116-6607-46b7-bdba-6e936c48d53c"
