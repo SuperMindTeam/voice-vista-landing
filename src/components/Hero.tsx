@@ -40,16 +40,11 @@ const Hero = () => {
 
 
   const CallToAction = ({ isMobileLayout = false }) => (
-  <div className={isMobileLayout ? "relative mt-16 w-full flex justify-center" : "relative mt-8 w-full flex justify-center"}>
-    <div className={isMobileLayout 
-      ? "flex justify-center" 
-      : "absolute right-2 -translate-y-[24rem] flex justify-center"
-    }>
-      <VapiMicButton 
-        assistantId="8fd5e116-6607-46b7-bdba-6e936c48d53c"
-        className="hover:scale-105 transition-transform"
-      />
-    </div>
+  <div className={isMobileLayout ? "relative mt-16 w-full flex justify-center" : "absolute bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center"}>
+    <VapiMicButton 
+      assistantId="8fd5e116-6607-46b7-bdba-6e936c48d53c"
+      className="hover:scale-105 transition-transform"
+    />
   </div>
 );
 
